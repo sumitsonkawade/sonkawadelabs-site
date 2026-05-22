@@ -175,7 +175,6 @@
   </main>
 
   <script>
-    const RELEASE_API = "https://api.github.com/repos/sumitsonkawade/CSC-Pro/releases/latest";
     const downloadBtn = document.getElementById("downloadBtn");
     const buttonLabel = document.getElementById("buttonLabel");
     const statusEl = document.getElementById("status");
@@ -221,26 +220,7 @@
       setLoading(true);
 
       try {
-        const releaseResponse = await fetch(RELEASE_API, {
-          headers: {
-            "Accept": "application/vnd.github+json"
-          }
-        });
-
-        if (!releaseResponse.ok) {
-          throw new Error("Could not fetch the latest release.");
-        }
-
-        const release = await releaseResponse.json();
-        const exeAsset = Array.isArray(release.assets)
-          ? release.assets.find((asset) => typeof asset.name === "string" && asset.name.toLowerCase().endsWith(".exe"))
-          : null;
-
-        if (!exeAsset || !exeAsset.browser_download_url) {
-          throw new Error("No .exe asset found in the latest release.");
-        }
-
-        triggerDownload(exeAsset.browser_download_url, exeAsset.name);
+        triggerDownload("/api/download-latest", "CSC_Pro_Setup.exe");
         setStatus("Download started.", false);
       } catch (error) {
         console.error(error);
