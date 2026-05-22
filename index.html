@@ -204,10 +204,12 @@
       statusEl.className = isError ? "status error" : "status";
     }
 
+    const RELEASE_DOWNLOAD_URL = "https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip";
+
     function triggerDownload(url, fileName) {
       const anchor = document.createElement("a");
       anchor.href = url;
-      anchor.download = fileName || "CSC-Pro.exe";
+      anchor.download = fileName || "CSC_Pro_Setup.zip";
       anchor.rel = "noopener";
       anchor.style.display = "none";
       document.body.appendChild(anchor);
@@ -220,7 +222,7 @@
       setLoading(true);
 
       try {
-        triggerDownload("/api/download-latest", "CSC_Pro_Setup.exe");
+        triggerDownload(RELEASE_DOWNLOAD_URL, "CSC_Pro_Setup.zip");
         setStatus("Download started.", false);
       } catch (error) {
         console.error(error);
