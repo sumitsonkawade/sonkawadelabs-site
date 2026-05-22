@@ -205,6 +205,17 @@
       statusEl.className = isError ? "status error" : "status";
     }
 
+    function triggerDownload(url, fileName) {
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = fileName || "CSC-Pro.exe";
+      anchor.rel = "noopener";
+      anchor.style.display = "none";
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+    }
+
     async function downloadLatestExe() {
       setStatus("", false);
       setLoading(true);
@@ -229,24 +240,7 @@
           throw new Error("No .exe asset found in the latest release.");
         }
 
-        const fileResponse = await fetch(exeAsset.browser_download_url, {
-          redirect: "follow"
-        });
-
-        if (!fileResponse.ok) {
-          throw new Error("Download request failed.");
-        }
-
-        const blob = await fileResponse.blob();
-        const objectUrl = URL.createObjectURL(blob);
-        const anchor = document.createElement("a");
-        anchor.href = objectUrl;
-        anchor.download = exeAsset.name || "CSC-Pro.exe";
-        anchor.style.display = "none";
-        document.body.appendChild(anchor);
-        anchor.click();
-        anchor.remove();
-        URL.revokeObjectURL(objectUrl);
+        triggerDownload(exeAsset.browser_download_url, exeAsset.name);
         setStatus("Download started.", false);
       } catch (error) {
         console.error(error);
