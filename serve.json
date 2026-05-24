@@ -7,6 +7,22 @@
     {
       "source": "/privacy/",
       "destination": "/privacy/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms/index.html"
+    },
+    {
+      "source": "/terms/",
+      "destination": "/terms/index.html"
+    },
+    {
+      "source": "/data-deletion",
+      "destination": "/data-deletion/index.html"
+    },
+    {
+      "source": "/data-deletion/",
+      "destination": "/data-deletion/index.html"
     }
   ]
 }
