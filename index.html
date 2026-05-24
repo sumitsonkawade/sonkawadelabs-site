@@ -148,6 +148,24 @@
       color: #fca5a5;
     }
 
+    .legal-links {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .legal-links a {
+      color: #bbf7d0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .legal-links a:hover {
+      text-decoration: underline;
+    }
+
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
@@ -172,6 +190,9 @@
       </button>
     </div>
     <div id="status" class="status" role="status" aria-live="polite"></div>
+    <div class="legal-links">
+      <a href="/privacy">Privacy Policy</a>
+    </div>
   </main>
 
   <script>
