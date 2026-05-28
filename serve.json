@@ -23,6 +23,14 @@
     {
       "source": "/data-deletion/",
       "destination": "/data-deletion/index.html"
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/thank-you/index.html"
+    },
+    {
+      "source": "/thank-you/",
+      "destination": "/thank-you/index.html"
     }
   ]
 }

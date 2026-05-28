@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You | CSC Pro</title>
+  <meta name="description" content="CSC Pro download confirmation and install help from Sonkawade Labs.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09090b;
+      --panel: rgba(24, 24, 27, 0.86);
+      --panel-border: rgba(255, 255, 255, 0.08);
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --accent: #22c55e;
+      --accent-2: #15803d;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(34, 197, 94, 0.18), transparent 38%),
+        radial-gradient(circle at bottom right, rgba(21, 128, 61, 0.16), transparent 30%),
+        linear-gradient(180deg, #0b0b0d 0%, #09090b 100%);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .shell {
+      width: min(100%, 760px);
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      padding: 48px 32px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shell::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), transparent 30%, transparent 70%, rgba(34, 197, 94, 0.14));
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: #bbf7d0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 7vw, 56px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0;
+      max-width: 620px;
+      font-size: clamp(16px, 2.6vw, 19px);
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .lead {
+      margin-bottom: 28px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+      margin: 0 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .step {
+      padding: 16px 18px;
+      border: 1px solid var(--panel-border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .support {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .support a,
+    .support span,
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .support a {
+      color: #04110a;
+      background: linear-gradient(135deg, var(--accent), #86efac);
+      box-shadow: 0 18px 36px rgba(34, 197, 94, 0.24);
+    }
+
+    .support span {
+      color: var(--muted);
+      border: 1px solid var(--panel-border);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .back-link {
+      color: #bbf7d0;
+      border: 1px solid rgba(187, 247, 208, 0.18);
+      background: rgba(34, 197, 94, 0.08);
+    }
+
+    .legal-links {
+      margin-top: 26px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .legal-links a {
+      color: #bbf7d0;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .legal-links a:hover,
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        padding: 36px 22px;
+      }
+
+      .support {
+        flex-direction: column;
+      }
+
+      .support a,
+      .support span,
+      .back-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="content">
+      <div class="eyebrow">Sonkawade Labs</div>
+      <h1>Download started! Check your Downloads folder.</h1>
+      <p class="lead">If the installer does not appear within a few seconds, return to the homepage and start the download again.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <strong>1. Open the installer file</strong>
+          Find <code>CSC_Pro_Setup.zip</code> in your Downloads folder and extract it if Windows downloaded it as a ZIP archive.
+        </li>
+        <li class="step">
+          <strong>2. Run setup</strong>
+          Open the extracted setup file and follow the installation prompts on your Windows PC.
+        </li>
+        <li class="step">
+          <strong>3. Need help?</strong>
+          Use the support email below. If you already have a Sonkawade Labs WhatsApp chat, continue there for install help.
+        </li>
+      </ol>
+
+      <div class="support">
+        <a href="mailto:sumitsonkawade07@gmail.com?subject=CSC%20Pro%20Install%20Help">Email Support</a>
+        <span>WhatsApp support is available through your existing Sonkawade Labs chat.</span>
+      </div>
+
+      <a class="back-link" href="/">Back to Download Page</a>
+
+      <div class="legal-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/data-deletion/">Data Deletion</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -225,6 +225,10 @@
       anchor.remove();
     }
 
+    function redirectToThankYou() {
+      window.location.assign("/thank-you/");
+    }
+
     async function downloadLatestExe() {
       setStatus("", false);
       setLoading(true);
@@ -232,6 +236,7 @@
       try {
         triggerDownload(RELEASE_DOWNLOAD_URL, "CSC_Pro_Setup.zip");
         setStatus("Download started.", false);
+        window.setTimeout(redirectToThankYou, 150);
       } catch (error) {
         console.error(error);
         setStatus(error instanceof Error ? error.message : "Download failed.", true);
