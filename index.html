@@ -220,6 +220,7 @@
 
     const RELEASE_ASSET_NAME = "CSC_Pro_Setup.zip";
     const RELEASES_API_URL = "https://api.github.com/repos/sumitsonkawade/sonkawadelabs-site/releases?per_page=10";
+    const THANK_YOU_URL = "/thank-you/";
 
     function openDownloadInNewTab(url) {
       const anchor = document.createElement("a");
@@ -264,6 +265,9 @@
         const downloadUrl = await resolveLatestDownloadUrl();
         openDownloadInNewTab(downloadUrl);
         setStatus("Download started.", false);
+        window.setTimeout(() => {
+          window.location.assign(THANK_YOU_URL);
+        }, 150);
       } catch (error) {
         console.error(error);
         setStatus(error instanceof Error ? error.message : "Download failed.", true);
