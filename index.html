@@ -255,7 +255,8 @@
       return asset.browser_download_url;
     }
 
-    async function downloadLatestExe() {
+    async function downloadLatestExe(event) {
+      event.preventDefault();
       setStatus("", false);
       setLoading(true);
 
