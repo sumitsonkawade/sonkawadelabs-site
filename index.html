@@ -218,7 +218,8 @@
       statusEl.className = isError ? "status error" : "status";
     }
 
-    const RELEASE_DOWNLOAD_URL = "https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip";
+    const RELEASE_ASSET_NAME = "CSC_Pro_Setup.zip";
+    const RELEASES_API_URL = "https://api.github.com/repos/sumitsonkawade/sonkawadelabs-site/releases?per_page=10";
 
     function openDownloadInNewTab(url) {
       const anchor = document.createElement("a");
@@ -231,16 +232,41 @@
       anchor.remove();
     }
 
+    async function resolveLatestDownloadUrl() {
+      const response = await fetch(RELEASES_API_URL, {
+        headers: {
+          Accept: "application/vnd.github+json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Could not check the latest installer release.");
+      }
+
+      const releases = await response.json();
+      const asset = releases
+        .flatMap((release) => Array.isArray(release.assets) ? release.assets : [])
+        .find((item) => item && item.name === RELEASE_ASSET_NAME && item.browser_download_url);
+
+      if (!asset) {
+        throw new Error("Installer asset not found in GitHub releases.");
+      }
+
+      return asset.browser_download_url;
+    }
+
     async function downloadLatestExe() {
       setStatus("", false);
       setLoading(true);
 
       try {
-        openDownloadInNewTab(RELEASE_DOWNLOAD_URL);
+        const downloadUrl = await resolveLatestDownloadUrl();
+        openDownloadInNewTab(downloadUrl);
         setStatus("Download started.", false);
       } catch (error) {
         console.error(error);
         setStatus(error instanceof Error ? error.message : "Download failed.", true);
+      } finally {
         setLoading(false);
       }
     }
