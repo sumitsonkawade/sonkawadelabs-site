@@ -80,7 +80,7 @@
       justify-content: center;
     }
 
-    button {
+    .download-link {
       appearance: none;
       border: 0;
       cursor: pointer;
@@ -93,16 +93,21 @@
       background: linear-gradient(135deg, var(--accent), #86efac);
       box-shadow: 0 18px 36px rgba(34, 197, 94, 0.24);
       transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    button:hover:not(:disabled) {
+    .download-link:hover:not(.disabled) {
       transform: translateY(-1px);
       box-shadow: 0 22px 44px rgba(34, 197, 94, 0.3);
     }
 
-    button:disabled {
+    .download-link.disabled {
       cursor: wait;
       opacity: 0.9;
+      pointer-events: none;
     }
 
     .spinner {
@@ -168,11 +173,11 @@
     <h1>CSC Pro</h1>
     <p>Automates Maharashtra government certificate applications for CSC operators — Income, Domicile, Caste, NCL, EWS &amp; SEBC in minutes.</p>
     <div class="actions">
-      <button id="downloadBtn" type="button" aria-live="polite">
+      <a id="downloadBtn" class="download-link" href="/thank-you/" aria-live="polite">
         <span class="button-row">
           <span id="buttonLabel">Download</span>
         </span>
-      </button>
+      </a>
     </div>
     <div id="status" class="status" role="status" aria-live="polite"></div>
     <div class="legal-links">
@@ -188,7 +193,8 @@
     const statusEl = document.getElementById("status");
 
     function setLoading(isLoading) {
-      downloadBtn.disabled = isLoading;
+      downloadBtn.classList.toggle("disabled", isLoading);
+      downloadBtn.setAttribute("aria-disabled", isLoading ? "true" : "false");
       buttonLabel.textContent = "";
 
       const row = document.createElement("span");
@@ -214,7 +220,7 @@
 
     const RELEASE_DOWNLOAD_URL = "https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip";
 
-    function triggerDownload(url) {
+    function openDownloadInNewTab(url) {
       const anchor = document.createElement("a");
       anchor.href = url;
       anchor.target = "_blank";
@@ -225,22 +231,16 @@
       anchor.remove();
     }
 
-    function redirectToThankYou() {
-      window.location.assign("/thank-you/");
-    }
-
     async function downloadLatestExe() {
       setStatus("", false);
       setLoading(true);
 
       try {
-        triggerDownload(RELEASE_DOWNLOAD_URL);
+        openDownloadInNewTab(RELEASE_DOWNLOAD_URL);
         setStatus("Download started.", false);
-        window.setTimeout(redirectToThankYou, 150);
       } catch (error) {
         console.error(error);
         setStatus(error instanceof Error ? error.message : "Download failed.", true);
-      } finally {
         setLoading(false);
       }
     }
