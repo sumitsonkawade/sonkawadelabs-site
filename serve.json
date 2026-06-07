@@ -31,6 +31,30 @@
     {
       "source": "/thank-you/",
       "destination": "/thank-you/index.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/products/index.html"
+    },
+    {
+      "source": "/products/",
+      "destination": "/products/index.html"
+    },
+    {
+      "source": "/products/arzi-bot",
+      "destination": "/products/arzi-bot/index.html"
+    },
+    {
+      "source": "/products/arzi-bot/",
+      "destination": "/products/arzi-bot/index.html"
+    },
+    {
+      "source": "/products/csc-pro",
+      "destination": "/products/csc-pro/index.html"
+    },
+    {
+      "source": "/products/csc-pro/",
+      "destination": "/products/csc-pro/index.html"
     }
   ]
 }

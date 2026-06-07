@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSC Pro | Sonkawade Labs</title>
+  <meta name="description" content="CSC Pro is desktop certificate automation software for Maharashtra CSC operators.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
+  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
+  <style>
+    :root {
+      --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
+      --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+      --bg: #f4f0e8;
+      --paper: rgba(255, 250, 244, 0.84);
+      --ink: #17120d;
+      --muted: rgba(23, 18, 13, 0.66);
+      --line: rgba(23, 18, 13, 0.12);
+      --soft: rgba(255, 255, 255, 0.62);
+      --shadow: 0 24px 60px rgba(30, 24, 17, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08)),
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.44), transparent 24%),
+        radial-gradient(circle at 80% 14%, rgba(252, 244, 228, 0.58), transparent 22%),
+        linear-gradient(180deg, #f6f1e8 0%, #eee6da 100%);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      backdrop-filter: blur(14px);
+      background: rgba(244, 240, 232, 0.74);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .brand-mark {
+      font-size: 25px;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .header-links {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 15px;
+    }
+
+    .header-links a {
+      opacity: 0.72;
+      text-decoration: none;
+      transition: opacity 200ms ease;
+    }
+
+    .header-links a:hover,
+    .header-links a[aria-current="page"] {
+      opacity: 1;
+    }
+
+    main,
+    .page-footer {
+      width: min(1100px, calc(100% - 24px));
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    main {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .panel {
+      padding: 1.5rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.74);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      font-family: var(--font-heading);
+      margin: 0 0 0.8rem;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      max-width: 12ch;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .lead,
+    .copy {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: clamp(16px, 2.4vw, 20px);
+      max-width: 52rem;
+    }
+
+    .grid,
+    .link-grid {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .card,
+    .link-card {
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--soft);
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .checklist {
+      display: grid;
+      gap: 0.75rem;
+      padding-left: 1.1rem;
+      margin: 0;
+    }
+
+    .actions,
+    .page-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.8rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+      text-decoration: none;
+      transition: background-color 200ms ease, color 200ms ease;
+    }
+
+    .pill:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .link-card a,
+    .page-footer a {
+      text-decoration: none;
+      opacity: 0.72;
+    }
+
+    .link-card a:hover,
+    .page-footer a:hover {
+      opacity: 1;
+    }
+
+    .page-footer {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      padding: 0 0.25rem;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 768px) {
+      .site-header { padding: 1.25rem 2rem; }
+      .brand-name { font-size: 26px; }
+      .brand-mark { font-size: 30px; }
+      .header-links { display: flex; }
+      main, .page-footer { width: min(1100px, calc(100% - 48px)); }
+      .panel { padding: 2rem; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .link-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="brand-name">Sonkawade Labs</span>
+      <span class="brand-mark" aria-hidden="true">✳︎</span>
+    </a>
+    <nav class="header-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/products/" aria-current="page">Products</a>
+      <a href="/thank-you/">Download</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/data-deletion/">Data Deletion</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="eyebrow">CSC Pro</div>
+      <h1>Desktop software for certificate automation.</h1>
+      <p class="lead">CSC Pro is desktop software used by Maharashtra CSC operators to manage customer intake, OCR-assisted data capture, WhatsApp-linked communication, and repeated certificate application steps inside a guided workflow.</p>
+      <div class="actions" style="margin-top: 1.25rem;">
+        <a class="pill" href="/thank-you/">Download Page</a>
+        <a class="pill" href="/privacy/">Privacy Policy</a>
+        <a class="pill" href="/data-deletion/">Data Deletion</a>
+        <a class="pill" href="/terms/">Terms of Service</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>What the product does</h2>
+        <div class="card">
+          <span class="label">Core workflow</span>
+          Helps operators collect customer details, process Aadhaar and related documents, run OCR, and automate repetitive application steps on MahaOnline.
+        </div>
+        <div class="card" style="margin-top: 0.9rem;">
+          <span class="label">Supported use cases</span>
+          Certificate workflows including caste, income, and residence applications for Maharashtra service operators.
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Typical operator flow</h2>
+        <ul class="checklist">
+          <li>Launch Chrome and log into the required operator systems.</li>
+          <li>Open CSC Pro and create or select the customer record.</li>
+          <li>Upload customer documents and let OCR prefill relevant fields.</li>
+          <li>Choose the certificate type and run the automated workflow.</li>
+          <li>Review the result and complete final submission steps.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Who uses it</h2>
+        <div class="card">
+          <span class="label">Primary audience</span>
+          CSC operators and center staff handling multiple citizen applications in a desktop environment.
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Meta review notes</h2>
+        <div class="card">
+          <span class="label">WhatsApp usage</span>
+          CSC Pro includes WhatsApp onboarding and customer communication flows associated with the operator workflow.
+        </div>
+        <div class="card" style="margin-top: 0.9rem;">
+          <span class="label">Handled data</span>
+          Operator-entered customer information, uploaded documents, OCR output, and workflow status related to supported certificate services.
+        </div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Useful public links</h2>
+      <div class="link-grid">
+        <div class="link-card"><a href="/products/csc-pro/">Product page</a></div>
+        <div class="link-card"><a href="/thank-you/">Download Page</a></div>
+        <div class="link-card"><a href="/privacy/">Privacy Policy</a></div>
+        <div class="link-card"><a href="/data-deletion/">Data Deletion</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <a href="/">Home</a>
+    <a href="/products/" aria-current="page">Products</a>
+    <a href="/thank-you/">Download</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="/data-deletion/">Data Deletion</a>
+  </footer>
+</body>
+</html>

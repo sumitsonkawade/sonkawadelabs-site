@@ -5,226 +5,310 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thank You | CSC Pro</title>
   <meta name="description" content="CSC Pro download confirmation and install help from Sonkawade Labs.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
+  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #09090b;
-      --panel: rgba(24, 24, 27, 0.86);
-      --panel-border: rgba(255, 255, 255, 0.08);
-      --text: #f4f4f5;
-      --muted: #a1a1aa;
-      --accent: #22c55e;
-      --accent-2: #15803d;
-      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-      --radius: 24px;
+      --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
+      --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+      --bg: #f4f0e8;
+      --paper: rgba(255, 250, 244, 0.84);
+      --ink: #17120d;
+      --muted: rgba(23, 18, 13, 0.66);
+      --line: rgba(23, 18, 13, 0.12);
+      --soft: rgba(255, 255, 255, 0.52);
+      --shadow: 0 24px 60px rgba(30, 24, 17, 0.12);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html,
+    body {
+      min-height: 100%;
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: "Segoe UI", system-ui, sans-serif;
+      font-family: var(--font-body);
+      color: var(--ink);
       background:
-        radial-gradient(circle at top, rgba(34, 197, 94, 0.18), transparent 38%),
-        radial-gradient(circle at bottom right, rgba(21, 128, 61, 0.16), transparent 30%),
-        linear-gradient(180deg, #0b0b0d 0%, #09090b 100%);
-      color: var(--text);
-      display: grid;
-      place-items: center;
-      padding: 24px;
+        linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08)),
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.44), transparent 24%),
+        radial-gradient(circle at 80% 14%, rgba(252, 244, 228, 0.58), transparent 22%),
+        linear-gradient(180deg, #f6f1e8 0%, #eee6da 100%);
+      line-height: 1.7;
     }
 
-    .shell {
-      width: min(100%, 760px);
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      border-radius: var(--radius);
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      backdrop-filter: blur(14px);
+      background: rgba(244, 240, 232, 0.74);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .brand-mark {
+      font-size: 25px;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .header-links {
+      display: none;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 15px;
+    }
+
+    .header-links a {
+      opacity: 0.72;
+      text-decoration: none;
+      transition: opacity 200ms ease;
+    }
+
+    .header-links a:hover {
+      opacity: 1;
+    }
+
+    main {
+      width: min(900px, calc(100% - 24px));
+      margin: 1rem auto 2rem;
+      padding: 2rem 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: var(--paper);
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
-      padding: 48px 32px;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .shell::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), transparent 30%, transparent 70%, rgba(34, 197, 94, 0.14));
-      pointer-events: none;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 18px;
-      color: #bbf7d0;
-      font-size: 13px;
-      font-weight: 700;
+      margin-bottom: 1rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 7vw, 56px);
-      line-height: 1;
-      letter-spacing: -0.04em;
+    h1,
+    h2,
+    .step strong {
+      font-family: var(--font-heading);
     }
 
-    p {
-      margin: 0;
-      max-width: 620px;
-      font-size: clamp(16px, 2.6vw, 19px);
-      line-height: 1.7;
-      color: var(--muted);
+    h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
     }
 
     .lead {
-      margin-bottom: 28px;
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-size: clamp(16px, 2.6vw, 20px);
+      max-width: 42rem;
     }
 
     .steps {
       display: grid;
-      gap: 14px;
-      margin: 0 0 28px;
+      gap: 0.9rem;
+      margin: 0 0 1.5rem;
       padding: 0;
       list-style: none;
     }
 
-    .step {
-      padding: 16px 18px;
-      border: 1px solid var(--panel-border);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.03);
+    .step,
+    .support-note {
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--soft);
     }
 
     .step strong {
       display: block;
-      margin-bottom: 6px;
-      color: var(--text);
-      font-size: 15px;
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
     }
 
-    .support {
+    .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 26px;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
     }
 
-    .support a,
-    .support span,
-    .back-link {
+    .pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      padding: 12px 18px;
+      padding: 0.8rem 1.1rem;
       border-radius: 999px;
-      font-weight: 700;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--ink);
       text-decoration: none;
+      transition: background-color 200ms ease, color 200ms ease;
     }
 
-    .support a {
-      color: #04110a;
-      background: linear-gradient(135deg, var(--accent), #86efac);
-      box-shadow: 0 18px 36px rgba(34, 197, 94, 0.24);
+    .pill:hover {
+      background: #000;
+      color: #fff;
     }
 
-    .support span {
-      color: var(--muted);
-      border: 1px solid var(--panel-border);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .back-link {
-      color: #bbf7d0;
-      border: 1px solid rgba(187, 247, 208, 0.18);
-      background: rgba(34, 197, 94, 0.08);
-    }
-
-    .legal-links {
-      margin-top: 26px;
+    .footer-links {
+      width: min(900px, calc(100% - 24px));
+      margin: 0 auto 2rem;
       display: flex;
-      gap: 16px;
       flex-wrap: wrap;
+      gap: 0.9rem;
+      padding: 0 0.25rem;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .legal-links a {
-      color: #bbf7d0;
+    .footer-links a {
       text-decoration: none;
-      font-size: 14px;
+      opacity: 0.72;
     }
 
-    .legal-links a:hover,
-    .back-link:hover {
-      text-decoration: underline;
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      .site-header {
+        padding: 1.25rem 2rem;
+      }
+
+      .brand-name {
+        font-size: 26px;
+      }
+
+      .brand-mark {
+        font-size: 30px;
+      }
+
+      .header-links {
+        display: flex;
+      }
+
+      main {
+        width: min(900px, calc(100% - 48px));
+        margin-top: 1.25rem;
+        padding: 2.5rem;
+      }
+
+      .footer-links {
+        width: min(900px, calc(100% - 48px));
+      }
     }
 
     @media (max-width: 640px) {
-      .shell {
-        padding: 36px 22px;
+      main {
+        width: min(900px, calc(100% - 16px));
+        padding: 1.5rem 1rem 2rem;
       }
 
-      .support {
+      .actions {
         flex-direction: column;
       }
 
-      .support a,
-      .support span,
-      .back-link {
+      .pill {
         width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <div class="content">
-      <div class="eyebrow">Sonkawade Labs</div>
-      <h1>Download started! Check your Downloads folder.</h1>
-      <p class="lead">If the installer does not appear within a few seconds, return to the homepage and start the download again.</p>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="brand-name">Sonkawade Labs</span>
+      <span class="brand-mark" aria-hidden="true">✳︎</span>
+    </a>
+    <nav class="header-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/thank-you/">Download</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/data-deletion/">Data Deletion</a>
+    </nav>
+  </header>
 
-      <ol class="steps">
-        <li class="step">
-          <strong>1. Open the installer file</strong>
-          Find <code>CSC_Pro_Setup.zip</code> in your Downloads folder and extract it if Windows downloaded it as a ZIP archive.
-        </li>
-        <li class="step">
-          <strong>2. Run setup</strong>
-          Open the extracted setup file and follow the installation prompts on your Windows PC.
-        </li>
-        <li class="step">
-          <strong>3. Need help?</strong>
-          Use the support email below. If you already have a Sonkawade Labs WhatsApp chat, continue there for install help.
-        </li>
-      </ol>
+  <main>
+    <div class="eyebrow">CSC Pro Download</div>
+    <h1>Download started. Check your Downloads folder.</h1>
+    <p class="lead">If the installer does not appear within a few seconds, go back to the homepage and start the download again.</p>
 
-      <div class="support">
-        <a href="mailto:sumitsonkawade@sonkawadelabs.in?subject=CSC%20Pro%20Install%20Help">Email Support</a>
-        <span>WhatsApp support is available through your existing Sonkawade Labs chat.</span>
-      </div>
+    <ol class="steps">
+      <li class="step">
+        <strong>1. Open the installer file</strong>
+        Find <code>CSC_Pro_Setup.zip</code> in your Downloads folder and extract it if Windows saved it as a ZIP archive.
+      </li>
+      <li class="step">
+        <strong>2. Run setup</strong>
+        Open the extracted setup file and follow the installation prompts on your Windows PC.
+      </li>
+      <li class="step">
+        <strong>3. Need help?</strong>
+        Use the support email below. If you already have a Sonkawade Labs WhatsApp chat, continue there for install help.
+      </li>
+    </ol>
 
-      <a class="back-link" href="/">Back to Download Page</a>
+    <div class="support-note">
+      WhatsApp support is available through your existing Sonkawade Labs chat.
+    </div>
 
-      <div class="legal-links">
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/terms/">Terms of Service</a>
-        <a href="/data-deletion/">Data Deletion</a>
-      </div>
+    <div class="actions">
+      <a class="pill" href="/">Back to Download Page</a>
+      <a class="pill" href="mailto:sumitsonkawade@sonkawadelabs.in?subject=CSC%20Pro%20Install%20Help">Email Support</a>
+      <a class="pill" href="/privacy/">Privacy Policy</a>
+      <a class="pill" href="/terms/">Terms of Service</a>
+      <a class="pill" href="/data-deletion/">Data Deletion</a>
     </div>
   </main>
+
+  <footer class="footer-links">
+    <a href="/">Home</a>
+    <a href="/thank-you/">Download</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="/data-deletion/">Data Deletion</a>
+  </footer>
 </body>
 </html>
