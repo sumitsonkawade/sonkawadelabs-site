@@ -55,6 +55,30 @@
     {
       "source": "/products/csc-pro/",
       "destination": "/products/csc-pro/index.html"
+    },
+    {
+      "source": "/arzi/privacy",
+      "destination": "/arzi/privacy/index.html"
+    },
+    {
+      "source": "/arzi/privacy/",
+      "destination": "/arzi/privacy/index.html"
+    },
+    {
+      "source": "/arzi/terms",
+      "destination": "/arzi/terms/index.html"
+    },
+    {
+      "source": "/arzi/terms/",
+      "destination": "/arzi/terms/index.html"
+    },
+    {
+      "source": "/arzi/data-deletion",
+      "destination": "/arzi/data-deletion/index.html"
+    },
+    {
+      "source": "/arzi/data-deletion/",
+      "destination": "/arzi/data-deletion/index.html"
     }
   ]
 }

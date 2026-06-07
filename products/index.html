@@ -72,24 +72,6 @@
       user-select: none;
     }
 
-    .header-links {
-      display: none;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 15px;
-    }
-
-    .header-links a {
-      opacity: 0.72;
-      text-decoration: none;
-      transition: opacity 200ms ease;
-    }
-
-    .header-links a:hover,
-    .header-links a[aria-current="page"] {
-      opacity: 1;
-    }
-
     main,
     .page-footer {
       width: min(1100px, calc(100% - 24px));
@@ -253,7 +235,6 @@
       .site-header { padding: 1.25rem 2rem; }
       .brand-name { font-size: 26px; }
       .brand-mark { font-size: 30px; }
-      .header-links { display: flex; }
       main, .page-footer { width: min(1100px, calc(100% - 48px)); }
       .panel { padding: 2rem; }
       .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -267,30 +248,16 @@
       <span class="brand-name">Sonkawade Labs</span>
       <span class="brand-mark" aria-hidden="true">✳︎</span>
     </a>
-    <nav class="header-links" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/products/" aria-current="page">Products</a>
-      <a href="/thank-you/">Download</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="/data-deletion/">Data Deletion</a>
-    </nav>
   </header>
 
   <main>
-    <section class="panel">
-      <div class="eyebrow">Product Directory</div>
-      <h1>Two products. Clear URLs. Review-ready context.</h1>
-      <p class="lead">This page lists the public product pages currently published by Sonkawade Labs. Use the direct product URLs below when you need to describe the product in Meta review or other compliance flows.</p>
-    </section>
-
     <section class="grid">
       <article class="card">
         <div>
-          <p class="product-name">Arzi Bot</p>
+          <p class="product-name">Arzi</p>
           <h2>WhatsApp application-letter assistant</h2>
         </div>
-        <p class="copy">Arzi Bot receives a WhatsApp message from a user, understands the issue in Indian languages, organizes the request into a formal structure, and sends back a ready-to-print PDF application letter.</p>
+        <p class="copy">Arzi receives a WhatsApp message from a user, understands the issue in Indian languages, organizes the request into a formal structure, and sends back a ready-to-print PDF application letter.</p>
         <div class="meta">
           <div>
             <span class="label">Primary channel</span>
@@ -303,7 +270,7 @@
         </div>
         <div class="actions">
           <a class="pill" href="/products/arzi-bot/">Open product page</a>
-          <a class="pill" href="/privacy/">Privacy policy</a>
+          <a class="pill" href="/arzi/privacy/">Privacy policy</a>
         </div>
       </article>
 

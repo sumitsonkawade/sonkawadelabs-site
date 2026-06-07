@@ -84,24 +84,6 @@
       user-select: none;
     }
 
-    .header-links {
-      display: none;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 15px;
-    }
-
-    .header-links a {
-      opacity: 0.72;
-      text-decoration: none;
-      transition: opacity 200ms ease;
-    }
-
-    .header-links a:hover,
-    .header-links a[aria-current="page"] {
-      opacity: 1;
-    }
-
     main {
       width: min(1080px, calc(100% - 24px));
       margin: 1rem auto 2rem;
@@ -251,10 +233,6 @@
         font-size: 30px;
       }
 
-      .header-links {
-        display: flex;
-      }
-
       main {
         width: min(1080px, calc(100% - 48px));
         margin-top: 1.25rem;
@@ -280,13 +258,6 @@
       <span class="brand-name">Sonkawade Labs</span>
       <span class="brand-mark" aria-hidden="true">✳︎</span>
     </a>
-    <nav class="header-links" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/thank-you/">Download</a>
-      <a href="/privacy/" aria-current="page">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="/data-deletion/">Data Deletion</a>
-    </nav>
   </header>
   <main>
     <h1>CSC Pro Privacy Policy</h1>

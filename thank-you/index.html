@@ -80,23 +80,6 @@
       user-select: none;
     }
 
-    .header-links {
-      display: none;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 15px;
-    }
-
-    .header-links a {
-      opacity: 0.72;
-      text-decoration: none;
-      transition: opacity 200ms ease;
-    }
-
-    .header-links a:hover {
-      opacity: 1;
-    }
-
     main {
       width: min(900px, calc(100% - 24px));
       margin: 1rem auto 2rem;
@@ -171,6 +154,17 @@
       margin-bottom: 1.5rem;
     }
 
+    .status {
+      min-height: 24px;
+      margin: 1rem 0 1.5rem;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .status.error {
+      color: #b42318;
+    }
+
     .pill {
       display: inline-flex;
       align-items: center;
@@ -224,10 +218,6 @@
         font-size: 30px;
       }
 
-      .header-links {
-        display: flex;
-      }
-
       main {
         width: min(900px, calc(100% - 48px));
         margin-top: 1.25rem;
@@ -261,19 +251,12 @@
       <span class="brand-name">Sonkawade Labs</span>
       <span class="brand-mark" aria-hidden="true">✳︎</span>
     </a>
-    <nav class="header-links" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/thank-you/">Download</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="/data-deletion/">Data Deletion</a>
-    </nav>
   </header>
 
   <main>
     <div class="eyebrow">CSC Pro Download</div>
-    <h1>Download started. Check your Downloads folder.</h1>
-    <p class="lead">If the installer does not appear within a few seconds, go back to the homepage and start the download again.</p>
+    <h1>Preparing your download.</h1>
+    <p class="lead">The CSC Pro installer should start downloading automatically. If it does not, use the retry button below.</p>
 
     <ol class="steps">
       <li class="step">
@@ -294,8 +277,11 @@
       WhatsApp support is available through your existing Sonkawade Labs chat.
     </div>
 
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
     <div class="actions">
-      <a class="pill" href="/">Back to Download Page</a>
+      <a id="retryDownload" class="pill" href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a>
+      <a class="pill" href="/">Back to Home</a>
       <a class="pill" href="mailto:sumitsonkawade@sonkawadelabs.in?subject=CSC%20Pro%20Install%20Help">Email Support</a>
       <a class="pill" href="/privacy/">Privacy Policy</a>
       <a class="pill" href="/terms/">Terms of Service</a>
@@ -310,5 +296,39 @@
     <a href="/terms/">Terms</a>
     <a href="/data-deletion/">Data Deletion</a>
   </footer>
+
+  <script>
+    const statusEl = document.getElementById("status");
+    const retryDownload = document.getElementById("retryDownload");
+    const DOWNLOAD_URL = "https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip";
+
+    function setStatus(message, isError = false) {
+      statusEl.textContent = message;
+      statusEl.className = isError ? "status error" : "status";
+    }
+
+    function triggerDownload() {
+      const anchor = document.createElement("a");
+      anchor.href = DOWNLOAD_URL;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.style.display = "none";
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+    }
+
+    function startDownload(event) {
+      if (event) {
+        event.preventDefault();
+      }
+
+      triggerDownload();
+      setStatus("If the download did not start, click Download CSC Pro again.");
+    }
+
+    retryDownload.addEventListener("click", startDownload);
+    window.addEventListener("load", startDownload, { once: true });
+  </script>
 </body>
 </html>
