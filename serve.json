@@ -25,6 +25,22 @@
       "destination": "/data-deletion/index.html"
     },
     {
+      "source": "/refunds",
+      "destination": "/refunds/index.html"
+    },
+    {
+      "source": "/refunds/",
+      "destination": "/refunds/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact/index.html"
+    },
+    {
       "source": "/thank-you",
       "destination": "/thank-you/index.html"
     },

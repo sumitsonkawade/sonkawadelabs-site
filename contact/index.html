@@ -1,10 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arzi Terms of Service | Sonkawade Labs</title>
-  <meta name="description" content="Terms of Service for Arzi by Sonkawade Labs.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | Sonkawade Labs</title>
+  <meta
+    name="description"
+    content="Contact Sonkawade Labs for CSC Pro and Arzi support, billing, privacy grievances, and legal queries."
+  />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
   <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
@@ -12,15 +15,20 @@
     :root {
       --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
       --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+      --bg: #f4f0e8;
       --paper: rgba(255, 250, 244, 0.82);
       --ink: #17120d;
       --muted: rgba(23, 18, 13, 0.66);
       --line: rgba(23, 18, 13, 0.12);
+      --accent: #17120d;
       --soft: rgba(255, 255, 255, 0.5);
       --shadow: 0 24px 60px rgba(30, 24, 17, 0.12);
     }
+
     * { box-sizing: border-box; }
+
     html, body { min-height: 100%; }
+
     body {
       margin: 0;
       font-family: var(--font-body);
@@ -32,7 +40,9 @@
         linear-gradient(180deg, #f6f1e8 0%, #eee6da 100%);
       line-height: 1.7;
     }
+
     a { color: inherit; }
+
     .site-header {
       position: sticky;
       top: 0;
@@ -45,6 +55,7 @@
       backdrop-filter: blur(14px);
       background: rgba(244, 240, 232, 0.74);
     }
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -52,17 +63,20 @@
       color: inherit;
       text-decoration: none;
     }
+
     .brand-name {
       font-family: var(--font-heading);
       font-size: 21px;
       letter-spacing: -0.02em;
       line-height: 1;
     }
+
     .brand-mark {
       font-size: 25px;
       line-height: 1;
       user-select: none;
     }
+
     main {
       width: min(1080px, calc(100% - 24px));
       margin: 1rem auto 2rem;
@@ -73,30 +87,58 @@
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
     }
-    h1, h2 {
+
+    h1, h2, h3 {
       font-family: var(--font-heading);
       margin: 0 0 14px;
-      line-height: 1.1;
+      line-height: 1.15;
     }
+
     h1 {
       font-size: clamp(2.4rem, 5vw, 4.2rem);
       letter-spacing: -0.05em;
     }
-    h2 {
-      margin-top: 40px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      font-size: 1.7rem;
-      letter-spacing: -0.03em;
+
+    h3 {
+      margin-top: 28px;
+      font-size: 1.1rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
     }
-    p, li { color: var(--muted); }
-    .meta, .card {
+
+    p, li { margin: 0 0 12px; }
+
+    ul { margin: 0 0 14px; padding-left: 22px; }
+
+    .meta, .small { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .card {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .contact {
       padding: 18px 20px;
       margin: 18px 0;
       border-radius: 22px;
       border: 1px solid var(--line);
       background: var(--soft);
     }
+
     .page-footer {
       width: min(1080px, calc(100% - 24px));
       margin: 0 auto 2rem;
@@ -108,80 +150,92 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
+
     .page-footer a {
       text-decoration: none;
       opacity: 0.72;
     }
+
     .page-footer a:hover,
     .page-footer a[aria-current="page"] {
       opacity: 1;
     }
+
     @media (min-width: 768px) {
       .site-header { padding: 1.25rem 2rem; }
       .brand-name { font-size: 26px; }
       .brand-mark { font-size: 30px; }
       main {
         width: min(1080px, calc(100% - 48px));
+        margin-top: 1.25rem;
         padding: 2.5rem 2.5rem 2.75rem;
       }
       .page-footer { width: min(1080px, calc(100% - 48px)); }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        width: min(1080px, calc(100% - 16px));
+        padding: 1.5rem 1rem 2rem;
+      }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/products/arzi-bot/">
+    <a class="brand" href="/">
       <span class="brand-name">Sonkawade Labs</span>
       <span class="brand-mark" aria-hidden="true">✳︎</span>
     </a>
   </header>
   <main>
-    <h1>Arzi Terms of Service</h1>
-    <p class="meta"><strong>Product:</strong> Arzi &nbsp;·&nbsp; <strong>Provider:</strong> Sonkawade Labs &nbsp;·&nbsp; <strong>Last Updated:</strong> July 7, 2026</p>
-    <div class="card">
-      These Terms govern access to and use of Arzi, a WhatsApp-based application-letter assistant operated by Sonkawade Labs.
+    <h1>Contact Us</h1>
+    <p class="meta"><strong>Business name:</strong> Sonkawade Labs</p>
+    <p class="meta"><strong>Registered address:</strong> Walandi, Deoni Taluka, Latur District, Maharashtra, India</p>
+
+    <div class="grid">
+      <div class="card">
+        <strong>General &amp; product support</strong>
+        <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
+        <p class="small">Install help, workflow questions, account issues for CSC Pro and Arzi.</p>
+      </div>
+      <div class="card">
+        <strong>Billing &amp; refunds</strong>
+        <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
+        <p class="small">Subject "Refund Request". See the <a href="/refunds/">Refund &amp; Cancellation Policy</a>.</p>
+      </div>
+      <div class="card">
+        <strong>Privacy grievances &amp; data deletion</strong>
+        <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
+        <p class="small">Grievance Officer: Sumit Sonkawade. See <a href="/privacy/">Privacy Policy</a> and <a href="/data-deletion/">Data Deletion</a>.</p>
+      </div>
     </div>
 
-    <h2>Service description</h2>
-    <p>Arzi helps users draft formal application letters from messages sent through WhatsApp and returns the generated output as a PDF or related response.</p>
-
-    <h2>Acceptable use</h2>
+    <h3>Response times</h3>
     <ul>
-      <li>Use Arzi only for lawful requests and genuine application drafting needs.</li>
-      <li>Do not submit unlawful, abusive, threatening, fraudulent, or deceptive content.</li>
-      <li>Do not use Arzi to impersonate another person or authority.</li>
-      <li>Do not use Arzi to generate false evidence, forged records, or illegal submissions.</li>
+      <li>Support queries: we aim to respond within 2 business days.</li>
+      <li>Privacy grievances: acknowledged within 48 hours, resolved within 30 days.</li>
+      <li>Data deletion requests: responded to within 30 days.</li>
     </ul>
 
-    <h2>No guarantee of legal or official outcome</h2>
-    <p>Arzi assists with document drafting only. Sonkawade Labs does not guarantee acceptance, approval, legal sufficiency, or action by any office, authority, or institution.</p>
+    <h3>Operating hours</h3>
+    <p>Monday to Saturday, 10:00 AM – 6:00 PM IST (email monitored on all days).</p>
 
-    <h2>Availability</h2>
-    <p>Arzi is provided on an as-available basis. We do not guarantee uninterrupted delivery, error-free output, or continuous platform availability.</p>
-
-    <h2>Intellectual property</h2>
-    <p>Arzi, its software, workflow, prompts, design, and branding remain the property of Sonkawade Labs except where ownership is required by law for user-supplied content.</p>
-
-    <h2>Termination</h2>
-    <p>Sonkawade Labs may suspend or restrict access if Arzi is used in violation of these Terms, for abuse prevention, or to comply with legal obligations.</p>
-
-    <h2>User responsibility for content</h2>
-    <p>You are responsible for the accuracy and lawfulness of the information you submit and for how you use the generated letter. Generated letters are drafts prepared from your input; review them before submission to any office or authority. You agree to indemnify Sonkawade Labs against claims arising from your misuse of Arzi or from unlawful content you submit.</p>
-
-    <h2>Limitation of liability</h2>
-    <p>To the maximum extent permitted by law, Sonkawade Labs is not liable for indirect or consequential losses arising from use of Arzi, and its total liability for any claim relating to Arzi is limited to the amount you paid for the service (if any) in the three months preceding the claim.</p>
-
-    <h2>Governing law and jurisdiction</h2>
-    <p>These Terms are governed by the laws of India, including the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023. Subject to any mandatory law, the courts at Latur, Maharashtra, India shall have exclusive jurisdiction over disputes relating to these Terms or to Arzi.</p>
-
-    <h2>Contact</h2>
-    <p>For Terms-related questions, contact <strong>sumitsonkawade@sonkawadelabs.in</strong>.</p>
+    <div class="contact">
+      <p>
+        Existing CSC Pro operators can also reach us through their Sonkawade Labs WhatsApp support
+        chat for faster help.
+      </p>
+    </div>
   </main>
   <footer class="page-footer">
-    <a href="/products/arzi-bot/">Arzi</a>
-    <a href="/arzi/privacy/">Privacy</a>
-    <a href="/arzi/terms/" aria-current="page">Terms</a>
-    <a href="/arzi/data-deletion/">Data Deletion</a>
+    <a href="/">Home</a>
+    <a href="/thank-you/">Download</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="/refunds/">Refunds</a>
+    <a href="/data-deletion/">Data Deletion</a>
+    <a href="/contact/" aria-current="page">Contact</a>
   </footer>
 </body>
 </html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refund &amp; Cancellation Policy | Sonkawade Labs</title>
+  <meta
+    name="description"
+    content="Refund and cancellation policy for CSC Pro and Arzi by Sonkawade Labs, covering prepaid credits, subscriptions, duplicate payments, and processing timelines."
+  />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
+  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
+  <style>
+    :root {
+      --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
+      --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+      --bg: #f4f0e8;
+      --paper: rgba(255, 250, 244, 0.82);
+      --ink: #17120d;
+      --muted: rgba(23, 18, 13, 0.66);
+      --line: rgba(23, 18, 13, 0.12);
+      --accent: #17120d;
+      --soft: rgba(255, 255, 255, 0.5);
+      --shadow: 0 24px 60px rgba(30, 24, 17, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08)),
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.44), transparent 24%),
+        radial-gradient(circle at 80% 14%, rgba(252, 244, 228, 0.58), transparent 22%),
+        linear-gradient(180deg, #f6f1e8 0%, #eee6da 100%);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      backdrop-filter: blur(14px);
+      background: rgba(244, 240, 232, 0.74);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .brand-mark {
+      font-size: 25px;
+      line-height: 1;
+      user-select: none;
+    }
+
+    main {
+      width: min(1080px, calc(100% - 24px));
+      margin: 1rem auto 2rem;
+      padding: 2rem 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      letter-spacing: -0.05em;
+    }
+
+    h3 {
+      margin-top: 28px;
+      font-size: 1.1rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    p, li { margin: 0 0 12px; }
+
+    ul { margin: 0 0 14px; padding-left: 22px; }
+
+    .meta, .small { color: var(--muted); }
+
+    .hero, .contact {
+      padding: 18px 20px;
+      margin: 18px 0;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: #000;
+    }
+
+    .page-footer {
+      width: min(1080px, calc(100% - 24px));
+      margin: 0 auto 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      padding: 0 0.25rem;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .page-footer a {
+      text-decoration: none;
+      opacity: 0.72;
+    }
+
+    .page-footer a:hover,
+    .page-footer a[aria-current="page"] {
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      .site-header { padding: 1.25rem 2rem; }
+      .brand-name { font-size: 26px; }
+      .brand-mark { font-size: 30px; }
+      main {
+        width: min(1080px, calc(100% - 48px));
+        margin-top: 1.25rem;
+        padding: 2.5rem 2.5rem 2.75rem;
+      }
+      .page-footer { width: min(1080px, calc(100% - 48px)); }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        width: min(1080px, calc(100% - 16px));
+        padding: 1.5rem 1rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="brand-name">Sonkawade Labs</span>
+      <span class="brand-mark" aria-hidden="true">✳︎</span>
+    </a>
+  </header>
+  <main>
+    <h1>Refund &amp; Cancellation Policy</h1>
+    <p class="meta"><strong>Products:</strong> CSC Pro and Arzi</p>
+    <p class="meta"><strong>Provider:</strong> Sonkawade Labs, Walandi, Deoni Taluka, Latur District, Maharashtra, India</p>
+    <p class="meta"><strong>Last Updated:</strong> July 7, 2026</p>
+
+    <div class="hero">
+      <p>
+        This policy explains when payments made to Sonkawade Labs for CSC Pro subscriptions or
+        prepaid credits can be refunded or cancelled. It should be read together with the
+        <a href="/terms/">Terms of Service</a>.
+      </p>
+    </div>
+
+    <h3>1. Prepaid Credits</h3>
+    <ul>
+      <li><strong>Used credits are non-refundable.</strong> Once a credit is consumed for an application workflow, it cannot be reversed, restored, or redeemed for cash.</li>
+      <li>No refund is available merely because a government portal is slow, unavailable, rejects an application, or requires correction.</li>
+      <li>If a credit is deducted due to a verified fault in CSC Pro itself (for example, a duplicate deduction for the same application), we will re-credit the affected amount to your account after review.</li>
+    </ul>
+
+    <h3>2. Duplicate or Failed Payments</h3>
+    <ul>
+      <li>If you are charged more than once for the same top-up or subscription, the duplicate amount will be refunded to the original payment method after verification.</li>
+      <li>If a payment is debited but credits or subscription access are not delivered, and the payment gateway confirms the debit, we will either deliver the purchased credits or refund the amount.</li>
+      <li>Verified refunds are initiated within 7 business days of confirmation. The time for the amount to reflect in your account depends on your bank or payment provider (typically 5–10 business days).</li>
+    </ul>
+
+    <h3>3. Subscription Cancellation</h3>
+    <ul>
+      <li>You may stop using the service and cancel future renewals at any time by contacting us at the email below.</li>
+      <li>Cancellation stops future billing. Fees already paid for the current billing period are non-refundable except where required by law.</li>
+      <li>Unused prepaid credits remain available for use until account closure. On account closure, unused credits are forfeited unless a refund is required by applicable law or agreed in writing.</li>
+    </ul>
+
+    <h3>4. How to Request a Refund</h3>
+    <div class="contact">
+      <p>
+        Email <strong>sumitsonkawade@sonkawadelabs.in</strong> with the subject line
+        <strong>"Refund Request"</strong>, including: your registered email or mobile number,
+        the payment reference / UTR / transaction ID, the payment date and amount, and a brief
+        description of the issue.
+      </p>
+      <p>We acknowledge refund requests within 48 hours and resolve them within 30 days.</p>
+    </div>
+
+    <h3>5. Delivery</h3>
+    <p>
+      CSC Pro and Arzi are digital services. There is no physical shipping. Credits and subscription
+      access are delivered electronically to your account, normally within minutes of payment
+      confirmation and in any case within 24 hours.
+    </p>
+
+    <h3>6. Contact</h3>
+    <div class="contact">
+      <p><strong>Sonkawade Labs</strong></p>
+      <p><strong>Email:</strong> sumitsonkawade@sonkawadelabs.in</p>
+      <p><strong>Address:</strong> Walandi, Deoni Taluka, Latur District, Maharashtra, India</p>
+    </div>
+  </main>
+  <footer class="page-footer">
+    <a href="/">Home</a>
+    <a href="/thank-you/">Download</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="/refunds/" aria-current="page">Refunds</a>
+    <a href="/data-deletion/">Data Deletion</a>
+    <a href="/contact/">Contact</a>
+  </footer>
+</body>
+</html>

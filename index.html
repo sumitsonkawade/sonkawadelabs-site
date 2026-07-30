@@ -109,6 +109,53 @@
       position: relative;
     }
 
+    .hero-bot {
+      position: absolute;
+      right: 1.5rem;
+      bottom: 0;
+      width: clamp(110px, 16vw, 190px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-bot svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 16px 20px rgba(30, 24, 17, 0.22));
+    }
+
+    #botHead {
+      transform-origin: 100px 152px;
+    }
+
+    #botFace {
+      transform-origin: 100px 100px;
+    }
+
+    #botAll {
+      transform-origin: 100px 228px;
+    }
+
+    #botHead, #botFace, #botAll, #earL, #earR,
+    #pupilL, #pupilR, #glintL, #glintR, #lidL, #lidR {
+      will-change: transform;
+    }
+
+    @media (max-width: 900px) {
+      .hero-bot {
+        position: static;
+        margin: 1.25rem auto 0;
+        width: 130px;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .hero {
+        padding-right: 230px;
+      }
+    }
+
     .hero::before {
       content: "";
       position: absolute;
@@ -358,6 +405,91 @@
         <a class="pill" href="/products/csc-pro/">Open CSC Pro Page</a>
         <a class="pill" href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a>
       </div>
+      <div class="hero-bot" aria-hidden="true">
+        <svg id="heroBot" viewBox="0 0 200 232" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="headShade" cx="0.35" cy="0.28" r="1.05">
+              <stop offset="0%" stop-color="#4a4238"/>
+              <stop offset="45%" stop-color="#2a241e"/>
+              <stop offset="100%" stop-color="#0d0a07"/>
+            </radialGradient>
+            <radialGradient id="faceShade" cx="0.4" cy="0.3" r="1.1">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="60%" stop-color="#fdf7ee"/>
+              <stop offset="100%" stop-color="#e8ddcd"/>
+            </radialGradient>
+            <radialGradient id="bodyShade" cx="0.35" cy="0.25" r="1.1">
+              <stop offset="0%" stop-color="#443c33"/>
+              <stop offset="55%" stop-color="#241f19"/>
+              <stop offset="100%" stop-color="#0d0a07"/>
+            </radialGradient>
+            <linearGradient id="neckShade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1a1510"/>
+              <stop offset="35%" stop-color="#57493c"/>
+              <stop offset="65%" stop-color="#3a3128"/>
+              <stop offset="100%" stop-color="#120e0a"/>
+            </linearGradient>
+            <radialGradient id="eyeShade" cx="0.4" cy="0.35" r="0.9">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="80%" stop-color="#f3ece1"/>
+              <stop offset="100%" stop-color="#d8ccb9"/>
+            </radialGradient>
+            <radialGradient id="pupilShade" cx="0.35" cy="0.3" r="0.9">
+              <stop offset="0%" stop-color="#4d4133"/>
+              <stop offset="55%" stop-color="#17120d"/>
+              <stop offset="100%" stop-color="#000000"/>
+            </radialGradient>
+          </defs>
+
+          <ellipse id="botShadow" cx="100" cy="227" rx="54" ry="6" fill="rgba(23,18,13,0.18)"/>
+
+          <g id="botAll">
+            <!-- body -->
+            <rect x="52" y="176" width="96" height="52" rx="21" fill="url(#bodyShade)"/>
+            <ellipse cx="78" cy="188" rx="20" ry="9" fill="rgba(255,255,255,0.14)"/>
+            <circle cx="100" cy="201" r="11" fill="rgba(255,250,244,0.16)"/>
+            <circle cx="100" cy="201" r="7" fill="rgba(255,250,244,0.22)"/>
+
+            <!-- neck -->
+            <rect x="90" y="146" width="20" height="38" rx="8" fill="url(#neckShade)"/>
+            <rect x="90" y="152" width="20" height="3" rx="1.5" fill="rgba(0,0,0,0.35)"/>
+            <rect x="90" y="160" width="20" height="3" rx="1.5" fill="rgba(0,0,0,0.35)"/>
+
+            <g id="botHead">
+              <!-- antenna -->
+              <line x1="100" y1="48" x2="100" y2="27" stroke="#3a322a" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="100" cy="23" r="6" fill="url(#headShade)"/>
+              <circle cx="98" cy="21" r="2" fill="rgba(255,255,255,0.45)"/>
+              <!-- ears -->
+              <rect id="earL" x="28" y="84" width="16" height="34" rx="7" fill="url(#headShade)"/>
+              <rect id="earR" x="156" y="84" width="16" height="34" rx="7" fill="url(#headShade)"/>
+              <!-- head shell -->
+              <rect x="42" y="44" width="116" height="110" rx="31" fill="url(#headShade)"/>
+              <ellipse cx="74" cy="60" rx="26" ry="10" fill="rgba(255,255,255,0.18)"/>
+              <rect x="42" y="44" width="116" height="110" rx="31" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="1"/>
+
+              <!-- face plate: moves more than the shell for parallax depth -->
+              <g id="botFace">
+                <rect x="53" y="58" width="94" height="84" rx="24" fill="url(#faceShade)"/>
+                <rect x="53" y="58" width="94" height="84" rx="24" fill="none" stroke="rgba(23,18,13,0.12)" stroke-width="1"/>
+                <!-- eyes -->
+                <circle cx="80" cy="95" r="15" fill="url(#eyeShade)" stroke="rgba(23,18,13,0.18)"/>
+                <circle cx="120" cy="95" r="15" fill="url(#eyeShade)" stroke="rgba(23,18,13,0.18)"/>
+                <circle id="pupilL" cx="80" cy="95" r="6.8" fill="url(#pupilShade)"/>
+                <circle id="pupilR" cx="120" cy="95" r="6.8" fill="url(#pupilShade)"/>
+                <circle id="glintL" cx="77.5" cy="92.5" r="2" fill="rgba(255,255,255,0.9)"/>
+                <circle id="glintR" cx="117.5" cy="92.5" r="2" fill="rgba(255,255,255,0.9)"/>
+                <rect id="lidL" x="64" y="79" width="32" height="32" rx="16" fill="#fdf7ee" style="transform-origin:80px 95px; transform:scaleY(0);"/>
+                <rect id="lidR" x="104" y="79" width="32" height="32" rx="16" fill="#fdf7ee" style="transform-origin:120px 95px; transform:scaleY(0);"/>
+                <!-- cheeks + mouth -->
+                <ellipse cx="68" cy="116" rx="6" ry="3.5" fill="rgba(23,18,13,0.07)"/>
+                <ellipse cx="132" cy="116" rx="6" ry="3.5" fill="rgba(23,18,13,0.07)"/>
+                <rect id="botMouth" x="88" y="122" width="24" height="6" rx="3" fill="#17120d" opacity="0.85" style="transform-origin:100px 125px;"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
     </section>
 
     <section class="products">
@@ -442,7 +574,139 @@
     <a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download</a>
     <a href="/privacy/">Privacy</a>
     <a href="/terms/">Terms</a>
+    <a href="/refunds/">Refunds</a>
     <a href="/data-deletion/">Data Deletion</a>
+    <a href="/contact/">Contact</a>
   </footer>
+
+  <script>
+    (function () {
+      var svg = document.getElementById("heroBot");
+      var head = document.getElementById("botHead");
+      if (!svg || !head) return;
+
+      var pupilL = document.getElementById("pupilL");
+      var pupilR = document.getElementById("pupilR");
+      var lidL = document.getElementById("lidL");
+      var lidR = document.getElementById("lidR");
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) return;
+
+      var face = document.getElementById("botFace");
+      var all = document.getElementById("botAll");
+      var earL = document.getElementById("earL");
+      var earR = document.getElementById("earR");
+      var glintL = document.getElementById("glintL");
+      var glintR = document.getElementById("glintR");
+
+      var MAX_LOOK = 6;    // px of pupil travel
+      // Yaw/pitch as normalized -1..1 values driven by critically-damped springs.
+      var yaw = { x: 0, v: 0, t: 0 };
+      var pitch = { x: 0, v: 0, t: 0 };
+      var lookX = 0, lookY = 0, targetLookX = 0, targetLookY = 0;
+      var lastInput = 0;
+      var last = performance.now();
+
+      function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+      function aim(x, y) {
+        var r = svg.getBoundingClientRect();
+        if (!r.width) return;
+        var cx = r.left + r.width / 2;
+        var cy = r.top + r.height * 0.42; // roughly eye level
+        var dx = x - cx;
+        var dy = y - cy;
+        var dist = Math.max(Math.hypot(dx, dy), 1);
+        // Saturating response: nearby cursor turns the head strongly, far cursor gently.
+        yaw.t = clamp(Math.tanh(dx / 420), -1, 1);
+        pitch.t = clamp(Math.tanh(dy / 420), -1, 1);
+        targetLookX = clamp((dx / dist) * MAX_LOOK, -MAX_LOOK, MAX_LOOK);
+        targetLookY = clamp((dy / dist) * MAX_LOOK, -MAX_LOOK, MAX_LOOK);
+        lastInput = performance.now();
+      }
+
+      window.addEventListener("mousemove", function (e) { aim(e.clientX, e.clientY); }, { passive: true });
+      window.addEventListener("touchmove", function (e) {
+        if (e.touches && e.touches[0]) aim(e.touches[0].clientX, e.touches[0].clientY);
+      }, { passive: true });
+      window.addEventListener("touchstart", function (e) {
+        if (e.touches && e.touches[0]) aim(e.touches[0].clientX, e.touches[0].clientY);
+      }, { passive: true });
+
+      // Idle behaviour: after 4s without input, glance around occasionally.
+      setInterval(function () {
+        if (performance.now() - lastInput > 4000) {
+          if (Math.random() < 0.6) {
+            yaw.t = (Math.random() * 2 - 1) * 0.6;
+            pitch.t = (Math.random() * 2 - 1) * 0.3;
+            targetLookX = yaw.t * MAX_LOOK * 0.9;
+            targetLookY = pitch.t * MAX_LOOK * 0.6;
+          } else {
+            yaw.t = 0; pitch.t = 0;
+            targetLookX = 0; targetLookY = 0;
+          }
+        }
+      }, 2600);
+
+      // Blink loop.
+      (function blink() {
+        setTimeout(function () {
+          lidL.style.transform = "scaleY(1)";
+          lidR.style.transform = "scaleY(1)";
+          setTimeout(function () {
+            lidL.style.transform = "scaleY(0)";
+            lidR.style.transform = "scaleY(0)";
+            blink();
+          }, 130);
+        }, 2200 + Math.random() * 3200);
+      })();
+
+      // Spring integrator: slight underdamping gives a small organic overshoot.
+      function spring(s, dt, stiffness, damping) {
+        s.v += (s.t - s.x) * stiffness * dt;
+        s.v *= Math.exp(-damping * dt);
+        s.x += s.v * dt;
+      }
+
+      function frame(now) {
+        var dt = Math.min((now - last) / 1000, 0.05);
+        last = now;
+
+        spring(yaw, dt, 60, 9);
+        spring(pitch, dt, 60, 9);
+        // Eyes lead the head: faster follow so pupils arrive first.
+        lookX += (targetLookX - lookX) * Math.min(1, 14 * dt);
+        lookY += (targetLookY - lookY) * Math.min(1, 14 * dt);
+
+        var breathe = Math.sin(now / 1400) * 1.4;
+
+        // Head: translate + roll approximates a 3D turn from the neck.
+        head.style.transform =
+          "translate(" + (yaw.x * 7).toFixed(2) + "px," + (pitch.x * 3.5 + breathe * 0.4).toFixed(2) + "px)" +
+          " rotate(" + (yaw.x * 9).toFixed(2) + "deg)";
+        // Face plate moves further than the shell — parallax sells the depth.
+        face.style.transform =
+          "translate(" + (yaw.x * 9).toFixed(2) + "px," + (pitch.x * 6).toFixed(2) + "px)" +
+          " scaleX(" + (1 - Math.abs(yaw.x) * 0.06).toFixed(3) + ")";
+        // Ears counter-shift slightly (they sit behind the face plane).
+        var ear = "translate(" + (yaw.x * -3).toFixed(2) + "px," + (pitch.x * -1.5).toFixed(2) + "px)";
+        earL.style.transform = ear;
+        earR.style.transform = ear;
+        // Whole robot breathes gently.
+        all.style.transform = "translateY(" + breathe.toFixed(2) + "px)";
+
+        var t = "translate(" + lookX.toFixed(2) + "px," + lookY.toFixed(2) + "px)";
+        pupilL.style.transform = t;
+        pupilR.style.transform = t;
+        // Specular glints drift opposite the pupils, hinting at a fixed light source.
+        var g = "translate(" + (lookX * -0.35).toFixed(2) + "px," + (lookY * -0.35).toFixed(2) + "px)";
+        glintL.style.transform = g;
+        glintR.style.transform = g;
+
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
+  </script>
 </body>
 </html>
