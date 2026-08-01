@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sample Invoice | Sonkawade Labs</title>
+<style>
+  :root { --ink:#17120d; --muted:#6b6259; --line:#d9d2c7; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; padding:24px;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    color:var(--ink); background:#e9e4da; line-height:1.55;
+  }
+  .sheet {
+    width:210mm; min-height:297mm; margin:0 auto; padding:18mm 16mm;
+    background:#fff; box-shadow:0 10px 40px rgba(0,0,0,.15);
+  }
+  .note {
+    width:210mm; margin:0 auto 16px; padding:12px 16px;
+    background:#fff8e1; border:1px solid #e6d9a8; border-radius:8px;
+    font-size:13px;
+  }
+  .note ul { margin:6px 0 0; padding-left:20px; }
+  h1 { font-size:26px; letter-spacing:.14em; text-transform:uppercase; margin:0; }
+  .top { display:flex; justify-content:space-between; align-items:flex-start; gap:24px;
+         border-bottom:2px solid var(--ink); padding-bottom:14px; }
+  .seller { font-size:13px; }
+  .seller strong { font-size:16px; }
+  .muted { color:var(--muted); }
+  .cols { display:flex; gap:24px; margin:20px 0 8px; }
+  .cols > div { flex:1; }
+  .label { font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+           color:var(--muted); display:block; margin-bottom:4px; }
+  table { width:100%; border-collapse:collapse; margin:14px 0; font-size:14px; }
+  th, td { border:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+  th { background:#f4f0e8; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  tfoot td { font-weight:bold; }
+  .fill { color:#b04a2f; }
+  .decl { margin-top:18px; padding:12px 14px; border:1px solid var(--line); background:#faf8f4; font-size:13px; }
+  .sign { margin-top:38px; display:flex; justify-content:space-between; font-size:13px; }
+  .sign div { width:45%; }
+  .sign .rule { margin-top:44px; border-top:1px solid var(--ink); padding-top:5px; }
+  .foot { margin-top:24px; font-size:11px; color:var(--muted); text-align:center;
+          border-top:1px solid var(--line); padding-top:10px; }
+  .specimen {
+    display:inline-block; margin-top:8px; padding:4px 12px;
+    border:2px solid #b04a2f; color:#b04a2f;
+    font-size:11px; font-weight:bold; letter-spacing:.18em; text-transform:uppercase;
+  }
+  @media print {
+    body { background:#fff; padding:0; }
+    .note { display:none; }
+    .sheet { width:auto; min-height:auto; margin:0; padding:0; box-shadow:none; }
+    .fill { color:inherit; }
+  }
+</style>
+</head>
+<body>
+
+
+<div class="sheet">
+
+  <div class="top">
+    <div class="seller">
+      <strong>Sonkawade Labs</strong><br />
+      Walandi, Deoni Taluka<br />
+      Latur District, Maharashtra, India<br />
+      <span class="muted">Email:</span> sumitsonkawade@sonkawadelabs.in<br />
+      <span class="muted">Web:</span> sonkawadelabs.in<br />
+      
+    </div>
+    <div style="text-align:right;">
+      <h1>Invoice</h1>
+      <div class="specimen">Sample &mdash; specimen only</div>
+      <div style="margin-top:10px; font-size:13px;">
+        <span class="muted">Invoice No.</span> <strong>SL/2026-27/001</strong><br />
+        <span class="muted">Date</span> <strong>31 July 2026</strong><br />
+        <span class="muted">Place of supply</span> <strong>Maharashtra</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <span class="label">Billed to</span>
+      <strong>Sample Customer (CSC Centre)</strong><br />
+      <span>Sample Address Line</span><br />
+      <span>Latur, Latur District, Maharashtra, 413512</span><br />
+      <span class="muted">Phone:</span> <span>—</span><br />
+      <span class="muted">Email:</span> <span>sample.customer@example.com</span>
+    </div>
+    <div>
+      <span class="label">Payment</span>
+      <span class="muted">Mode:</span> <span>UPI</span><br />
+      <span class="muted">Reference / UTR:</span> <span>SAMPLE-UTR-000000000000</span><br />
+      <span class="muted">Payment date:</span> <span>31 July 2026</span><br />
+      <span class="muted">Status:</span> <strong>Paid</strong>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:36px;">#</th>
+        <th>Description of service</th>
+        <th class="num" style="width:70px;">Qty</th>
+        <th class="num" style="width:90px;">Rate (₹)</th>
+        <th class="num" style="width:100px;">Amount (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>
+          <strong>CSC Pro — prepaid service credits</strong><br />
+          <span class="muted">Software service credits for government application processing,
+          covering WhatsApp intake, document OCR, operator review and portal submission.
+          1 credit = ₹1; 10 credits = 1 application.</span>
+        </td>
+        <td class="num">1,000</td>
+        <td class="num">1.00</td>
+        <td class="num">1,000.00</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>
+          <strong>Arzi — application letter generation</strong><br />
+          <span class="muted">Per-use generation and delivery of formal application letters (PDF).</span>
+        </td>
+        <td class="num">10</td>
+        <td class="num">10.00</td>
+        <td class="num">100.00</td>
+      </tr>
+      <tr>
+
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" class="num">Total</td>
+        <td class="num">₹1,100.00</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="num">Amount payable</td>
+        <td class="num">₹1,100.00</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <p style="font-size:13px; margin:4px 0 0;">
+    <span class="muted">Amount in words:</span>
+    <strong>Rupees One Thousand One Hundred Only</strong>
+  </p>
+
+  <div class="decl">
+    <strong>Declaration</strong><br />
+    Sonkawade Labs is not registered under the Goods and Services Tax Act. GST is not charged or
+    collected on this invoice and no input tax credit is available against it. The amount shown is
+    the total and final amount payable. Current rates are published at sonkawadelabs.in/pricing.
+    <br /><br />
+    All services billed here are digital and are delivered electronically. Refunds and cancellations
+    are governed by the Refund &amp; Cancellation Policy at sonkawadelabs.in/refunds.
+  </div>
+
+  <div class="sign">
+    <div>
+      <span class="label">Customer</span>
+      <div class="rule">Received the services described above</div>
+    </div>
+    <div style="text-align:right;">
+      <span class="label">For Sonkawade Labs</span>
+      <div class="rule">Authorised signatory</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Sonkawade Labs · Walandi, Deoni Taluka, Latur District, Maharashtra, India ·
+    sumitsonkawade@sonkawadelabs.in · This is a computer-generated invoice.
+  </div>
+
+</div>
+
+</body>
+</html>

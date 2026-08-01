@@ -1,0 +1,7 @@
+# Local dev-server config, not site content
+.claude/
+
+# Business documents kept alongside the site but NOT published.
+# Everything committed here is served publicly at sonkawadelabs.in.
+invoice-template.html
+invoices/
