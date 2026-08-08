@@ -148,9 +148,12 @@ strong { font-weight: 600; }
   margin: 0 auto;
   padding: 10px 10px 10px 22px;
   border-radius: var(--r-pill);
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  /* Translucent so the sky backdrop reads through; the border and saturate()
+     keep it legible where it floats over white panels. */
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   box-shadow: var(--shadow-nav);
 }
 
@@ -230,6 +233,88 @@ strong { font-weight: 600; }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .center .btn-row { justify-content: center; }
+
+/* Label slide: two stacked copies of the label inside an overflow-hidden box.
+   On hover the pair travels up exactly one line so the second copy lands where
+   the first was. The wrapper is injected by site.js. */
+.btn__label {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn__label > span {
+  display: block;
+  transition: transform 460ms cubic-bezier(0.65, 0.05, 0.1, 1);
+}
+
+.btn__label > span:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(105%);
+}
+
+.btn:hover .btn__label > span:first-child { transform: translateY(-105%); }
+.btn:hover .btn__label > span:last-child { transform: translateY(0); }
+
+.btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* ---------- Tabs ---------- */
+
+.tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: clamp(24px, 3.5vw, 40px);
+  padding: 6px;
+  border-radius: var(--r-pill);
+  background: rgba(26, 22, 21, 0.06);
+}
+
+.panel--cream .tabs,
+.panel--cream2 .tabs { background: rgba(255, 255, 255, 0.7); }
+.panel--ink .tabs { background: rgba(255, 255, 255, 0.1); }
+
+.tab {
+  padding: 12px 22px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background-color 260ms ease, color 260ms ease;
+}
+
+.tab:hover { color: var(--ink); }
+
+.tab[aria-selected="true"] {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.panel--ink .tab { color: rgba(255, 255, 255, 0.66); }
+.panel--ink .tab:hover { color: var(--white); }
+.panel--ink .tab[aria-selected="true"] { background: var(--white); color: var(--ink); }
+
+.tab:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.tab-panel[hidden] { display: none; }
+
+.tab-panel.is-entering { animation: tab-in 480ms cubic-bezier(0.22, 0.8, 0.3, 1) both; }
+
+@keyframes tab-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
 
 /* ---------- Hero ---------- */
 

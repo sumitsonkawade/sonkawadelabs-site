@@ -17,12 +17,12 @@
         Sonkawade Labs
       </a>
       <div class="nav-links">
-        <a href="/products/">Products</a>
-        <a href="#how">How it works</a>
+        <a href="/products/arzi-bot/">Arzi</a>
+        <a href="/products/csc-pro/">CSC Pro</a>
         <a href="/pricing/">Pricing</a>
         <a href="/contact/">Contact</a>
       </div>
-      <a class="btn btn--primary" href="/products/arzi-bot/">Try Arzi</a>
+      <a class="btn btn--primary" href="/pricing/">Get started</a>
     </nav>
   </header>
 
@@ -33,7 +33,7 @@
       <h1>Paperwork that runs itself, for the people who file it</h1>
       <p class="lede">Sonkawade Labs builds Arzi and CSC Pro — a WhatsApp assistant that turns a citizen's message into a ready-to-print application letter, and desktop software that automates Maharashtra certificate filing for CSC operators.</p>
       <div class="btn-row">
-        <a class="btn btn--primary" href="/products/arzi-bot/">Try Arzi</a>
+        <a class="btn btn--primary" href="/pricing/">Get started</a>
         <a class="btn btn--light" href="/products/csc-pro/">See CSC Pro</a>
       </div>
       <p class="hero-note">₹10 per application · No subscription · No minimum</p>
@@ -87,24 +87,51 @@
       <div class="section-head">
         <span class="eyebrow">How it works</span>
         <h2>From a message to a filed application</h2>
-        <p class="lede">Both products collapse the same slow, repetitive chain into a few minutes of work.</p>
+        <p class="lede">Both products collapse the same slow, repetitive chain into a few minutes of work. Pick a product to see its flow.</p>
       </div>
 
-      <div class="grid grid--3">
-        <div class="card">
-          <div class="card-icon" aria-hidden="true">1</div>
-          <h4>Describe the problem</h4>
-          <p>A citizen writes to Arzi on WhatsApp in their own language, or an operator opens a new case in CSC Pro.</p>
+      <div class="tabs" role="tablist" aria-label="Product workflows">
+        <button class="tab" type="button" role="tab" id="tab-arzi" aria-controls="flow-arzi" aria-selected="true">Arzi</button>
+        <button class="tab" type="button" role="tab" id="tab-csc" aria-controls="flow-csc" aria-selected="false">CSC Pro</button>
+      </div>
+
+      <div class="tab-panel" id="flow-arzi" role="tabpanel" aria-labelledby="tab-arzi">
+        <div class="grid grid--3">
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">1</div>
+            <h4>Describe the problem</h4>
+            <p>A citizen sends a WhatsApp message describing the issue or request, in the Indian language they are most comfortable using.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">2</div>
+            <h4>The details get structured</h4>
+            <p>Arzi interprets the message, extracts the essential details, and prepares a formal application letter addressed to the right authority.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">3</div>
+            <h4>Ready to print</h4>
+            <p>The finished PDF is sent back to the same WhatsApp chat, ready to print or submit. ₹10 per application, pay per use.</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon" aria-hidden="true">2</div>
-          <h4>The details get structured</h4>
-          <p>The request is turned into the right format — a formal letter for Arzi, or an OCR-checked application form for CSC Pro.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon" aria-hidden="true">3</div>
-          <h4>Ready to submit</h4>
-          <p>Arzi sends back a print-ready PDF. CSC Pro submits to the government portal and deducts a single credit charge.</p>
+      </div>
+
+      <div class="tab-panel" id="flow-csc" role="tabpanel" aria-labelledby="tab-csc" hidden>
+        <div class="grid grid--3">
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">1</div>
+            <h4>Open the customer record</h4>
+            <p>The operator launches CSC Pro, creates or selects the customer, and uploads their documents for the certificate being applied for.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">2</div>
+            <h4>OCR prefills the form</h4>
+            <p>Aadhaar and supporting documents are read automatically, prefilling the application fields so the operator only reviews and corrects.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">3</div>
+            <h4>Automated submission</h4>
+            <p>CSC Pro runs the MahaOnline workflow and submits. One credit charge of ₹10 covers the whole chain — nothing is billed separately.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -165,7 +192,7 @@
             <li>Delivered on WhatsApp</li>
             <li>Charged only per letter generated</li>
           </ul>
-          <a class="btn btn--primary" href="/products/arzi-bot/">Try Arzi</a>
+          <a class="btn btn--primary" href="/pricing/">Get started</a>
         </article>
 
         <article class="card price-card">
@@ -259,5 +286,6 @@
 
   </main>
 
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>
