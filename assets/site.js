@@ -89,9 +89,61 @@
     select(initial, false);
   }
 
+  /* ---------------------------------------------------------------------
+   * Tilt: [data-tilt] elements rest rotated back and straighten once they
+   * scroll into view. Honours prefers-reduced-motion by landing flat with no
+   * transition, and falls back to flat if IntersectionObserver is missing.
+   * ------------------------------------------------------------------- */
+  function initTilt() {
+    var els = Array.prototype.slice.call(document.querySelectorAll("[data-tilt]"));
+    if (!els.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    els.forEach(function (el) {
+      el.classList.add("is-tilted");
+
+      var settled = false;
+      var io = null;
+      var timer;
+
+      function flatten() {
+        if (settled) return;
+        settled = true;
+        el.classList.remove("is-tilted");
+        window.removeEventListener("scroll", onScroll);
+        clearTimeout(timer);
+        if (io) io.disconnect();
+      }
+
+      function inView() {
+        var r = el.getBoundingClientRect();
+        return r.top < window.innerHeight * 0.85 && r.bottom > 0;
+      }
+
+      function onScroll() {
+        if (inView()) flatten();
+      }
+
+      if ("IntersectionObserver" in window) {
+        io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) flatten(); });
+        }, { threshold: 0.25 });
+        io.observe(el);
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      // Straighten shortly after load if it is already on screen, and never
+      // allow it to stay stuck tilted if no callback ever arrives.
+      setTimeout(onScroll, 400);
+      timer = setTimeout(flatten, 2500);
+    });
+  }
+
   function init() {
     wrapLabels();
     document.querySelectorAll(".tabs").forEach(initTabs);
+    initTilt();
   }
 
   if (document.readyState === "loading") {
