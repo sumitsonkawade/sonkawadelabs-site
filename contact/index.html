@@ -1,254 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Us | Sonkawade Labs</title>
-  <meta
-    name="description"
-    content="Contact Sonkawade Labs for CSC Pro and Arzi support, billing, privacy grievances, and legal queries."
-  />
+  <meta name="description" content="Contact Sonkawade Labs for support, billing, refunds, privacy grievances and data deletion requests for CSC Pro and Arzi.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
-  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
-  <style>
-    :root {
-      --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
-      --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
-      --bg: #f4f0e8;
-      --paper: rgba(255, 250, 244, 0.82);
-      --ink: #17120d;
-      --muted: rgba(23, 18, 13, 0.66);
-      --line: rgba(23, 18, 13, 0.12);
-      --accent: #17120d;
-      --soft: rgba(255, 255, 255, 0.5);
-      --shadow: 0 24px 60px rgba(30, 24, 17, 0.12);
-    }
-
-    * { box-sizing: border-box; }
-
-    html, body { min-height: 100%; }
-
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      color: var(--ink);
-      background:
-        linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08)),
-        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.44), transparent 24%),
-        radial-gradient(circle at 80% 14%, rgba(252, 244, 228, 0.58), transparent 22%),
-        linear-gradient(180deg, #f6f1e8 0%, #eee6da 100%);
-      line-height: 1.7;
-    }
-
-    a { color: inherit; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 1.25rem;
-      backdrop-filter: blur(14px);
-      background: rgba(244, 240, 232, 0.74);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .brand-name {
-      font-family: var(--font-heading);
-      font-size: 21px;
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-
-    .brand-mark {
-      font-size: 25px;
-      line-height: 1;
-      user-select: none;
-    }
-
-    main {
-      width: min(1080px, calc(100% - 24px));
-      margin: 1rem auto 2rem;
-      padding: 2rem 1.25rem;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-heading);
-      margin: 0 0 14px;
-      line-height: 1.15;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4.2rem);
-      letter-spacing: -0.05em;
-    }
-
-    h3 {
-      margin-top: 28px;
-      font-size: 1.1rem;
-      color: var(--accent);
-      letter-spacing: -0.02em;
-    }
-
-    p, li { margin: 0 0 12px; }
-
-    ul { margin: 0 0 14px; padding-left: 22px; }
-
-    .meta, .small { color: var(--muted); }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin: 18px 0;
-    }
-
-    .card {
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.62);
-    }
-
-    .card strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .contact {
-      padding: 18px 20px;
-      margin: 18px 0;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: var(--soft);
-    }
-
-    .page-footer {
-      width: min(1080px, calc(100% - 24px));
-      margin: 0 auto 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      padding: 0 0.25rem;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .page-footer a {
-      text-decoration: none;
-      opacity: 0.72;
-    }
-
-    .page-footer a:hover,
-    .page-footer a[aria-current="page"] {
-      opacity: 1;
-    }
-
-    @media (min-width: 768px) {
-      .site-header { padding: 1.25rem 2rem; }
-      .brand-name { font-size: 26px; }
-      .brand-mark { font-size: 30px; }
-      main {
-        width: min(1080px, calc(100% - 48px));
-        margin-top: 1.25rem;
-        padding: 2.5rem 2.5rem 2.75rem;
-      }
-      .page-footer { width: min(1080px, calc(100% - 48px)); }
-    }
-
-    @media (max-width: 640px) {
-      main {
-        width: min(1080px, calc(100% - 16px));
-        padding: 1.5rem 1rem 2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+
   <header class="site-header">
-    <a class="brand" href="/">
-      <span class="brand-name">Sonkawade Labs</span>
-      <span class="brand-mark" aria-hidden="true">✳︎</span>
-    </a>
+    <nav class="nav">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">✳︎</span>
+        Sonkawade Labs
+      </a>
+      <div class="nav-links">
+        <a href="/products/">Products</a>
+        <a href="/#how">How it works</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/contact/" aria-current="page">Contact</a>
+      </div>
+      <a class="btn btn--primary" href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a>
+    </nav>
   </header>
-  <main>
-    <h1>Contact Us</h1>
-    <p class="meta"><strong>Business name:</strong> Sonkawade Labs</p>
-    <p class="meta"><strong>Registered address:</strong> Walandi, Deoni Taluka, Latur District, Maharashtra, India</p>
-    <p class="meta"><strong>Support phone:</strong> <a href="tel:+917498601105">+91 74986 01105</a></p>
-    <p class="meta"><strong>Support email:</strong> <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a></p>
 
-    <h3>About Us</h3>
-    <p>
-      Sonkawade Labs is a sole proprietorship owned by Sumit Sonkawade, based in Walandi, Deoni Taluka,
-      Latur District, Maharashtra. We build software for citizen service workflows in India: <a href="/products/arzi-bot/">Arzi</a>,
-      a WhatsApp assistant that turns a citizen's message into a ready-to-print application letter, and
-      <a href="/products/csc-pro/">CSC Pro</a>, desktop software that helps Common Service Centre operators
-      collect customer details, read documents, and complete Maharashtra government certificate applications.
-      Both are digital services sold online in India at ₹10 per application — see <a href="/pricing/">Pricing</a>.
-    </p>
+  <main class="wrap stack">
 
-    <div class="grid">
-      <div class="card">
-        <strong>General &amp; product support</strong>
-        <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
-        <p class="small">Install help, workflow questions, account issues for CSC Pro and Arzi.</p>
+    <section class="hero">
+      <span class="pill-tag">✳︎ Contact</span>
+      <h1>Talk to Sonkawade Labs</h1>
+      <p class="lede">Support, billing, privacy grievances and data deletion — all handled directly by us.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
+        <a class="btn btn--light" href="tel:+917498601105">+91 74986 01105</a>
       </div>
-      <div class="card">
-        <strong>Billing &amp; refunds</strong>
-        <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
-        <p class="small">Subject "Refund Request". See the <a href="/refunds/">Refund &amp; Cancellation Policy</a>.</p>
+    </section>
+
+    <section class="panel">
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">✳︎</div>
+          <h4>General &amp; product support</h4>
+          <p><a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a></p>
+          <p>Install help, workflow questions, account issues for CSC Pro and Arzi.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">₹</div>
+          <h4>Billing &amp; refunds</h4>
+          <p><a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a></p>
+          <p>Subject "Refund Request". See the <a href="/refunds/">Refund &amp; Cancellation Policy</a>.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">⚖</div>
+          <h4>Privacy &amp; data deletion</h4>
+          <p><a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a></p>
+          <p>Grievance Officer: Sumit Sonkawade. See <a href="/privacy/">Privacy Policy</a> and <a href="/data-deletion/">Data Deletion</a>.</p>
+        </div>
       </div>
-      <div class="card">
-        <strong>Privacy grievances &amp; data deletion</strong>
-        <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
-        <p class="small">Grievance Officer: Sumit Sonkawade. See <a href="/privacy/">Privacy Policy</a> and <a href="/data-deletion/">Data Deletion</a>.</p>
+    </section>
+
+    <section class="panel panel--cream">
+      <div class="section-head">
+        <span class="eyebrow">About us</span>
+        <h2>Who we are</h2>
       </div>
-    </div>
+      <div class="prose">
+        <p>
+          Sonkawade Labs is a sole proprietorship owned by Sumit Sonkawade, based in Walandi, Deoni Taluka,
+          Latur District, Maharashtra. We build software for citizen service workflows in India: <a href="/products/arzi-bot/">Arzi</a>,
+          a WhatsApp assistant that turns a citizen's message into a ready-to-print application letter, and
+          <a href="/products/csc-pro/">CSC Pro</a>, desktop software that helps Common Service Centre operators
+          collect customer details, read documents, and complete Maharashtra government certificate applications.
+          Both are digital services sold online in India at ₹10 per application — see <a href="/pricing/">Pricing</a>.
+        </p>
 
-    <h3>Response times</h3>
-    <ul>
-      <li>Support queries: we aim to respond within 2 business days.</li>
-      <li>Privacy grievances: acknowledged within 48 hours, resolved within 30 days.</li>
-      <li>Data deletion requests: responded to within 30 days.</li>
-    </ul>
+        <h3>Business details</h3>
+        <ul>
+          <li><strong>Business name:</strong> Sonkawade Labs</li>
+          <li><strong>Registered address:</strong> Walandi, Deoni Taluka, Latur District, Maharashtra, India</li>
+          <li><strong>Support phone:</strong> <a href="tel:+917498601105">+91 74986 01105</a></li>
+          <li><strong>Support email:</strong> <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a></li>
+        </ul>
 
-    <h3>Operating hours</h3>
-    <p>Monday to Saturday, 10:00 AM – 6:00 PM IST (email monitored on all days).</p>
+        <h3>Response times</h3>
+        <ul>
+          <li>Support queries: we aim to respond within 2 business days.</li>
+          <li>Privacy grievances: acknowledged within 48 hours, resolved within 30 days.</li>
+          <li>Data deletion requests: responded to within 30 days.</li>
+        </ul>
 
-    <div class="contact">
-      <p>
-        Existing CSC Pro operators can also reach us through their Sonkawade Labs WhatsApp support
-        chat for faster help.
-      </p>
-    </div>
+        <h3>Operating hours</h3>
+        <p>Monday to Saturday, 10:00 AM – 6:00 PM IST (email monitored on all days).</p>
+
+        <div class="note">
+          <p>
+            Existing CSC Pro operators can also reach us through their Sonkawade Labs WhatsApp support
+            chat for faster help.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✳︎</span> Sonkawade Labs</a>
+          <p>Software for citizen workflows and certificate operators. Walandi, Deoni Taluka, Latur District, Maharashtra, India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/">All products</a></li>
+            <li><a href="/products/arzi-bot/">Arzi</a></li>
+            <li><a href="/products/csc-pro/">CSC Pro</a></li>
+            <li><a href="/thank-you/">Download CSC Pro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a></li>
+            <li><a href="tel:+917498601105">+91 74986 01105</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+            <li><a href="/refunds/">Refunds</a></li>
+            <li><a href="/data-deletion/">Data deletion</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Sonkawade Labs. All rights reserved.</span>
+        <span>Walandi, Deoni Taluka, Latur District, Maharashtra, India</span>
+      </div>
+    </footer>
+
   </main>
-  <footer class="page-footer">
-    <a href="/">Home</a>
-    <a href="/thank-you/">Download</a>
-    <a href="/pricing/">Pricing</a>
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/">Terms</a>
-    <a href="/refunds/">Refunds</a>
-    <a href="/data-deletion/">Data Deletion</a>
-    <a href="/contact/" aria-current="page">Contact</a>
-  </footer>
+
 </body>
 </html>

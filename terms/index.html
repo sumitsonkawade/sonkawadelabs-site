@@ -9,263 +9,37 @@
     content="CSC Pro Terms of Service for Sonkawade Labs covering subscription, prepaid credits, acceptable use, refunds, downtime, and governing law."
   />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
-  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
-  <style>
-    :root {
-      --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
-      --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
-      --bg: #f4f0e8;
-      --paper: rgba(255, 250, 244, 0.82);
-      --ink: #17120d;
-      --muted: rgba(23, 18, 13, 0.66);
-      --line: rgba(23, 18, 13, 0.12);
-      --accent: #17120d;
-      --soft: rgba(255, 255, 255, 0.5);
-      --shadow: 0 24px 60px rgba(30, 24, 17, 0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      min-height: 100%;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      color: var(--ink);
-      background:
-        linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08)),
-        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.44), transparent 24%),
-        radial-gradient(circle at 80% 14%, rgba(252, 244, 228, 0.58), transparent 22%),
-        linear-gradient(180deg, #f6f1e8 0%, #eee6da 100%);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 1.25rem;
-      backdrop-filter: blur(14px);
-      background: rgba(244, 240, 232, 0.74);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .brand-name {
-      font-family: var(--font-heading);
-      font-size: 21px;
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-
-    .brand-mark {
-      font-size: 25px;
-      line-height: 1;
-      user-select: none;
-    }
-
-    main {
-      width: min(1080px, calc(100% - 24px));
-      margin: 1rem auto 2rem;
-      padding: 2rem 1.25rem;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-heading);
-      margin: 0 0 14px;
-      line-height: 1.15;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4.2rem);
-      letter-spacing: -0.05em;
-    }
-
-    h2 {
-      margin-top: 42px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      font-size: 1.7rem;
-      color: var(--accent);
-    }
-
-    h3 {
-      margin-top: 28px;
-      font-size: 1.1rem;
-      color: var(--accent);
-      letter-spacing: -0.02em;
-    }
-
-    p, li {
-      margin: 0 0 12px;
-    }
-
-    ul {
-      margin: 0 0 14px;
-      padding-left: 22px;
-    }
-
-    .meta,
-    .small {
-      color: var(--muted);
-    }
-
-    .hero,
-    .contact {
-      padding: 18px 20px;
-      margin: 18px 0;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: var(--soft);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 4px;
-      background: #000;
-    }
-
-    .lang-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0 8px;
-    }
-
-    .lang-nav a {
-      text-decoration: none;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 14px;
-      background: rgba(255, 255, 255, 0.72);
-      transition: background-color 200ms ease, color 200ms ease;
-    }
-
-    .lang-nav a:hover {
-      background: #000;
-      color: #fff;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin: 18px 0;
-    }
-
-    .card {
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.62);
-    }
-
-    .card strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .page-footer {
-      width: min(1080px, calc(100% - 24px));
-      margin: 0 auto 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      padding: 0 0.25rem;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .page-footer a {
-      text-decoration: none;
-      opacity: 0.72;
-    }
-
-    .page-footer a:hover,
-    .page-footer a[aria-current="page"] {
-      opacity: 1;
-    }
-
-    @media (min-width: 768px) {
-      .site-header {
-        padding: 1.25rem 2rem;
-      }
-
-      .brand-name {
-        font-size: 26px;
-      }
-
-      .brand-mark {
-        font-size: 30px;
-      }
-
-      main {
-        width: min(1080px, calc(100% - 48px));
-        margin-top: 1.25rem;
-        padding: 2.5rem 2.5rem 2.75rem;
-      }
-
-      .page-footer {
-        width: min(1080px, calc(100% - 48px));
-      }
-    }
-
-    @media (max-width: 640px) {
-      main {
-        width: min(1080px, calc(100% - 16px));
-        padding: 1.5rem 1rem 2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/">
-      <span class="brand-name">Sonkawade Labs</span>
-      <span class="brand-mark" aria-hidden="true">✳︎</span>
-    </a>
+    <nav class="nav">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">✳︎</span>
+        Sonkawade Labs
+      </a>
+      <div class="nav-links">
+        <a href="/products/">Products</a>
+        <a href="/#how">How it works</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn--primary" href="/contact/">Contact us</a>
+    </nav>
   </header>
-  <main>
-    <h1>CSC Pro Terms of Service</h1>
-    <p class="meta"><strong>Product:</strong> CSC Pro</p>
-    <p class="meta"><strong>Provider:</strong> Sonkawade Labs</p>
-    <p class="meta"><strong>Service Type:</strong> Windows desktop SaaS for CSC operators automating Maharashtra government form submissions</p>
-    <p class="meta"><strong>Last Updated:</strong> July 7, 2026</p>
 
-    <div class="hero">
+  <main class="wrap stack">
+
+    <section class="hero">
+      <span class="pill-tag">✳︎ Terms</span>
+      <h1>CSC Pro Terms of Service</h1>
+      <p class="lede"><strong>Product:</strong> CSC Pro<br><strong>Provider:</strong> Sonkawade Labs<br><strong>Service Type:</strong> Windows desktop SaaS for CSC operators automating Maharashtra government form submissions<br><strong>Last Updated:</strong> July 7, 2026</p>
+    </section>
+
+    <section class="panel">
+      <div class="prose">
+
+    <div class="note">
       <p>
         These Terms of Service govern access to and use of CSC Pro, a Windows desktop SaaS product
         operated by Sonkawade Labs for eligible CSC operators in Maharashtra, India. By installing,
@@ -301,7 +75,7 @@
         CSC Pro is offered on a subscription and prepaid credit basis. Certain features may require an
         active subscription, and application processing is billed through prepaid credits.
       </p>
-      <div class="grid">
+      <div class="grid grid--2">
         <div class="card">
           <strong>Billing rate</strong>
           Usage is charged at <strong>₹10 per application</strong> unless Sonkawade Labs publishes a revised rate. Current rates and credit pack sizes are listed on the <a href="/pricing/">Pricing</a> page.
@@ -419,7 +193,7 @@
       </p>
 
       <h3>11. Contact</h3>
-      <div class="contact">
+      <div class="note">
         <p>
           For legal, billing, or service-related questions about these Terms, contact Sonkawade Labs at
           <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>.
@@ -453,7 +227,7 @@
         CSC Pro सदस्यता आणि प्रीपेड क्रेडिट पद्धतीवर उपलब्ध आहे. काही सुविधा सक्रिय सदस्यतेशिवाय उपलब्ध नसू शकतात
         आणि अर्ज प्रक्रिया प्रीपेड क्रेडिटद्वारे आकारली जाते.
       </p>
-      <div class="grid">
+      <div class="grid grid--2">
         <div class="card">
           <strong>दर</strong>
           वापराचा सध्याचा दर <strong>प्रति अर्ज ₹10</strong> आहे, जो Sonkawade Labs कडून बदलला जाऊ शकतो. सध्याचे दर <a href="/pricing/">Pricing</a> पानावर पहा.
@@ -563,7 +337,7 @@
       </p>
 
       <h3>11. संपर्क</h3>
-      <div class="contact">
+      <div class="note">
         <p>
           या अटींबाबत कायदेशीर, बिलिंग किंवा सेवा-संबंधित प्रश्नांसाठी Sonkawade Labs शी
           <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a> वर संपर्क साधा.
@@ -596,7 +370,7 @@
         CSC Pro सदस्यता और प्रीपेड क्रेडिट मॉडल पर उपलब्ध है। कुछ सुविधाओं के लिए सक्रिय सदस्यता आवश्यक हो सकती है
         और आवेदन प्रोसेसिंग का शुल्क प्रीपेड क्रेडिट के माध्यम से लिया जाता है।
       </p>
-      <div class="grid">
+      <div class="grid grid--2">
         <div class="card">
           <strong>शुल्क दर</strong>
           वर्तमान उपयोग दर <strong>प्रति आवेदन ₹10</strong> है, जिसे Sonkawade Labs समय-समय पर बदल सकता है। वर्तमान दर <a href="/pricing/">Pricing</a> पेज पर देखें।
@@ -707,7 +481,7 @@
       </p>
 
       <h3>11. संपर्क</h3>
-      <div class="contact">
+      <div class="note">
         <p>
           इन शर्तों से संबंधित कानूनी, बिलिंग या सेवा प्रश्नों के लिए Sonkawade Labs से
           <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a> पर संपर्क करें।
@@ -720,16 +494,49 @@
         संस्करण प्रभावी माना जाएगा। उसके बाद CSC Pro का उपयोग करना संशोधित शर्तों की स्वीकृति माना जाएगा।
       </p>
     </section>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✳︎</span> Sonkawade Labs</a>
+          <p>Software for citizen workflows and certificate operators. Walandi, Deoni Taluka, Latur District, Maharashtra, India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/">All products</a></li>
+            <li><a href="/products/arzi-bot/">Arzi</a></li>
+            <li><a href="/products/csc-pro/">CSC Pro</a></li>
+            <li><a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a></li>
+            <li><a href="tel:+917498601105">+91 74986 01105</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+            <li><a href="/refunds/">Refunds</a></li>
+            <li><a href="/data-deletion/">Data deletion</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Sonkawade Labs. All rights reserved.</span>
+        <span>Walandi, Deoni Taluka, Latur District, Maharashtra, India</span>
+      </div>
+    </footer>
+
   </main>
-  <footer class="page-footer">
-    <a href="/">Home</a>
-    <a href="/thank-you/">Download</a>
-    <a href="/pricing/">Pricing</a>
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/" aria-current="page">Terms</a>
-    <a href="/refunds/">Refunds</a>
-    <a href="/data-deletion/">Data Deletion</a>
-    <a href="/contact/">Contact</a>
-  </footer>
 </body>
 </html>

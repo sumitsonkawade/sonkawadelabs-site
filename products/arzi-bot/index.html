@@ -4,315 +4,142 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Arzi | Sonkawade Labs</title>
-  <meta name="description" content="Arzi is a WhatsApp bot that converts citizen messages into ready-to-print formal application letter PDFs.">
+  <meta name="description" content="Arzi is a WhatsApp bot by Sonkawade Labs that turns a user's message into a ready-to-print formal application letter as a PDF. ₹10 per application.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
-  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
-  <style>
-    :root {
-      --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
-      --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
-      --bg: #f4f0e8;
-      --paper: rgba(255, 250, 244, 0.84);
-      --ink: #17120d;
-      --muted: rgba(23, 18, 13, 0.66);
-      --line: rgba(23, 18, 13, 0.12);
-      --soft: rgba(255, 255, 255, 0.62);
-      --shadow: 0 24px 60px rgba(30, 24, 17, 0.12);
-    }
-
-    * { box-sizing: border-box; }
-    html, body { min-height: 100%; }
-
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      color: var(--ink);
-      background:
-        linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08)),
-        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.44), transparent 24%),
-        radial-gradient(circle at 80% 14%, rgba(252, 244, 228, 0.58), transparent 22%),
-        linear-gradient(180deg, #f6f1e8 0%, #eee6da 100%);
-      line-height: 1.7;
-    }
-
-    a { color: inherit; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 1.25rem;
-      backdrop-filter: blur(14px);
-      background: rgba(244, 240, 232, 0.74);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .brand-name {
-      font-family: var(--font-heading);
-      font-size: 21px;
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-
-    .brand-mark {
-      font-size: 25px;
-      line-height: 1;
-      user-select: none;
-    }
-
-    main,
-    .page-footer {
-      width: min(1100px, calc(100% - 24px));
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    main {
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .panel {
-      padding: 1.5rem 1rem;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      margin-bottom: 1rem;
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.74);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-heading);
-      margin: 0 0 0.8rem;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
-      max-width: 12ch;
-    }
-
-    h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-    }
-
-    .lead,
-    .copy {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .lead {
-      font-size: clamp(16px, 2.4vw, 20px);
-      max-width: 48rem;
-    }
-
-    .grid,
-    .checklist,
-    .link-grid {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .grid {
-      grid-template-columns: 1fr;
-    }
-
-    .card,
-    .link-card {
-      padding: 1rem 1.05rem;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: var(--soft);
-    }
-
-    .label {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .checklist {
-      padding-left: 1.1rem;
-      margin: 0;
-    }
-
-    .actions,
-    .page-footer {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0.8rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.78);
-      text-decoration: none;
-      transition: background-color 200ms ease, color 200ms ease;
-    }
-
-    .pill:hover {
-      background: #000;
-      color: #fff;
-    }
-
-    .link-card a,
-    .page-footer a {
-      text-decoration: none;
-      opacity: 0.72;
-    }
-
-    .link-card a:hover,
-    .page-footer a:hover {
-      opacity: 1;
-    }
-
-    .page-footer {
-      margin-top: 0;
-      margin-bottom: 2rem;
-      padding: 0 0.25rem;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    @media (min-width: 768px) {
-      .site-header { padding: 1.25rem 2rem; }
-      .brand-name { font-size: 26px; }
-      .brand-mark { font-size: 30px; }
-      main, .page-footer { width: min(1100px, calc(100% - 48px)); }
-      .panel { padding: 2rem; }
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .link-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+
   <header class="site-header">
-    <a class="brand" href="/">
-      <span class="brand-name">Sonkawade Labs</span>
-      <span class="brand-mark" aria-hidden="true">✳︎</span>
-    </a>
+    <nav class="nav">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">✳︎</span>
+        Sonkawade Labs
+      </a>
+      <div class="nav-links">
+        <a href="/products/" aria-current="page">Products</a>
+        <a href="/#how">How it works</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn--primary" href="/pricing/">See pricing</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="panel">
-      <div class="eyebrow">Arzi</div>
-      <h1>WhatsApp bot for formal application letters.</h1>
-      <p class="lead">Arzi listens to a user's problem in WhatsApp, understands the request in Indian languages, and sends back a ready-to-print formal application letter as a PDF.</p>
-      <p class="lead"><strong>Pricing: ₹10 per application.</strong> ₹10 per generated application letter, pay per use. No credit packs, no subscription, no minimum purchase. Prices are final; no additional tax is added. Full details on the <a href="/pricing/">Pricing</a> page.</p>
-      <div class="actions" style="margin-top: 1.25rem;">
-        <a class="pill" href="/pricing/">Pricing</a>
-        <a class="pill" href="/arzi/privacy/">Privacy Policy</a>
-        <a class="pill" href="/arzi/data-deletion/">Data Deletion</a>
-        <a class="pill" href="/arzi/terms/">Terms of Service</a>
+  <main class="wrap stack">
+
+    <section class="hero">
+      <span class="pill-tag">✳︎ Arzi</span>
+      <h1>WhatsApp bot for formal application letters</h1>
+      <p class="lede">Arzi listens to a user's problem in WhatsApp, understands the request in Indian languages, and sends back a ready-to-print formal application letter as a PDF.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/pricing/">Pricing</a>
+        <a class="btn btn--light" href="/arzi/privacy/">Privacy policy</a>
       </div>
-    </section>
-
-    <section class="grid">
-      <article class="panel">
-        <h2>What the product does</h2>
-        <div class="card">
-          <span class="label">Core function</span>
-          Receives a citizen's grievance, complaint, or request through WhatsApp and transforms it into a properly formatted application letter.
-        </div>
-        <div class="card" style="margin-top: 0.9rem;">
-          <span class="label">Output</span>
-          Returns a PDF that the user can print or submit to the relevant office, authority, or institution.
-        </div>
-      </article>
-
-      <article class="panel">
-        <h2>How it works</h2>
-        <ul class="checklist">
-          <li>User sends a message describing the issue or request.</li>
-          <li>The bot interprets the message and extracts the essential details.</li>
-          <li>The system prepares a formal application letter in document format.</li>
-          <li>The finished PDF is sent back to the same WhatsApp user.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="grid">
-      <article class="panel">
-        <h2>Intended users</h2>
-        <div class="card">
-          <span class="label">Audience</span>
-          Citizens, customers, or support users who need help drafting a formal written application in a language they can naturally use on WhatsApp.
-        </div>
-      </article>
-
-      <article class="panel">
-        <h2>Meta review notes</h2>
-        <div class="card">
-          <span class="label">WhatsApp usage</span>
-          The WhatsApp Business Platform is used to receive inbound messages and return the generated PDF response to the requesting user.
-        </div>
-        <div class="card" style="margin-top: 0.9rem;">
-          <span class="label">Handled data</span>
-          User message content and the information needed to generate the requested formal application letter.
-        </div>
-      </article>
+      <p class="hero-note">₹10 per application · Pay per use · No subscription</p>
     </section>
 
     <section class="panel">
-      <h2>Useful public links</h2>
-      <div class="link-grid">
-        <div class="link-card"><a href="/products/arzi-bot/">Product page</a></div>
-        <div class="link-card"><a href="/arzi/privacy/">Privacy Policy</a></div>
-        <div class="link-card"><a href="/arzi/data-deletion/">Data Deletion</a></div>
-        <div class="link-card"><a href="/arzi/terms/">Terms of Service</a></div>
+      <div class="section-head">
+        <span class="eyebrow">Pricing</span>
+        <h2>₹10 per application</h2>
+      </div>
+      <p class="lede">₹10 per generated application letter, pay per use. No credit packs, no subscription, no minimum purchase. Prices are final; no additional tax is added. Full details on the <a href="/pricing/">Pricing</a> page.</p>
+    </section>
+
+    <section class="panel panel--cream">
+      <div class="grid grid--2">
+        <article class="card">
+          <span class="eyebrow">What the product does</span>
+          <h3>Core function</h3>
+          <p>Receives a citizen's grievance, complaint, or request through WhatsApp and transforms it into a properly formatted application letter.</p>
+          <h4 style="margin-top:24px">Output</h4>
+          <p>Returns a PDF that the user can print or submit to the relevant office, authority, or institution.</p>
+        </article>
+
+        <article class="card">
+          <span class="eyebrow">How it works</span>
+          <h3>Four steps</h3>
+          <ul class="ticks" style="margin-top:18px">
+            <li>User sends a message describing the issue or request.</li>
+            <li>The bot interprets the message and extracts the essential details.</li>
+            <li>The system prepares a formal application letter in document format.</li>
+            <li>The finished PDF is sent back to the same WhatsApp user.</li>
+          </ul>
+        </article>
       </div>
     </section>
+
+    <section class="panel">
+      <div class="grid grid--2">
+        <article class="card">
+          <span class="eyebrow">Intended users</span>
+          <h3>Audience</h3>
+          <p>Citizens, customers, or support users who need help drafting a formal written application in a language they can naturally use on WhatsApp.</p>
+        </article>
+
+        <article class="card">
+          <span class="eyebrow">Meta review notes</span>
+          <h3>WhatsApp usage</h3>
+          <p>The WhatsApp Business Platform is used to receive inbound messages and return the generated PDF response to the requesting user.</p>
+          <h4 style="margin-top:24px">Handled data</h4>
+          <p>User message content and the information needed to generate the requested formal application letter.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel panel--ink center">
+      <span class="eyebrow">Useful public links</span>
+      <h2>Arzi documentation</h2>
+      <div class="btn-row" style="margin-top:32px">
+        <a class="btn btn--light" href="/products/arzi-bot/">Product page</a>
+        <a class="btn btn--ghost" href="/arzi/privacy/">Privacy Policy</a>
+        <a class="btn btn--ghost" href="/arzi/data-deletion/">Data Deletion</a>
+        <a class="btn btn--ghost" href="/arzi/terms/">Terms of Service</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✳︎</span> Sonkawade Labs</a>
+          <p>Software for citizen workflows and certificate operators. Walandi, Deoni Taluka, Latur District, Maharashtra, India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/">All products</a></li>
+            <li><a href="/products/arzi-bot/">Arzi</a></li>
+            <li><a href="/products/csc-pro/">CSC Pro</a></li>
+            <li><a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a></li>
+            <li><a href="tel:+917498601105">+91 74986 01105</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Arzi legal</h4>
+          <ul>
+            <li><a href="/arzi/privacy/">Privacy</a></li>
+            <li><a href="/arzi/terms/">Terms</a></li>
+            <li><a href="/arzi/data-deletion/">Data deletion</a></li>
+            <li><a href="/refunds/">Refunds</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Sonkawade Labs. All rights reserved.</span>
+        <span>Walandi, Deoni Taluka, Latur District, Maharashtra, India</span>
+      </div>
+    </footer>
+
   </main>
 
-  <footer class="page-footer">
-    <a href="/">Home</a>
-    <a href="/products/" aria-current="page">Products</a>
-    <a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download</a>
-    <a href="/pricing/">Pricing</a>
-    <a href="/arzi/privacy/">Privacy</a>
-    <a href="/arzi/terms/">Terms</a>
-    <a href="/arzi/data-deletion/">Data Deletion</a>
-    <a href="/contact/">Contact</a>
-  </footer>
 </body>
 </html>

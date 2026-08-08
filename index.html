@@ -6,718 +6,258 @@
   <title>Sonkawade Labs | Products</title>
   <meta name="description" content="Sonkawade Labs builds Arzi and CSC Pro for WhatsApp-based citizen support and certificate automation workflows.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium">
-  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg">
-  <style>
-    :root {
-      --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
-      --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
-      --bg: #f4f0e8;
-      --paper: rgba(255, 250, 244, 0.84);
-      --ink: #17120d;
-      --muted: rgba(23, 18, 13, 0.66);
-      --line: rgba(23, 18, 13, 0.12);
-      --soft: rgba(255, 255, 255, 0.62);
-      --shadow: 0 24px 60px rgba(30, 24, 17, 0.12);
-      --accent: #17120d;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      min-height: 100%;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      color: var(--ink);
-      background:
-        linear-gradient(120deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.08)),
-        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.44), transparent 24%),
-        radial-gradient(circle at 80% 14%, rgba(252, 244, 228, 0.58), transparent 22%),
-        linear-gradient(180deg, #f6f1e8 0%, #eee6da 100%);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 1.25rem;
-      backdrop-filter: blur(14px);
-      background: rgba(244, 240, 232, 0.74);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .brand-name {
-      font-family: var(--font-heading);
-      font-size: 21px;
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-
-    .brand-mark {
-      font-size: 25px;
-      line-height: 1;
-      user-select: none;
-    }
-
-    main,
-    .page-footer {
-      width: min(1120px, calc(100% - 24px));
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    main {
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    .panel {
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-    }
-
-    .hero {
-      padding: 2rem 1.25rem;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero-bot {
-      position: absolute;
-      right: 1.5rem;
-      bottom: 0;
-      width: clamp(110px, 16vw, 190px);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .hero-bot svg {
-      display: block;
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0 16px 20px rgba(30, 24, 17, 0.22));
-    }
-
-    #botHead {
-      transform-origin: 100px 152px;
-    }
-
-    #botFace {
-      transform-origin: 100px 100px;
-    }
-
-    #botAll {
-      transform-origin: 100px 228px;
-    }
-
-    #botHead, #botFace, #botAll, #earL, #earR,
-    #pupilL, #pupilR, #glintL, #glintR, #lidL, #lidR {
-      will-change: transform;
-    }
-
-    @media (max-width: 900px) {
-      .hero-bot {
-        position: static;
-        margin: 1.25rem auto 0;
-        width: 130px;
-      }
-    }
-
-    @media (min-width: 901px) {
-      .hero {
-        padding-right: 230px;
-      }
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top right, rgba(23, 18, 13, 0.08), transparent 30%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 55%);
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      position: relative;
-      display: inline-flex;
-      margin-bottom: 1rem;
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.74);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    h1,
-    h2,
-    h3,
-    .product-title,
-    .mini-title {
-      font-family: var(--font-heading);
-    }
-
-    h1 {
-      position: relative;
-      margin: 0 0 1rem;
-      font-size: clamp(2.8rem, 6vw, 5.6rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
-      max-width: 12ch;
-    }
-
-    .hero-copy {
-      position: relative;
-      margin: 0;
-      max-width: 50rem;
-      color: var(--muted);
-      font-size: clamp(16px, 2.4vw, 20px);
-    }
-
-    .hero-actions,
-    .mini-links,
-    .review-links,
-    .page-footer {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .hero-actions {
-      position: relative;
-      margin-top: 1.5rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0.8rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.78);
-      color: var(--ink);
-      text-decoration: none;
-      transition: background-color 200ms ease, color 200ms ease;
-    }
-
-    .pill:hover {
-      background: #000;
-      color: #fff;
-    }
-
-    .pill.primary {
-      background: #111;
-      color: #fff;
-      border-color: #111;
-    }
-
-    .pill.primary:hover {
-      background: #2a241e;
-      border-color: #2a241e;
-    }
-
-    .products {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .product-card {
-      display: grid;
-      gap: 1rem;
-      padding: 1.25rem;
-    }
-
-    .product-title {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 0.96;
-      letter-spacing: -0.05em;
-    }
-
-    .product-subtitle {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .meta-grid,
-    .mini-grid {
-      display: grid;
-      gap: 0.85rem;
-    }
-
-    .meta-item,
-    .mini-card {
-      padding: 1rem 1.05rem;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: var(--soft);
-    }
-
-    .meta-label,
-    .mini-label {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .mini-section {
-      padding: 1.25rem;
-    }
-
-    .mini-title {
-      margin: 0 0 0.5rem;
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      letter-spacing: -0.04em;
-    }
-
-    .mini-copy {
-      margin: 0 0 1rem;
-      color: var(--muted);
-    }
-
-    .review-links a,
-    .mini-links a,
-    .page-footer a {
-      text-decoration: none;
-      opacity: 0.72;
-    }
-
-    .review-links a:hover,
-    .mini-links a:hover,
-    .page-footer a:hover {
-      opacity: 1;
-    }
-
-    .page-footer {
-      margin-top: 0;
-      margin-bottom: 2rem;
-      padding: 0 0.25rem;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    @media (min-width: 768px) {
-      .site-header {
-        padding: 1.25rem 2rem;
-      }
-
-      .brand-name {
-        font-size: 26px;
-      }
-
-      .brand-mark {
-        font-size: 30px;
-      }
-
-      main,
-      .page-footer {
-        width: min(1120px, calc(100% - 48px));
-      }
-
-      .hero {
-        padding: 2.5rem;
-      }
-
-      .products {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .meta-grid,
-      .mini-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .mini-section {
-        padding: 1.6rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      main,
-      .page-footer {
-        width: min(1120px, calc(100% - 16px));
-      }
-
-      .hero,
-      .product-card,
-      .mini-section {
-        padding: 1.5rem 1rem;
-      }
-
-      .hero-actions .pill {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+
   <header class="site-header">
-    <a class="brand" href="/">
-      <span class="brand-name">Sonkawade Labs</span>
-      <span class="brand-mark" aria-hidden="true">✳︎</span>
-    </a>
+    <nav class="nav">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">✳︎</span>
+        Sonkawade Labs
+      </a>
+      <div class="nav-links">
+        <a href="/products/">Products</a>
+        <a href="#how">How it works</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <a class="btn btn--primary" href="/products/arzi-bot/">Try Arzi</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="panel hero">
-      <div class="eyebrow">Sonkawade Labs Products</div>
-      <h1>Products built for citizen workflows and operator teams.</h1>
-      <p class="hero-copy">Sonkawade Labs currently publishes two primary products: <strong>Arzi</strong>, a WhatsApp-based application-letter assistant, and <strong>CSC Pro</strong>, a desktop workflow tool for certificate operators. Each product page below is suitable for Meta app review and links to the shared legal pages.</p>
-      <div class="hero-actions">
-        <a class="pill primary" href="/products/arzi-bot/">Arzi</a>
-        <a class="pill" href="/products/csc-pro/">Open CSC Pro Page</a>
-        <a class="pill" href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a>
+  <main class="wrap stack">
+
+    <section class="hero">
+      <span class="pill-tag">✳︎ Two products, one flat rate</span>
+      <h1>Paperwork that runs itself, for the people who file it</h1>
+      <p class="lede">Sonkawade Labs builds Arzi and CSC Pro — a WhatsApp assistant that turns a citizen's message into a ready-to-print application letter, and desktop software that automates Maharashtra certificate filing for CSC operators.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/products/arzi-bot/">Try Arzi</a>
+        <a class="btn btn--light" href="/products/csc-pro/">See CSC Pro</a>
       </div>
-      <div class="hero-bot" aria-hidden="true">
-        <svg id="heroBot" viewBox="0 0 200 232" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="headShade" cx="0.35" cy="0.28" r="1.05">
-              <stop offset="0%" stop-color="#4a4238"/>
-              <stop offset="45%" stop-color="#2a241e"/>
-              <stop offset="100%" stop-color="#0d0a07"/>
-            </radialGradient>
-            <radialGradient id="faceShade" cx="0.4" cy="0.3" r="1.1">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="60%" stop-color="#fdf7ee"/>
-              <stop offset="100%" stop-color="#e8ddcd"/>
-            </radialGradient>
-            <radialGradient id="bodyShade" cx="0.35" cy="0.25" r="1.1">
-              <stop offset="0%" stop-color="#443c33"/>
-              <stop offset="55%" stop-color="#241f19"/>
-              <stop offset="100%" stop-color="#0d0a07"/>
-            </radialGradient>
-            <linearGradient id="neckShade" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#1a1510"/>
-              <stop offset="35%" stop-color="#57493c"/>
-              <stop offset="65%" stop-color="#3a3128"/>
-              <stop offset="100%" stop-color="#120e0a"/>
-            </linearGradient>
-            <radialGradient id="eyeShade" cx="0.4" cy="0.35" r="0.9">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="80%" stop-color="#f3ece1"/>
-              <stop offset="100%" stop-color="#d8ccb9"/>
-            </radialGradient>
-            <radialGradient id="pupilShade" cx="0.35" cy="0.3" r="0.9">
-              <stop offset="0%" stop-color="#4d4133"/>
-              <stop offset="55%" stop-color="#17120d"/>
-              <stop offset="100%" stop-color="#000000"/>
-            </radialGradient>
-          </defs>
-
-          <ellipse id="botShadow" cx="100" cy="227" rx="54" ry="6" fill="rgba(23,18,13,0.18)"/>
-
-          <g id="botAll">
-            <!-- body -->
-            <rect x="52" y="176" width="96" height="52" rx="21" fill="url(#bodyShade)"/>
-            <ellipse cx="78" cy="188" rx="20" ry="9" fill="rgba(255,255,255,0.14)"/>
-            <circle cx="100" cy="201" r="11" fill="rgba(255,250,244,0.16)"/>
-            <circle cx="100" cy="201" r="7" fill="rgba(255,250,244,0.22)"/>
-
-            <!-- neck -->
-            <rect x="90" y="146" width="20" height="38" rx="8" fill="url(#neckShade)"/>
-            <rect x="90" y="152" width="20" height="3" rx="1.5" fill="rgba(0,0,0,0.35)"/>
-            <rect x="90" y="160" width="20" height="3" rx="1.5" fill="rgba(0,0,0,0.35)"/>
-
-            <g id="botHead">
-              <!-- antenna -->
-              <line x1="100" y1="48" x2="100" y2="27" stroke="#3a322a" stroke-width="4" stroke-linecap="round"/>
-              <circle cx="100" cy="23" r="6" fill="url(#headShade)"/>
-              <circle cx="98" cy="21" r="2" fill="rgba(255,255,255,0.45)"/>
-              <!-- ears -->
-              <rect id="earL" x="28" y="84" width="16" height="34" rx="7" fill="url(#headShade)"/>
-              <rect id="earR" x="156" y="84" width="16" height="34" rx="7" fill="url(#headShade)"/>
-              <!-- head shell -->
-              <rect x="42" y="44" width="116" height="110" rx="31" fill="url(#headShade)"/>
-              <ellipse cx="74" cy="60" rx="26" ry="10" fill="rgba(255,255,255,0.18)"/>
-              <rect x="42" y="44" width="116" height="110" rx="31" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="1"/>
-
-              <!-- face plate: moves more than the shell for parallax depth -->
-              <g id="botFace">
-                <rect x="53" y="58" width="94" height="84" rx="24" fill="url(#faceShade)"/>
-                <rect x="53" y="58" width="94" height="84" rx="24" fill="none" stroke="rgba(23,18,13,0.12)" stroke-width="1"/>
-                <!-- eyes -->
-                <circle cx="80" cy="95" r="15" fill="url(#eyeShade)" stroke="rgba(23,18,13,0.18)"/>
-                <circle cx="120" cy="95" r="15" fill="url(#eyeShade)" stroke="rgba(23,18,13,0.18)"/>
-                <circle id="pupilL" cx="80" cy="95" r="6.8" fill="url(#pupilShade)"/>
-                <circle id="pupilR" cx="120" cy="95" r="6.8" fill="url(#pupilShade)"/>
-                <circle id="glintL" cx="77.5" cy="92.5" r="2" fill="rgba(255,255,255,0.9)"/>
-                <circle id="glintR" cx="117.5" cy="92.5" r="2" fill="rgba(255,255,255,0.9)"/>
-                <rect id="lidL" x="64" y="79" width="32" height="32" rx="16" fill="#fdf7ee" style="transform-origin:80px 95px; transform:scaleY(0);"/>
-                <rect id="lidR" x="104" y="79" width="32" height="32" rx="16" fill="#fdf7ee" style="transform-origin:120px 95px; transform:scaleY(0);"/>
-                <!-- cheeks + mouth -->
-                <ellipse cx="68" cy="116" rx="6" ry="3.5" fill="rgba(23,18,13,0.07)"/>
-                <ellipse cx="132" cy="116" rx="6" ry="3.5" fill="rgba(23,18,13,0.07)"/>
-                <rect id="botMouth" x="88" y="122" width="24" height="6" rx="3" fill="#17120d" opacity="0.85" style="transform-origin:100px 125px;"/>
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div>
+      <p class="hero-note">₹10 per application · No subscription · No minimum</p>
     </section>
 
-    <section class="products">
-      <article class="panel product-card">
-        <div>
+    <section class="panel">
+      <div class="section-head center">
+        <span class="eyebrow">Products</span>
+        <h2>Built for citizen workflows and operator teams</h2>
+        <p class="lede">Each product runs end to end on a single flat rate, with its own privacy, terms and data-deletion pages.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">✳︎</div>
           <span class="eyebrow">WhatsApp Bot</span>
-          <h2 class="product-title">Arzi</h2>
-          <p class="product-subtitle">A WhatsApp bot that listens to user problems in Indian languages and returns a ready-to-print formal application letter as a PDF.</p>
-        </div>
-        <div class="meta-grid">
-          <div class="meta-item">
-            <span class="meta-label">Primary use</span>
-            Convert a citizen's message into a structured written application addressed to the relevant office or authority.
+          <h3>Arzi</h3>
+          <p>A WhatsApp bot that listens to user problems in Indian languages and returns a ready-to-print formal application letter as a PDF.</p>
+          <ul class="ticks">
+            <li>Converts a citizen's message into a structured written application</li>
+            <li>Addressed to the relevant office or authority</li>
+            <li>Delivered back to the same WhatsApp chat as a PDF</li>
+            <li>₹10 per application, pay per use</li>
+          </ul>
+          <div class="btn-row" style="margin-top:24px">
+            <a class="btn btn--primary" href="/products/arzi-bot/">Product page</a>
+            <a class="btn btn--ghost" href="/pricing/">Pricing</a>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Meta review context</span>
-            Uses the WhatsApp Business Platform to receive messages, process the request, and send the generated PDF response back to the same user.
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Pricing</span>
-            ₹10 per application, pay per use. No subscription and no minimum purchase. See <a href="/pricing/">Pricing</a>.
-          </div>
-        </div>
-        <div class="review-links">
-          <a href="/products/arzi-bot/">Product page</a>
-          <a href="/pricing/">Pricing</a>
-          <a href="/arzi/privacy/">Privacy policy</a>
-          <a href="/arzi/data-deletion/">Data deletion</a>
-          <a href="/arzi/terms/">Terms</a>
-        </div>
-      </article>
+        </article>
 
-      <article class="panel product-card">
-        <div>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">▤</div>
           <span class="eyebrow">Desktop Software</span>
-          <h2 class="product-title">CSC Pro</h2>
-          <p class="product-subtitle">Certificate automation software for CSC operators handling Maharashtra service applications such as caste, income, and residence certificates.</p>
-        </div>
-        <div class="meta-grid">
-          <div class="meta-item">
-            <span class="meta-label">Primary use</span>
-            Helps operators collect customer data, run OCR, and automate repetitive MahaOnline certificate application steps from a desktop workflow.
+          <h3>CSC Pro</h3>
+          <p>Certificate automation software for CSC operators handling Maharashtra service applications such as caste, income, and residence certificates.</p>
+          <ul class="ticks">
+            <li>Collects customer data and runs OCR on documents</li>
+            <li>Automates repetitive MahaOnline application steps</li>
+            <li>WhatsApp onboarding and operator messaging flows</li>
+            <li>₹10 per application from prepaid wallet credits</li>
+          </ul>
+          <div class="btn-row" style="margin-top:24px">
+            <a class="btn btn--primary" href="/products/csc-pro/">Product page</a>
+            <a class="btn btn--ghost" href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download</a>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Meta review context</span>
-            Includes WhatsApp onboarding and operator messaging flows tied to the product's customer communication surface.
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Pricing</span>
-            ₹10 per application end to end, paid from prepaid wallet credits (₹1 = 1 credit, minimum top-up ₹100). See <a href="/pricing/">Pricing</a>.
-          </div>
-        </div>
-        <div class="review-links">
-          <a href="/products/csc-pro/">Product page</a>
-          <a href="/pricing/">Pricing</a>
-          <a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download page</a>
-          <a href="/privacy/">Privacy policy</a>
-          <a href="/data-deletion/">Data deletion</a>
-        </div>
-      </article>
+        </article>
+      </div>
     </section>
 
-    <section class="panel mini-section">
-      <h2 class="mini-title">Review Links</h2>
-      <p class="mini-copy">If you need to paste stable URLs into Meta app review, use the product pages plus the legal pages below.</p>
-      <div class="mini-grid">
-        <div class="mini-card">
-          <span class="mini-label">Arzi</span>
-          <div class="mini-links">
-            <a href="/products/arzi-bot/">Product page</a>
-            <a href="/arzi/privacy/">Privacy policy</a>
-            <a href="/arzi/data-deletion/">Data deletion</a>
-            <a href="/arzi/terms/">Terms</a>
-          </div>
+    <section class="panel panel--cream" id="how">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>From a message to a filed application</h2>
+        <p class="lede">Both products collapse the same slow, repetitive chain into a few minutes of work.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">1</div>
+          <h4>Describe the problem</h4>
+          <p>A citizen writes to Arzi on WhatsApp in their own language, or an operator opens a new case in CSC Pro.</p>
         </div>
-        <div class="mini-card">
-          <span class="mini-label">CSC Pro</span>
-          <div class="mini-links">
-            <a href="/products/csc-pro/">Product page</a>
-            <a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download page</a>
-            <a href="/privacy/">Privacy policy</a>
-            <a href="/data-deletion/">Data deletion</a>
-          </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">2</div>
+          <h4>The details get structured</h4>
+          <p>The request is turned into the right format — a formal letter for Arzi, or an OCR-checked application form for CSC Pro.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">3</div>
+          <h4>Ready to submit</h4>
+          <p>Arzi sends back a print-ready PDF. CSC Pro submits to the government portal and deducts a single credit charge.</p>
         </div>
       </div>
     </section>
+
+    <section class="panel">
+      <div class="section-head center">
+        <span class="eyebrow">Why it works</span>
+        <h2>Simple where it counts</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card">
+          <h4>Speaks your language</h4>
+          <p>Arzi accepts problems described in Indian languages and produces a correctly formatted formal application.</p>
+        </div>
+        <div class="card">
+          <h4>One flat rate</h4>
+          <p>₹10 per application, end to end. No setup fee, no monthly minimum, no per-user licence fee.</p>
+        </div>
+        <div class="card">
+          <h4>You only pay on success</h4>
+          <p>Credits are deducted only when an application is actually submitted. Failed or abandoned applications cost nothing.</p>
+        </div>
+        <div class="card">
+          <h4>Built for operators</h4>
+          <p>CSC Pro handles the repetitive MahaOnline steps so operators can process more cases per day.</p>
+        </div>
+        <div class="card">
+          <h4>Credits that keep</h4>
+          <p>Wallet credits do not expire while your account is active, and ₹1 always buys exactly 1 credit.</p>
+        </div>
+        <div class="card">
+          <h4>Clear paperwork</h4>
+          <p>Every product has published privacy, terms, refund and data-deletion pages at stable URLs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--cream2">
+      <div class="section-head center">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple plans for serious work</h2>
+        <p class="lede">Both products are priced the same way, and there are no other charges. All amounts are in Indian Rupees and payable in India only.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card price-card">
+          <div>
+            <h3>Arzi</h3>
+            <p class="muted">For citizens who need a formal application letter.</p>
+          </div>
+          <div>
+            <div class="price">₹10 <small>per application</small></div>
+            <p class="muted">Pay per use — no subscription, no minimum purchase.</p>
+          </div>
+          <ul class="ticks">
+            <li>Generated application letter as PDF</li>
+            <li>Delivered on WhatsApp</li>
+            <li>Charged only per letter generated</li>
+          </ul>
+          <a class="btn btn--primary" href="/products/arzi-bot/">Try Arzi</a>
+        </article>
+
+        <article class="card price-card">
+          <div>
+            <h3>CSC Pro</h3>
+            <p class="muted">For CSC operators filing Maharashtra certificates.</p>
+          </div>
+          <div>
+            <div class="price">₹10 <small>per application</small></div>
+            <p class="muted">Paid from prepaid wallet credits. ₹1 = 1 credit, minimum top-up ₹100.</p>
+          </div>
+          <ul class="ticks">
+            <li>WhatsApp intake, OCR and operator review included</li>
+            <li>Automated submission to the government portal</li>
+            <li>Credits do not expire while your account is active</li>
+          </ul>
+          <a class="btn btn--primary" href="/products/csc-pro/">See CSC Pro</a>
+        </article>
+      </div>
+
+      <p class="muted center" style="margin-top:24px;font-size:15px">
+        Full breakdown on the <a href="/pricing/">Pricing page</a>. Government and portal fees are separate and are not paid to Sonkawade Labs.
+      </p>
+    </section>
+
+    <section class="panel panel--ink center">
+      <span class="eyebrow">Review links</span>
+      <h2>Stable URLs for app review</h2>
+      <p class="lede" style="margin:16px auto 32px">If you need to paste stable URLs into Meta app review, use the product pages plus the legal pages below.</p>
+      <div class="grid grid--2" style="text-align:left">
+        <div class="card">
+          <h4>Arzi</h4>
+          <ul class="ticks" style="margin-top:14px">
+            <li><a href="/products/arzi-bot/">Product page</a></li>
+            <li><a href="/arzi/privacy/">Privacy policy</a></li>
+            <li><a href="/arzi/data-deletion/">Data deletion</a></li>
+            <li><a href="/arzi/terms/">Terms</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>CSC Pro</h4>
+          <ul class="ticks" style="margin-top:14px">
+            <li><a href="/products/csc-pro/">Product page</a></li>
+            <li><a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download page</a></li>
+            <li><a href="/privacy/">Privacy policy</a></li>
+            <li><a href="/data-deletion/">Data deletion</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✳︎</span> Sonkawade Labs</a>
+          <p>Software for citizen workflows and certificate operators. Walandi, Deoni Taluka, Latur District, Maharashtra, India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/">All products</a></li>
+            <li><a href="/products/arzi-bot/">Arzi</a></li>
+            <li><a href="/products/csc-pro/">CSC Pro</a></li>
+            <li><a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a></li>
+            <li><a href="tel:+917498601105">+91 74986 01105</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+            <li><a href="/refunds/">Refunds</a></li>
+            <li><a href="/data-deletion/">Data deletion</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Sonkawade Labs. All rights reserved.</span>
+        <span>Walandi, Deoni Taluka, Latur District, Maharashtra, India</span>
+      </div>
+    </footer>
+
   </main>
 
-  <footer class="page-footer">
-    <a href="/" aria-current="page">Home</a>
-    <a href="/products/">Products</a>
-    <a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download</a>
-    <a href="/pricing/">Pricing</a>
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/">Terms</a>
-    <a href="/refunds/">Refunds</a>
-    <a href="/data-deletion/">Data Deletion</a>
-    <a href="/contact/">Contact</a>
-  </footer>
-
-  <script>
-    (function () {
-      var svg = document.getElementById("heroBot");
-      var head = document.getElementById("botHead");
-      if (!svg || !head) return;
-
-      var pupilL = document.getElementById("pupilL");
-      var pupilR = document.getElementById("pupilR");
-      var lidL = document.getElementById("lidL");
-      var lidR = document.getElementById("lidR");
-      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduceMotion) return;
-
-      var face = document.getElementById("botFace");
-      var all = document.getElementById("botAll");
-      var earL = document.getElementById("earL");
-      var earR = document.getElementById("earR");
-      var glintL = document.getElementById("glintL");
-      var glintR = document.getElementById("glintR");
-
-      var MAX_LOOK = 6;    // px of pupil travel
-      // Yaw/pitch as normalized -1..1 values driven by critically-damped springs.
-      var yaw = { x: 0, v: 0, t: 0 };
-      var pitch = { x: 0, v: 0, t: 0 };
-      var lookX = 0, lookY = 0, targetLookX = 0, targetLookY = 0;
-      var lastInput = 0;
-      var last = performance.now();
-
-      function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
-
-      function aim(x, y) {
-        var r = svg.getBoundingClientRect();
-        if (!r.width) return;
-        var cx = r.left + r.width / 2;
-        var cy = r.top + r.height * 0.42; // roughly eye level
-        var dx = x - cx;
-        var dy = y - cy;
-        var dist = Math.max(Math.hypot(dx, dy), 1);
-        // Saturating response: nearby cursor turns the head strongly, far cursor gently.
-        yaw.t = clamp(Math.tanh(dx / 420), -1, 1);
-        pitch.t = clamp(Math.tanh(dy / 420), -1, 1);
-        targetLookX = clamp((dx / dist) * MAX_LOOK, -MAX_LOOK, MAX_LOOK);
-        targetLookY = clamp((dy / dist) * MAX_LOOK, -MAX_LOOK, MAX_LOOK);
-        lastInput = performance.now();
-      }
-
-      window.addEventListener("mousemove", function (e) { aim(e.clientX, e.clientY); }, { passive: true });
-      window.addEventListener("touchmove", function (e) {
-        if (e.touches && e.touches[0]) aim(e.touches[0].clientX, e.touches[0].clientY);
-      }, { passive: true });
-      window.addEventListener("touchstart", function (e) {
-        if (e.touches && e.touches[0]) aim(e.touches[0].clientX, e.touches[0].clientY);
-      }, { passive: true });
-
-      // Idle behaviour: after 4s without input, glance around occasionally.
-      setInterval(function () {
-        if (performance.now() - lastInput > 4000) {
-          if (Math.random() < 0.6) {
-            yaw.t = (Math.random() * 2 - 1) * 0.6;
-            pitch.t = (Math.random() * 2 - 1) * 0.3;
-            targetLookX = yaw.t * MAX_LOOK * 0.9;
-            targetLookY = pitch.t * MAX_LOOK * 0.6;
-          } else {
-            yaw.t = 0; pitch.t = 0;
-            targetLookX = 0; targetLookY = 0;
-          }
-        }
-      }, 2600);
-
-      // Blink loop.
-      (function blink() {
-        setTimeout(function () {
-          lidL.style.transform = "scaleY(1)";
-          lidR.style.transform = "scaleY(1)";
-          setTimeout(function () {
-            lidL.style.transform = "scaleY(0)";
-            lidR.style.transform = "scaleY(0)";
-            blink();
-          }, 130);
-        }, 2200 + Math.random() * 3200);
-      })();
-
-      // Spring integrator: slight underdamping gives a small organic overshoot.
-      function spring(s, dt, stiffness, damping) {
-        s.v += (s.t - s.x) * stiffness * dt;
-        s.v *= Math.exp(-damping * dt);
-        s.x += s.v * dt;
-      }
-
-      function frame(now) {
-        var dt = Math.min((now - last) / 1000, 0.05);
-        last = now;
-
-        spring(yaw, dt, 60, 9);
-        spring(pitch, dt, 60, 9);
-        // Eyes lead the head: faster follow so pupils arrive first.
-        lookX += (targetLookX - lookX) * Math.min(1, 14 * dt);
-        lookY += (targetLookY - lookY) * Math.min(1, 14 * dt);
-
-        var breathe = Math.sin(now / 1400) * 1.4;
-
-        // Head: translate + roll approximates a 3D turn from the neck.
-        head.style.transform =
-          "translate(" + (yaw.x * 7).toFixed(2) + "px," + (pitch.x * 3.5 + breathe * 0.4).toFixed(2) + "px)" +
-          " rotate(" + (yaw.x * 9).toFixed(2) + "deg)";
-        // Face plate moves further than the shell — parallax sells the depth.
-        face.style.transform =
-          "translate(" + (yaw.x * 9).toFixed(2) + "px," + (pitch.x * 6).toFixed(2) + "px)" +
-          " scaleX(" + (1 - Math.abs(yaw.x) * 0.06).toFixed(3) + ")";
-        // Ears counter-shift slightly (they sit behind the face plane).
-        var ear = "translate(" + (yaw.x * -3).toFixed(2) + "px," + (pitch.x * -1.5).toFixed(2) + "px)";
-        earL.style.transform = ear;
-        earR.style.transform = ear;
-        // Whole robot breathes gently.
-        all.style.transform = "translateY(" + breathe.toFixed(2) + "px)";
-
-        var t = "translate(" + lookX.toFixed(2) + "px," + lookY.toFixed(2) + "px)";
-        pupilL.style.transform = t;
-        pupilR.style.transform = t;
-        // Specular glints drift opposite the pupils, hinting at a fixed light source.
-        var g = "translate(" + (lookX * -0.35).toFixed(2) + "px," + (lookY * -0.35).toFixed(2) + "px)";
-        glintL.style.transform = g;
-        glintR.style.transform = g;
-
-        requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-    })();
-  </script>
 </body>
 </html>
