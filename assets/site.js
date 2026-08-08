@@ -89,55 +89,65 @@
     select(initial, false);
   }
 
+  var MAX_TILT = 20; // degrees — matches the reference design
+
+  // Layout position, walked through offsetParent. Unlike getBoundingClientRect
+  // this is unaffected by the transform we are about to write, so reading it
+  // back cannot feed into itself.
+  function docTop(el) {
+    var t = 0;
+    while (el) { t += el.offsetTop; el = el.offsetParent; }
+    return t;
+  }
+
   /* ---------------------------------------------------------------------
-   * Tilt: [data-tilt] elements rest rotated back and straighten once they
-   * scroll into view. Honours prefers-reduced-motion by landing flat with no
-   * transition, and falls back to flat if IntersectionObserver is missing.
+   * Tilt: [data-tilt] elements lean back and straighten as they are scrolled
+   * up the viewport, so the rotation tracks the scroll rather than firing
+   * once. Flat by default in CSS, so no JS / reduced motion stays upright.
    * ------------------------------------------------------------------- */
   function initTilt() {
     var els = Array.prototype.slice.call(document.querySelectorAll("[data-tilt]"));
     if (!els.length) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    els.forEach(function (el) {
-      el.classList.add("is-tilted");
+    var ticking = false;
 
-      var settled = false;
-      var io = null;
-      var timer;
+    function apply() {
+      ticking = false;
+      var vh = window.innerHeight;
+      var y = window.pageYOffset;
 
-      function flatten() {
-        if (settled) return;
-        settled = true;
-        el.classList.remove("is-tilted");
-        window.removeEventListener("scroll", onScroll);
-        clearTimeout(timer);
-        if (io) io.disconnect();
-      }
+      els.forEach(function (el) {
+        var top = docTop(el);
+        // starts straightening when it is near the bottom of the viewport,
+        // fully upright by the time it reaches the upper third
+        var start = Math.max(0, top - vh * 0.9);
+        var end = Math.max(start + 1, top - vh * 0.15);
+        var p = (y - start) / (end - start);
+        p = p < 0 ? 0 : p > 1 ? 1 : p;
 
-      function inView() {
-        var r = el.getBoundingClientRect();
-        return r.top < window.innerHeight * 0.85 && r.bottom > 0;
-      }
+        var deg = MAX_TILT * (1 - p);
+        if (deg < 0.05) {
+          el.style.transform = "";
+        } else {
+          el.style.transform =
+            "rotateX(" + deg.toFixed(2) + "deg) scale(" + (0.92 + 0.08 * p).toFixed(4) + ")";
+        }
+      });
+    }
 
-      function onScroll() {
-        if (inView()) flatten();
-      }
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(apply);
+    }
 
-      if ("IntersectionObserver" in window) {
-        io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) { if (e.isIntersecting) flatten(); });
-        }, { threshold: 0.25 });
-        io.observe(el);
-      }
-
-      window.addEventListener("scroll", onScroll, { passive: true });
-
-      // Straighten shortly after load if it is already on screen, and never
-      // allow it to stay stuck tilted if no callback ever arrives.
-      setTimeout(onScroll, 400);
-      timer = setTimeout(flatten, 2500);
-    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    // web fonts land after DOMContentLoaded and move things down the page, so
+    // recompute once everything has settled
+    window.addEventListener("load", onScroll);
+    apply();
   }
 
   function init() {

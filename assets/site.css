@@ -33,6 +33,7 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0 var(--pad, 16px) 16px;
   font-family: var(--font);
@@ -60,6 +61,38 @@ body {
 }
 
 @media (min-width: 900px) { body { --pad: 24px; } }
+
+/* Clouds sit in the page background, behind every panel. The containing block
+   here is body's padding box, which already spans the full viewport width, so
+   plain 0 insets reach both edges — offsetting by the padding would overflow.
+   The clouds are background images, so they are clipped by this box and can
+   never widen the document. z-index:-1 keeps them behind all content. */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1100px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.9;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 480px 262px, 420px 230px;
+  background-position: left -170px top 120px, right -150px top 220px;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 262'%3E%3Cdefs%3E%3Cfilter id='b' x='-25%25' y='-25%25' width='150%25' height='150%25'%3E%3CfeGaussianBlur stdDeviation='14'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23b)' fill='%23ffffff'%3E%3Cellipse cx='170' cy='178' rx='150' ry='50'/%3E%3Cellipse cx='268' cy='158' rx='118' ry='58'/%3E%3Cellipse cx='196' cy='126' rx='84' ry='52'/%3E%3Cellipse cx='320' cy='182' rx='126' ry='44'/%3E%3Cellipse cx='108' cy='150' rx='72' ry='40'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 262'%3E%3Cdefs%3E%3Cfilter id='b' x='-25%25' y='-25%25' width='150%25' height='150%25'%3E%3CfeGaussianBlur stdDeviation='16'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23b)' fill='%23ffffff'%3E%3Cellipse cx='310' cy='176' rx='150' ry='48'/%3E%3Cellipse cx='212' cy='156' rx='116' ry='58'/%3E%3Cellipse cx='288' cy='124' rx='82' ry='50'/%3E%3Cellipse cx='160' cy='180' rx='124' ry='44'/%3E%3Cellipse cx='372' cy='148' rx='70' ry='38'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media (max-width: 900px) {
+  body::before {
+    height: 700px;
+    opacity: 0.75;
+    background-size: 300px 164px, 260px 142px;
+    background-position: left -120px top 90px, right -110px top 190px;
+  }
+}
 
 a { color: inherit; }
 
@@ -337,37 +370,7 @@ strong { font-weight: 600; }
   position: relative;
   padding: clamp(56px, 10vw, 132px) 20px clamp(40px, 7vw, 88px);
   text-align: center;
-  /* clouds bleed past both edges and are clipped here, so they can never
-     widen the document */
-  overflow: hidden;
 }
-
-/* Soft clouds flanking the headline, drawn as SVG so there are no image
-   requests and they stay crisp at any size. */
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  top: clamp(40px, 12vh, 150px);
-  width: 480px;
-  height: 262px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 262'%3E%3Cdefs%3E%3Cfilter id='b' x='-25%25' y='-25%25' width='150%25' height='150%25'%3E%3CfeGaussianBlur stdDeviation='14'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23b)' fill='%23ffffff'%3E%3Cellipse cx='170' cy='178' rx='150' ry='50'/%3E%3Cellipse cx='268' cy='158' rx='118' ry='58'/%3E%3Cellipse cx='196' cy='126' rx='84' ry='52'/%3E%3Cellipse cx='320' cy='182' rx='126' ry='44'/%3E%3Cellipse cx='108' cy='150' rx='72' ry='40'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
-  opacity: 0.85;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero::before { left: -180px; }
-.hero::after { right: -180px; transform: scaleX(-1); }
-
-@media (max-width: 900px) {
-  .hero::before, .hero::after { width: 300px; height: 164px; opacity: 0.7; }
-  .hero::before { left: -140px; }
-  .hero::after { right: -140px; }
-}
-
-/* keep hero content above the clouds */
-.hero > * { position: relative; z-index: 1; }
 
 .hero h1 { margin-bottom: 20px; max-width: 18ch; margin-inline: auto; }
 .hero .lede { max-width: 40rem; margin-inline: auto; margin-bottom: 32px; }
@@ -385,20 +388,19 @@ strong { font-weight: 600; }
   margin-top: clamp(40px, 6vw, 72px);
 }
 
-/* Flat is the default so the window is readable with no JS, with a broken
-   observer, or under reduced-motion. site.js opts in to the tilt and always
-   removes it again. */
+/* Flat is the default so the window is readable with no JS or under
+   reduced-motion. site.js drives the tilt from scroll position, writing an
+   inline transform each frame — hence no transition here, which would lag
+   behind the scroll. */
 .mock {
   transform-origin: 50% 0;
-  transition: transform 1100ms cubic-bezier(0.22, 0.8, 0.3, 1);
   border-radius: var(--r-md);
   overflow: hidden;
   background: var(--white);
   box-shadow: 0 30px 60px -20px rgba(26, 22, 21, 0.35), 0 8px 20px rgba(26, 22, 21, 0.1);
   text-align: left;
+  will-change: transform;
 }
-
-.mock.is-tilted { transform: rotateX(20deg) scale(0.92); }
 
 .mock-bar {
   display: flex;
