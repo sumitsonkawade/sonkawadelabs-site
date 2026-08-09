@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helpora Support onboarding guide | Sonkawade Labs</title>
+  <meta name="description" content="How to get Helpora Support live on your website — add the snippet, load your help content, set escalation, and go live.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3E%E2%9C%B3%EF%B8%8E%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true">✳︎</span>
+        Sonkawade Labs
+      </a>
+      <div class="nav-links">
+        <a href="/products/">Products</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/contact/">Contact</a>
+        <a href="https://helporasupport.sonkawadelabs.in/login">Client login</a>
+      </div>
+      <a class="btn btn--primary" href="https://helporasupport.sonkawadelabs.in/login">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="wrap stack">
+
+    <section class="hero">
+      <span class="pill-tag">✳︎ Helpora Support</span>
+      <h1>Onboarding guide</h1>
+      <p class="lede">Five steps from a new account to an assistant answering your customers. Most of it is done in the dashboard; exactly one step touches your website.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="https://helporasupport.sonkawadelabs.in/login">Open dashboard</a>
+        <a class="btn btn--light" href="/products/helpora/signup/">Don't have an account yet?</a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <span class="eyebrow">Step 1</span>
+        <h2>Sign in and find your client ID</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Sign in to the dashboard with the login we sent you. Open the <strong>Install</strong> page.
+          Your <strong>client ID</strong> is shown there — a long string of letters and numbers that
+          identifies your workspace. Every snippet on your site carries it.
+        </p>
+        <div class="note">
+          <p>Change the password we issued you the first time you sign in, and do not share the login between staff — create a separate account for each person who needs one.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--cream">
+      <div class="section-head">
+        <span class="eyebrow">Step 2</span>
+        <h2>Load your help content</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Open <strong>Knowledge</strong> in the dashboard and add what you want the assistant to answer
+          from — FAQs, help articles, delivery and returns policies, opening hours, anything your
+          customers ask about. Add the questions you are actually asked most often first; it is worth
+          more than a large pile of documents.
+        </p>
+        <p>
+          Under <strong>Links</strong>, add the pages the assistant is allowed to point people to. This
+          list is a safety boundary: the assistant can only send customers to links you have approved
+          here, so it cannot invent a URL.
+        </p>
+        <p>
+          The assistant answers from this content. If something is not in it, the assistant will say it
+          does not know and offer to pass the customer to your team, rather than guessing.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <span class="eyebrow">Step 3</span>
+        <h2>Set where conversations escalate</h2>
+      </div>
+      <div class="prose">
+        <p>
+          In <strong>Chatbot</strong> settings, set the email address that should receive a conversation
+          when a customer asks for a person, or when the assistant cannot answer. Set the assistant's
+          name and greeting here too, so it introduces itself as part of your business.
+        </p>
+        <p>
+          Decide who on your team watches that inbox. An escalation that nobody reads is worse than no
+          chat at all — the customer has been promised a human.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel panel--cream2">
+      <div class="section-head">
+        <span class="eyebrow">Step 4</span>
+        <h2>Add the snippet to your website</h2>
+        <p class="lede">This is the only step that touches your site. One line, before the closing <code>&lt;/body&gt;</code> tag, on every page where the chat should appear.</p>
+      </div>
+      <div class="prose">
+        <div class="code-block">&lt;script src="https://helpora-support-production.up.railway.app/widget.js"
+        data-client-id="YOUR_CLIENT_ID"&gt;&lt;/script&gt;</div>
+        <p>
+          Replace <code>YOUR_CLIENT_ID</code> with the client ID from Step 1. The dashboard's
+          <strong>Install</strong> page shows this snippet with your ID already filled in — copy it from
+          there rather than typing it out.
+        </p>
+        <ul>
+          <li>No rebuild and no framework needed. It works on WordPress, Shopify, a hand-written HTML site, or anything else that lets you add a script tag.</li>
+          <li>On WordPress, most themes have a "footer scripts" or "custom code" box. Paste it there.</li>
+          <li>Add it site-wide if you want the chat everywhere, or only on the pages where you want it.</li>
+        </ul>
+        <div class="note">
+          <p>
+            Your site's domain must be authorised on your account before the widget will load. We set
+            that up with the website address you gave us. If you move to a new domain, tell us first or
+            the chat will stop appearing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <span class="eyebrow">Step 5</span>
+        <h2>Test it, then go live</h2>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">✓</div>
+          <h4>Ask it real questions</h4>
+          <p>Open your own site and ask the five questions your customers ask most. If an answer is wrong or thin, the fix is in your help content, not the chat.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">✓</div>
+          <h4>Test an escalation</h4>
+          <p>Ask for a human and confirm the conversation actually arrives at the address you set in Step 3.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">✓</div>
+          <h4>Check it on a phone</h4>
+          <p>Most customers will open it on a phone. Load your site on one and make sure the chat button does not cover anything important.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel--cream">
+      <div class="section-head">
+        <span class="eyebrow">Keeping it good</span>
+        <h2>The one habit worth having</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Once a week, open <strong>Conversations</strong> in the dashboard and read what customers
+          actually asked. The questions the assistant could not answer are the most useful thing the
+          product gives you: each one is a gap in your help content that a real customer hit. Add an
+          answer, and it never comes up again.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <span class="eyebrow">If something is wrong</span>
+        <h2>Common problems</h2>
+      </div>
+      <div class="prose">
+        <h3>The chat button does not appear</h3>
+        <ul>
+          <li>Check the snippet is before <code>&lt;/body&gt;</code> and that the client ID matches the one on the Install page.</li>
+          <li>Check the domain you are testing on is the one authorised on your account. A staging domain is a different domain.</li>
+          <li>Clear the page cache if your site or host caches HTML.</li>
+        </ul>
+
+        <h3>The answers are wrong or too vague</h3>
+        <ul>
+          <li>The assistant only knows your help content. Add the missing answer under Knowledge and ask again.</li>
+          <li>Short, direct question-and-answer entries work better than long documents.</li>
+        </ul>
+
+        <h3>Nobody is receiving escalations</h3>
+        <ul>
+          <li>Re-check the escalation address in Chatbot settings, and look in that inbox's spam folder.</li>
+        </ul>
+
+        <p>
+          Anything else, write to <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
+          or call <a href="tel:+917498601105">+91 74986 01105</a>. See also the
+          <a href="/helpora/privacy/">Privacy Policy</a>, <a href="/helpora/terms/">Terms</a> and
+          <a href="/helpora/data-deletion/">Data Deletion Instructions</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel panel--ink center">
+      <span class="eyebrow">Get going</span>
+      <h2>Open your dashboard</h2>
+      <div class="btn-row" style="margin-top:32px">
+        <a class="btn btn--light" href="https://helporasupport.sonkawadelabs.in/login">Client login</a>
+        <a class="btn btn--ghost" href="/products/helpora/signup/">Request an account</a>
+        <a class="btn btn--ghost" href="/contact/">Contact support</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✳︎</span> Sonkawade Labs</a>
+          <p>Software for citizen workflows and certificate operators. Walandi, Deoni Taluka, Latur District, Maharashtra, India.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="/products/">All products</a></li>
+            <li><a href="/products/arzi-bot/">Arzi</a></li>
+            <li><a href="/products/csc-pro/">CSC Pro</a></li>
+            <li><a href="/products/helpora/">Helpora Support</a></li>
+            <li><a href="/products/stocksaathi/">StockSaathi</a></li>
+            <li><a href="/products/phone-munshi/">Phone Munshi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Helpora legal</h4>
+          <ul>
+            <li><a href="/helpora/privacy/">Privacy</a></li>
+            <li><a href="/helpora/terms/">Terms</a></li>
+            <li><a href="/helpora/data-deletion/">Data deletion</a></li>
+            <li><a href="/refunds/">Refunds</a></li>
+            <li><a href="https://helporasupport.sonkawadelabs.in/login">Client login</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a></li>
+            <li><a href="tel:+917498601105">+91 74986 01105</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Sonkawade Labs. All rights reserved.</span>
+        <span>Walandi, Deoni Taluka, Latur District, Maharashtra, India</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="/assets/site.js" defer></script>
+  <!-- Helpora support widget -->
+  <script src="https://helpora-support-production.up.railway.app/widget.js"
+          data-client-id="a8b32735-14c7-4c66-a5b6-6d062438cc52"></script>
+</body>
+</html>

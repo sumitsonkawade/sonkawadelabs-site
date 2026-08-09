@@ -105,6 +105,22 @@
       "destination": "/products/phone-munshi/index.html"
     },
     {
+      "source": "/products/helpora/signup",
+      "destination": "/products/helpora/signup/index.html"
+    },
+    {
+      "source": "/products/helpora/signup/",
+      "destination": "/products/helpora/signup/index.html"
+    },
+    {
+      "source": "/products/helpora/onboarding",
+      "destination": "/products/helpora/onboarding/index.html"
+    },
+    {
+      "source": "/products/helpora/onboarding/",
+      "destination": "/products/helpora/onboarding/index.html"
+    },
+    {
       "source": "/helpora/privacy",
       "destination": "/helpora/privacy/index.html"
     },
