@@ -81,6 +81,102 @@
       "destination": "/products/csc-pro/index.html"
     },
     {
+      "source": "/products/helpora",
+      "destination": "/products/helpora/index.html"
+    },
+    {
+      "source": "/products/helpora/",
+      "destination": "/products/helpora/index.html"
+    },
+    {
+      "source": "/products/stocksaathi",
+      "destination": "/products/stocksaathi/index.html"
+    },
+    {
+      "source": "/products/stocksaathi/",
+      "destination": "/products/stocksaathi/index.html"
+    },
+    {
+      "source": "/products/phone-munshi",
+      "destination": "/products/phone-munshi/index.html"
+    },
+    {
+      "source": "/products/phone-munshi/",
+      "destination": "/products/phone-munshi/index.html"
+    },
+    {
+      "source": "/helpora/privacy",
+      "destination": "/helpora/privacy/index.html"
+    },
+    {
+      "source": "/helpora/privacy/",
+      "destination": "/helpora/privacy/index.html"
+    },
+    {
+      "source": "/helpora/terms",
+      "destination": "/helpora/terms/index.html"
+    },
+    {
+      "source": "/helpora/terms/",
+      "destination": "/helpora/terms/index.html"
+    },
+    {
+      "source": "/stocksaathi/privacy",
+      "destination": "/stocksaathi/privacy/index.html"
+    },
+    {
+      "source": "/stocksaathi/privacy/",
+      "destination": "/stocksaathi/privacy/index.html"
+    },
+    {
+      "source": "/stocksaathi/terms",
+      "destination": "/stocksaathi/terms/index.html"
+    },
+    {
+      "source": "/stocksaathi/terms/",
+      "destination": "/stocksaathi/terms/index.html"
+    },
+    {
+      "source": "/phone-munshi/privacy",
+      "destination": "/phone-munshi/privacy/index.html"
+    },
+    {
+      "source": "/phone-munshi/privacy/",
+      "destination": "/phone-munshi/privacy/index.html"
+    },
+    {
+      "source": "/phone-munshi/terms",
+      "destination": "/phone-munshi/terms/index.html"
+    },
+    {
+      "source": "/phone-munshi/terms/",
+      "destination": "/phone-munshi/terms/index.html"
+    },
+    {
+      "source": "/helpora/data-deletion",
+      "destination": "/helpora/data-deletion/index.html"
+    },
+    {
+      "source": "/helpora/data-deletion/",
+      "destination": "/helpora/data-deletion/index.html"
+    },
+    {
+      "source": "/stocksaathi/data-deletion",
+      "destination": "/stocksaathi/data-deletion/index.html"
+    },
+    {
+      "source": "/stocksaathi/data-deletion/",
+      "destination": "/stocksaathi/data-deletion/index.html"
+    },
+    {
+      "source": "/phone-munshi/data-deletion",
+      "destination": "/phone-munshi/data-deletion/index.html"
+    },
+    {
+      "source": "/phone-munshi/data-deletion/",
+      "destination": "/phone-munshi/data-deletion/index.html"
+    },
+    {
       "source": "/arzi/privacy",
       "destination": "/arzi/privacy/index.html"
     },
