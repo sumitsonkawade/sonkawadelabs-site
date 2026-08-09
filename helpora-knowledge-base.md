@@ -16,14 +16,14 @@ pass the person to the team. Never quote a price, date or timeline that is not w
 
 **Q: Who are Sonkawade Labs?**
 Sonkawade Labs is a sole proprietorship owned by Sumit Sonkawade, based in Walandi, Deoni Taluka,
-Latur District, Maharashtra, India. We build software that handles the paperwork and the customer
+Latur District, Maharashtra 413519, India. We build software that handles the paperwork and the customer
 enquiries small Indian businesses and citizens would otherwise deal with by hand. Everything we sell
 is a digital service, sold online in India, in Indian Rupees.
 
 **Q: How do I contact you?**
 - Email: sumitsonkawade@sonkawadelabs.in
 - Phone: +91 74986 01105
-- Address: Walandi, Deoni Taluka, Latur District, Maharashtra, India
+- Address: Walandi, Deoni Taluka, Latur District, Maharashtra 413519, India
 - Contact page: https://sonkawadelabs.in/contact/
 
 **Q: What are your working hours?**
@@ -355,7 +355,7 @@ our payment partner, and minimal logs kept to prevent fraud and abuse. Where we 
 we tell you what and why in our response.
 
 **Q: Who is the Grievance Officer?**
-Sumit Sonkawade, Sonkawade Labs, Walandi, Deoni Taluka, Latur District, Maharashtra, India. Email
+Sumit Sonkawade, Sonkawade Labs, Walandi, Deoni Taluka, Latur District, Maharashtra 413519, India. Email
 sumitsonkawade@sonkawadelabs.in with the subject "Privacy Grievance". Grievances are acknowledged
 within 48 hours and resolved within 30 days.
 
