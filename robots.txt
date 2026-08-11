@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Published but intentionally unlinked — a specimen invoice, not site content.
+Disallow: /invoice-sample.html
+
+Sitemap: https://sonkawadelabs.in/sitemap.xml

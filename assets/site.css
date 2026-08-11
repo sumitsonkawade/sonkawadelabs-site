@@ -6,8 +6,11 @@
   --sky: #9cc1e7;
   --sky-deep: #7fadde;
   --ink: #1a1615;
-  --ink-soft: rgba(26, 22, 21, 0.62);
-  --ink-faint: rgba(26, 22, 21, 0.42);
+  /* Both clear WCAG AA (4.5:1) against the cream and white panels they sit on;
+     --ink-faint is used for 12px uppercase eyebrows, so it has no room to go
+     lighter than this. */
+  --ink-soft: rgba(26, 22, 21, 0.68);
+  --ink-faint: rgba(26, 22, 21, 0.63);
 
   --white: #ffffff;
   --cream: #f0eae5;
@@ -216,8 +219,6 @@ strong { font-weight: 600; }
   white-space: nowrap;
 }
 
-.brand-mark { font-size: 19px; line-height: 1; }
-
 .nav-links {
   display: none;
   align-items: center;
@@ -243,6 +244,37 @@ strong { font-weight: 600; }
 
 @media (min-width: 900px) {
   .nav-links { display: flex; }
+}
+
+/* Below 900px the links wrap to their own row under the brand + CTA rather
+   than disappearing — a phone had no way to reach Products/Pricing/Contact
+   short of scrolling to the footer. Two rows make the bar tall, so the header
+   stops sticking here and scrolls away with the page instead. */
+@media (max-width: 899px) {
+  .site-header { position: static; }
+
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 6px;
+    padding: 8px 8px 10px 14px;
+    border-radius: var(--r-md);
+  }
+
+  /* Brand and CTA have to share the first row or the bar goes three deep.
+     They fit from ~360px up; below that the CTA wraps to its own row, which
+     is tall but not broken. */
+  .nav .brand { font-size: 16px; }
+  .nav > .btn { padding: 11px 16px; font-size: 14px; }
+
+  .nav-links {
+    display: flex;
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+  }
+
+  .nav-links a { padding: 10px 12px; }
 }
 
 /* ---------- Buttons ---------- */
@@ -291,8 +323,12 @@ strong { font-weight: 600; }
   overflow: hidden;
 }
 
+/* The box clips to its content height, so the label needs room for descenders
+   ("Get started", "Pricing"). The slide distance is 100% of that line box, so
+   the two copies stay exactly one line apart. */
 .btn__label > span {
   display: block;
+  line-height: 1.4;
   transition: transform 460ms cubic-bezier(0.65, 0.05, 0.1, 1);
 }
 
@@ -301,10 +337,10 @@ strong { font-weight: 600; }
   top: 0;
   left: 0;
   width: 100%;
-  transform: translateY(105%);
+  transform: translateY(100%);
 }
 
-.btn:hover .btn__label > span:first-child { transform: translateY(-105%); }
+.btn:hover .btn__label > span:first-child { transform: translateY(-100%); }
 .btn:hover .btn__label > span:last-child { transform: translateY(0); }
 
 .btn:focus-visible {
@@ -378,7 +414,7 @@ strong { font-weight: 600; }
 .hero-note {
   margin-top: 28px;
   font-size: 14px;
-  color: rgba(26, 22, 21, 0.55);
+  color: var(--ink-soft);
 }
 
 /* ---------- Tilted product window ---------- */
