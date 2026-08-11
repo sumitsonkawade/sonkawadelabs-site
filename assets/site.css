@@ -418,6 +418,9 @@ strong { font-weight: 600; }
   color: var(--ink-soft);
 }
 
+.hero-note a { text-decoration: underline; text-underline-offset: 2px; }
+.hero-note a:hover { color: var(--ink); }
+
 /* ---------- Tilted product window ---------- */
 
 .mock-wrap {
