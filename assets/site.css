@@ -365,7 +365,8 @@ strong { font-weight: 600; }
 .panel--ink .tabs { background: rgba(255, 255, 255, 0.1); }
 
 .tab {
-  padding: 12px 22px;
+  /* 15px + a 15px line box clears the 44px touch-target minimum. */
+  padding: 15px 22px;
   border: 0;
   border-radius: var(--r-pill);
   background: transparent;
