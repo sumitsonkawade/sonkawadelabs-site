@@ -7,7 +7,11 @@
   <meta name="description" content="Your CSC Pro download is starting. Installation steps and support contacts from Sonkawade Labs.">
   <meta name="robots" content="noindex">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/site.css">
+  <!-- Blocking, in <head>: site.js sets the theme class before first paint. -->
+  <script src="/assets/site.js"></script>
 </head>
 <body>
 
@@ -17,11 +21,11 @@
         Sonkawade Labs
       </a>
       <div class="nav-links">
-        <a href="/products/">Products</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/contact/">Contact</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#connect">Contact</a>
       </div>
-      <a class="btn btn--primary" href="/products/csc-pro/">CSC Pro</a>
+      <a class="btn btn--primary" href="/#projects">CSC Pro</a>
     </nav>
   </header>
 
@@ -80,20 +84,20 @@
         <div class="footer-col">
           <h4>Products</h4>
           <ul>
-            <li><a href="/products/">All products</a></li>
-            <li><a href="/products/arzi-bot/">Arzi</a></li>
-            <li><a href="/products/csc-pro/">CSC Pro</a></li>
-            <li><a href="/products/helpora/">Helpora Support</a></li>
-            <li><a href="/products/stocksaathi/">StockSaathi</a></li>
-            <li><a href="/products/phone-munshi/">Phone Munshi</a></li>
+            <li><a href="/#projects">All products</a></li>
+            <li><a href="/#projects">Arzi</a></li>
+            <li><a href="/#projects">CSC Pro</a></li>
+            <li><a href="/#projects">Helpora Support</a></li>
+            <li><a href="/#projects">StockSaathi</a></li>
+            <li><a href="/#projects">Phone Munshi</a></li>
             <li><a href="/thank-you/">Download CSC Pro</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="/pricing/">Pricing</a></li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="/#connect">Contact</a></li>
             <li><a href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a></li>
             <li><a href="tel:+917498601105">+91 74986 01105</a></li>
           </ul>
@@ -147,7 +151,6 @@
     window.addEventListener("load", startDownload, { once: true });
   </script>
 
-  <script src="/assets/site.js" defer></script>
   <!-- Helpora support widget -->
   <script src="https://helpora-support-production.up.railway.app/widget.js"
           data-client-id="a8b32735-14c7-4c66-a5b6-6d062438cc52"></script>

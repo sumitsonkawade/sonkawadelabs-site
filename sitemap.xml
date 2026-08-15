@@ -5,8 +5,24 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sonkawadelabs.in/arzi/data-deletion/</loc>
-    <priority>0.3</priority>
+    <loc>https://sonkawadelabs.in/products/helpora/signup/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sonkawadelabs.in/products/helpora/onboarding/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sonkawadelabs.in/legal/</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sonkawadelabs.in/refunds/</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sonkawadelabs.in/thank-you/</loc>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://sonkawadelabs.in/arzi/privacy/</loc>
@@ -17,11 +33,7 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sonkawadelabs.in/contact/</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/csc-pro/data-deletion/</loc>
+    <loc>https://sonkawadelabs.in/arzi/data-deletion/</loc>
     <priority>0.3</priority>
   </url>
   <url>
@@ -33,7 +45,7 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sonkawadelabs.in/helpora/data-deletion/</loc>
+    <loc>https://sonkawadelabs.in/csc-pro/data-deletion/</loc>
     <priority>0.3</priority>
   </url>
   <url>
@@ -45,63 +57,7 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sonkawadelabs.in/legal/</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/phone-munshi/data-deletion/</loc>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/phone-munshi/privacy/</loc>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/phone-munshi/terms/</loc>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/pricing/</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/products/</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/products/arzi-bot/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/products/csc-pro/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/products/helpora/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/products/helpora/onboarding/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/products/helpora/signup/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/products/phone-munshi/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/products/stocksaathi/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/refunds/</loc>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://sonkawadelabs.in/stocksaathi/data-deletion/</loc>
+    <loc>https://sonkawadelabs.in/helpora/data-deletion/</loc>
     <priority>0.3</priority>
   </url>
   <url>
@@ -113,7 +69,19 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sonkawadelabs.in/thank-you/</loc>
+    <loc>https://sonkawadelabs.in/stocksaathi/data-deletion/</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://sonkawadelabs.in/phone-munshi/privacy/</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://sonkawadelabs.in/phone-munshi/terms/</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://sonkawadelabs.in/phone-munshi/data-deletion/</loc>
     <priority>0.3</priority>
   </url>
 </urlset>

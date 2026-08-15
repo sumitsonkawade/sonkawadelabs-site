@@ -9,7 +9,11 @@
     content="Refund and cancellation policy for CSC Pro and Arzi by Sonkawade Labs, covering prepaid credits, subscriptions, duplicate payments, and processing timelines."
   />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/site.css">
+  <!-- Blocking, in <head>: site.js sets the theme class before first paint. -->
+  <script src="/assets/site.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -18,11 +22,11 @@
         Sonkawade Labs
       </a>
       <div class="nav-links">
-        <a href="/products/">Products</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/contact/">Contact</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#connect">Contact</a>
       </div>
-      <a class="btn btn--primary" href="/contact/">Contact us</a>
+      <a class="btn btn--primary" href="/#connect">Contact us</a>
     </nav>
   </header>
 
@@ -41,7 +45,7 @@
       <p>
         This policy explains when payments made to Sonkawade Labs for CSC Pro subscriptions or
         prepaid credits can be refunded or cancelled. It should be read together with the
-        <a href="/csc-pro/terms/">Terms of Service</a> and the <a href="/pricing/">Pricing</a> page, which lists the current rates.
+        <a href="/csc-pro/terms/">Terms of Service</a> and the <a href="/#pricing">Pricing</a> page, which lists the current rates.
       </p>
     </div>
 
@@ -49,7 +53,7 @@
     <p>Payments are collected online through our payment partner <strong>Cashfree Payments</strong>, and approved refunds are returned to the original payment method through the same gateway.</p>
     <p>Helpora Support is sold as a prepaid monthly or annual plan. Plan fees are charged in advance and are not refundable for the period in progress, except for a duplicate or incorrect charge, a service failure of more than 24 consecutive hours caused by us, or a request made within 7 days of the first payment. Nothing renews automatically and no payment instrument is stored, so there is no recurring charge to cancel. Full terms are on the <a href="https://helporasupport.sonkawadelabs.in/refunds">Helpora Support refund policy</a>.</p>
     <p>StockSaathi and Phone Munshi are not on sale yet — no payment is collected for them, so nothing under this policy applies to them until their pricing is published.</p>
-    <p>Current rate: <strong>₹10 per application</strong> for both CSC Pro and Arzi. CSC Pro is paid from prepaid wallet credits, minimum top-up ₹100. Prices are final and no additional tax is added — see the <a href="/pricing/">Pricing</a> page.</p>
+    <p>Current rate: <strong>₹10 per application</strong> for both CSC Pro and Arzi. CSC Pro is paid from prepaid wallet credits, minimum top-up ₹100. Prices are final and no additional tax is added — see the <a href="/#pricing">Pricing</a> page.</p>
     <ul>
       <li><strong>Used credits are non-refundable.</strong> Once a credit is consumed for an application workflow, it cannot be reversed, restored, or redeemed for cash.</li>
       <li>No refund is available merely because a government portal is slow, unavailable, rejects an application, or requires correction.</li>
@@ -107,20 +111,20 @@
         <div class="footer-col">
           <h4>Products</h4>
           <ul>
-            <li><a href="/products/">All products</a></li>
-            <li><a href="/products/arzi-bot/">Arzi</a></li>
-            <li><a href="/products/csc-pro/">CSC Pro</a></li>
-            <li><a href="/products/helpora/">Helpora Support</a></li>
-            <li><a href="/products/stocksaathi/">StockSaathi</a></li>
-            <li><a href="/products/phone-munshi/">Phone Munshi</a></li>
+            <li><a href="/#projects">All products</a></li>
+            <li><a href="/#projects">Arzi</a></li>
+            <li><a href="/#projects">CSC Pro</a></li>
+            <li><a href="/#projects">Helpora Support</a></li>
+            <li><a href="/#projects">StockSaathi</a></li>
+            <li><a href="/#projects">Phone Munshi</a></li>
             <li><a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="/pricing/">Pricing</a></li>
-            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="/#connect">Contact</a></li>
             <li><a href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a></li>
             <li><a href="tel:+917498601105">+91 74986 01105</a></li>
           </ul>
@@ -140,7 +144,6 @@
     </footer>
 
   </main>
-  <script src="/assets/site.js" defer></script>
   <!-- Helpora support widget -->
   <script src="https://helpora-support-production.up.railway.app/widget.js"
           data-client-id="a8b32735-14c7-4c66-a5b6-6d062438cc52"></script>

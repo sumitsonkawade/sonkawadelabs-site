@@ -15,39 +15,40 @@
   <meta name="twitter:title" content="Sonkawade Labs — paperwork and customers, handled while you work">
   <meta name="twitter:description" content="Sonkawade Labs builds Arzi, CSC Pro, Helpora Support, StockSaathi and Phone Munshi — WhatsApp and web software for citizen paperwork, certificate filing, customer support and small business enquiries.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='42'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/site.css">
+  <!-- Blocking, in <head>: site.js sets the theme class before first paint. -->
+  <script src="/assets/site.js"></script>
 </head>
 <body>
 
   <header class="site-header">
     <nav class="nav">
-      <a class="brand" href="/">
-        Sonkawade Labs
-      </a>
-      <div class="nav-links">
-        <a href="/products/">Products</a>
-        <a href="/pricing/">Pricing</a>
-        <a href="/contact/">Contact</a>
+      <div>
+        <a class="brand" href="/">Sonkawade Labs</a>
+        <p class="brand-tagline">I build software for the parts of India that software usually skips</p>
       </div>
-      <a class="btn btn--primary" href="https://wa.me/917498601105?text=Hi%2C%20I%20want%20to%20get%20started%20with%20Sonkawade%20Labs">Start on WhatsApp</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#connect">Contact</a>
+      </div>
     </nav>
   </header>
 
   <main class="wrap stack">
 
     <section class="hero">
-      <span class="pill-tag">Five products for everyday Indian business</span>
-      <h1>Paperwork and customers, handled while you work</h1>
-      <p class="lede">Sonkawade Labs builds software that answers for you — citizen application letters, certificate filing, website support chat, WhatsApp stock enquiries, and missed-call follow-up for tradesmen.</p>
-      <div class="btn-row">
-        <a class="btn btn--primary" href="https://wa.me/917498601105?text=Hi%2C%20I%20want%20to%20use%20Arzi">Start Arzi on WhatsApp</a>
-        <a class="btn btn--light" href="/products/csc-pro/">See CSC Pro</a>
-        <a class="btn btn--ghost" href="/products/helpora/signup/">Try Helpora Support</a>
-      </div>
-      <p class="hero-note">₹10 per application · No subscription · No minimum · <a href="/products/stocksaathi/">StockSaathi</a> and <a href="/products/phone-munshi/">Phone Munshi</a> coming soon</p>
+      <p class="lede">A one-person software studio in Walandi, Deoni Taluka, Latur District, Maharashtra. I build tools for the people I live next to — CSC operators filling government forms all day, farmers enrolling for crop insurance, kirana shops answering the same stock question forty times, tradesmen losing customers because their hands are inside a wall.</p>
+      <ul class="ticks" style="margin-top:16px">
+        <li>It runs on WhatsApp or on Windows — not on a new app nobody will install.</li>
+        <li>It speaks Marathi, Hindi and Hinglish, not just English.</li>
+        <li>It is priced per job, not per seat. ₹10 for an application, not ₹2,000 a month.</li>
+      </ul>
 
       <div class="mock-wrap">
-        <div class="mock" data-tilt>
+        <div class="mock">
           <div class="mock-bar">
             <span class="mock-dot" aria-hidden="true"></span>
             <span class="mock-dot" aria-hidden="true"></span>
@@ -83,89 +84,62 @@
       </div>
     </section>
 
-    <section class="panel">
-      <div class="section-head center">
-        <span class="eyebrow">Products</span>
-        <h2>Built for citizen workflows, operators and small businesses</h2>
-        <p class="lede">Arzi and CSC Pro run end to end on a flat ₹10 per application. Helpora Support is sold as a monthly or annual plan from ₹999 a month. StockSaathi and Phone Munshi are newer — pricing for those is coming soon.</p>
+    <section class="panel" id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
       </div>
-
-      <div class="grid grid--2">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">✎</div>
-          <span class="eyebrow">WhatsApp Bot</span>
-          <h3>Arzi</h3>
-          <p>A WhatsApp bot that listens to user problems in Indian languages and returns a ready-to-print formal application letter as a PDF.</p>
-          <ul class="ticks">
-            <li>Converts a citizen's message into a structured written application</li>
-            <li>Addressed to the relevant office or authority</li>
-            <li>Delivered back to the same WhatsApp chat as a PDF</li>
-            <li>₹10 per application, pay per use</li>
-          </ul>
-          <div class="btn-row" style="margin-top:24px">
-            <a class="btn btn--primary" href="/products/arzi-bot/">Product page</a>
-            <a class="btn btn--ghost" href="/pricing/">Pricing</a>
+      <div class="rowlist">
+        <div class="row">
+          <div class="row-head">
+            <span class="row-title">CSC Pro</span>
+            <span class="row-meta"><span class="status">Live</span></span>
           </div>
-        </article>
+          <p>Desktop software for Common Service Centre operators. The operator photographs a customer's Aadhaar, the software reads it and fills the MahaOnline certificate application in Chrome by itself. 15 government services, plus a PMFBY crop-insurance module. ₹10 per completed application from a prepaid wallet.</p>
+          <p class="row-links"><a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download for Windows</a> · <a href="/csc-pro/privacy/">Privacy</a> · <a href="/csc-pro/terms/">Terms</a></p>
+        </div>
 
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">▤</div>
-          <span class="eyebrow">Desktop Software</span>
-          <h3>CSC Pro</h3>
-          <p>Certificate automation software for CSC operators handling Maharashtra service applications such as caste, income, and residence certificates.</p>
-          <ul class="ticks">
-            <li>Collects customer details and reads uploaded documents</li>
-            <li>Automates repetitive MahaOnline application steps</li>
-            <li>WhatsApp onboarding and operator messaging flows</li>
-            <li>₹10 per application from prepaid wallet credits</li>
-          </ul>
-          <div class="btn-row" style="margin-top:24px">
-            <a class="btn btn--primary" href="/products/csc-pro/">Product page</a>
-            <a class="btn btn--ghost" href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download</a>
+        <div class="row">
+          <div class="row-head">
+            <span class="row-title">Arzi</span>
+            <span class="row-meta"><span class="status">Live</span></span>
           </div>
-        </article>
-      </div>
+          <p>A citizen describes a problem on WhatsApp in any Indian language. Arzi asks the two or three questions it still needs, then sends back a ready-to-print application letter addressed to the right office, as a PDF. ₹10 per application, no subscription.</p>
+          <p class="row-links"><a href="https://wa.me/917498601105?text=Hi%2C%20I%20want%20to%20use%20Arzi">Start on WhatsApp</a> · <a href="/arzi/privacy/">Privacy</a> · <a href="/arzi/terms/">Terms</a></p>
+        </div>
 
-      <div class="grid grid--3" style="margin-top:24px">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">◎</div>
-          <span class="eyebrow">Support Chat</span>
-          <h3>Helpora Support</h3>
-          <p>An AI support assistant on your website that answers customer questions from your own help content and passes the tricky ones to your team.</p>
-          <ul class="ticks"><li>From ₹999 per month · 14-day free trial</li></ul>
-          <div class="btn-row" style="margin-top:24px">
-            <a class="btn btn--primary" href="/products/helpora/">Product page</a>
+        <div class="row">
+          <div class="row-head">
+            <span class="row-title">Helpora Support</span>
+            <span class="row-meta"><span class="status">Live</span></span>
           </div>
-        </article>
+          <p>A multi-tenant AI support assistant that sits on a client's own website as one script tag. It answers from the client's own knowledge base, can only link to pages they approved, escalates to their team, and publishes the same knowledge as crawlable help pages. From ₹999 a month with a 14-day free trial.</p>
+          <p class="row-links"><a href="https://helporasupport.sonkawadelabs.in">helporasupport.sonkawadelabs.in</a> · <a href="/helpora/privacy/">Privacy</a> · <a href="/helpora/terms/">Terms</a></p>
+        </div>
 
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">◫</div>
-          <span class="eyebrow">WhatsApp for Shops</span>
-          <h3>StockSaathi</h3>
-          <p>Answers customer stock and price enquiries from the shop's own inventory — on WhatsApp, or on a call the shop couldn't pick up.</p>
-          <ul class="ticks"><li>Pricing coming soon</li></ul>
-          <div class="btn-row" style="margin-top:24px">
-            <a class="btn btn--primary" href="/products/stocksaathi/">Product page</a>
+        <div class="row">
+          <div class="row-head">
+            <span class="row-title">StockSaathi</span>
+            <span class="row-meta"><span class="status">Pilot</span></span>
           </div>
-        </article>
+          <p>A customer WhatsApps the shop asking for an item. StockSaathi reads the shop's live TallyPrime stock and answers in seconds with availability and price, in the language they asked in — and tells the owner what customers wanted that the shop did not have. Backend live; desktop billing app in beta.</p>
+          <p class="row-links"><a href="/stocksaathi/privacy/">Privacy</a> · <a href="/stocksaathi/terms/">Terms</a></p>
+        </div>
 
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">☏</div>
-          <span class="eyebrow">For Tradesmen</span>
-          <h3>Phone Munshi</h3>
-          <p>Answers a tradesman's forwarded calls, works out what job the caller needs, and hands it over for one-tap confirmation.</p>
-          <ul class="ticks"><li>Pricing coming soon</li></ul>
-          <div class="btn-row" style="margin-top:24px">
-            <a class="btn btn--primary" href="/products/phone-munshi/">Product page</a>
+        <div class="row">
+          <div class="row-head">
+            <span class="row-title">Phone Munshi</span>
+            <span class="row-meta"><span class="status">Built</span></span>
           </div>
-        </article>
+          <p>A plumber misses a call because his hands are inside a wall. Phone Munshi WhatsApps the caller within seconds, works out the job, proposes a time and a price, and sends the tradesman a one-tap confirm. Payment goes straight to the tradesman's own UPI ID. Code complete; not yet run with live customers.</p>
+          <p class="row-links"><a href="/phone-munshi/privacy/">Privacy</a> · <a href="/phone-munshi/terms/">Terms</a></p>
+        </div>
+
       </div>
     </section>
 
-    <section class="panel panel--cream" id="how">
+    <section class="panel" id="how">
       <div class="section-head">
-        <span class="eyebrow">How it works</span>
-        <h2>From a message to a finished job</h2>
+        <h2>How it works</h2>
         <p class="lede">Every product replaces the same thing — someone stopping their work to answer, type or file. Pick a product to see its flow.</p>
       </div>
 
@@ -242,7 +216,7 @@
           <div class="card">
             <div class="card-icon" aria-hidden="true">1</div>
             <h4>Connect the shop</h4>
-            <p>StockSaathi is set up with the shop's item list and prices from the accounting software the shop already uses.</p>
+            <p>A small Windows agent reads the shop's live stock and prices straight out of TallyPrime — the accounting software the shop already uses.</p>
           </div>
           <div class="card">
             <div class="card-icon" aria-hidden="true">2</div>
@@ -261,104 +235,82 @@
         <div class="grid grid--3">
           <div class="card">
             <div class="card-icon" aria-hidden="true">1</div>
-            <h4>The call forwards</h4>
-            <p>You are on site with your hands full and the call goes unanswered. Instead of ringing out, it forwards to your Phone Munshi agent.</p>
+            <h4>The call is missed</h4>
+            <p>You are on site with your hands full and the call goes unanswered. Phone Munshi notices it on your own Android phone.</p>
           </div>
           <div class="card">
             <div class="card-icon" aria-hidden="true">2</div>
             <h4>The agent answers it</h4>
-            <p>It says it is answering for you, talks to the caller in Marathi, Hindi or English, works out the job, and suggests a time and a price.</p>
+            <p>It WhatsApps the caller in Marathi, Hindi, Hinglish or English — or takes it by voice — works out the job, and suggests a time and a price.</p>
           </div>
           <div class="card">
             <div class="card-icon" aria-hidden="true">3</div>
             <h4>You confirm the job</h4>
-            <p>The details reach you on WhatsApp. One tap confirms or declines — nothing is booked until you say so, and the customer is told either way.</p>
+            <p>The details reach you on WhatsApp. One tap confirms or declines — nothing is booked until you say so, and the money goes to your own UPI ID.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="panel">
-      <div class="section-head center">
-        <span class="eyebrow">Why it works</span>
-        <h2>Simple where it counts</h2>
-      </div>
-
-      <div class="grid grid--3">
-        <div class="card">
-          <h4>Speaks your language</h4>
-          <p>Arzi accepts problems described in Indian languages and produces a correctly formatted formal application.</p>
-        </div>
-        <div class="card">
-          <h4>One flat rate</h4>
-          <p>₹10 per application, end to end. No setup fee, no monthly minimum, no per-user licence fee.</p>
-        </div>
-        <div class="card">
-          <h4>You only pay on success</h4>
-          <p>Credits are deducted only when an application is actually submitted. Failed or abandoned applications cost nothing.</p>
-        </div>
-        <div class="card">
-          <h4>Built for operators</h4>
-          <p>CSC Pro handles the repetitive MahaOnline steps so operators can process more cases per day.</p>
-        </div>
-        <div class="card">
-          <h4>Credits that keep</h4>
-          <p>Wallet credits do not expire while your account is active, and ₹1 always buys exactly 1 credit.</p>
-        </div>
-        <div class="card">
-          <h4>Clear paperwork</h4>
-          <p>Every product has published privacy, terms, refund and data-deletion pages at stable URLs.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel panel--cream2">
-      <div class="section-head center">
-        <span class="eyebrow">Pricing</span>
-        <h2>Simple plans for serious work</h2>
-        <p class="lede">Both products are priced the same way, and there are no other charges. All amounts are in Indian Rupees and payable in India only.</p>
+    <section class="panel" id="pricing">
+      <div class="section-head">
+        <h2>Pricing</h2>
+        <p class="lede">Priced per job, not per seat. All amounts are in Indian Rupees (INR) and payable in India only. These are the current published rates referred to in each product's Terms of Service.</p>
       </div>
 
       <div class="grid grid--2">
         <article class="card price-card">
           <div>
-            <h3>Arzi</h3>
-            <p class="muted">For citizens who need a formal application letter.</p>
-          </div>
-          <div>
+            <h3>Arzi · CSC Pro</h3>
             <div class="price">₹10 <small>per application</small></div>
-            <p class="muted">Pay per use — no subscription, no minimum purchase.</p>
           </div>
           <ul class="ticks">
-            <li>Generated application letter as PDF</li>
-            <li>Delivered on WhatsApp</li>
-            <li>Charged only per letter generated</li>
+            <li>Arzi: pay per use — no credit packs, no subscription, no minimum purchase</li>
+            <li>CSC Pro: paid from a prepaid wallet, ₹1 = 1 credit, minimum top-up ₹100, no fixed packs and no bulk discount</li>
+            <li>Credits are deducted only when an application is actually submitted — a failed or abandoned application costs nothing</li>
+            <li>Credits do not expire while your account is active</li>
           </ul>
-          <a class="btn btn--primary" href="https://wa.me/917498601105?text=Hi%2C%20I%20want%20to%20use%20Arzi">Start Arzi on WhatsApp</a>
         </article>
 
         <article class="card price-card">
           <div>
-            <h3>CSC Pro</h3>
-            <p class="muted">For CSC operators filing Maharashtra certificates.</p>
-          </div>
-          <div>
-            <div class="price">₹10 <small>per application</small></div>
-            <p class="muted">Paid from prepaid wallet credits. ₹1 = 1 credit, minimum top-up ₹100.</p>
+            <h3>Helpora Support</h3>
+            <div class="price">₹999 <small>per month and up</small></div>
           </div>
           <ul class="ticks">
-            <li>WhatsApp intake, document handling and operator review included</li>
-            <li>Automated submission to the government portal</li>
-            <li>Credits do not expire while your account is active</li>
+            <li>Starter ₹999 (1,000 AI replies, 2 seats) · Growth ₹2,499 (5,000 replies, 5 seats, voice) · Scale ₹5,999 (20,000 replies, unlimited seats)</li>
+            <li>Annual at ten months' price for twelve · 14-day free trial, no card required</li>
+            <li>Prepaid — nothing renews automatically, no card or UPI mandate is stored</li>
+            <li>Beyond a plan: ₹0.60 per extra AI reply · <a href="https://helporasupport.sonkawadelabs.in/pricing">full plan details</a></li>
           </ul>
-          <a class="btn btn--primary" href="/products/csc-pro/">See CSC Pro</a>
         </article>
       </div>
 
-      <p class="muted center" style="margin-top:24px;font-size:15px">
-        Helpora Support is sold as a monthly or annual plan from ₹999 a month. StockSaathi and Phone Munshi are not on sale yet — pricing coming soon.
-        Payments are handled by Cashfree Payments.
-        Full breakdown on the <a href="/pricing/">Pricing page</a>. Government and portal fees are separate and are not paid to Sonkawade Labs.
+      <p class="muted" style="margin-top:16px;font-size:14px">
+        StockSaathi and Phone Munshi are not on sale yet — no payment is collected for them until their prices are published here.
+        Payments are handled online in INR by Cashfree Payments (UPI, cards, net banking, wallets); card and bank details are entered on Cashfree's secure checkout and never stored by Sonkawade Labs.
+        Prices shown are the final amount payable — Sonkawade Labs is not currently registered under GST, so no tax is added.
+        Credits and documents are delivered electronically, normally within minutes and in any case within 24 hours.
+        Government and portal fees are separate and are not paid to Sonkawade Labs.
+        See the <a href="/refunds/">Refund &amp; Cancellation Policy</a>.
+      </p>
+    </section>
+
+    <section class="panel" id="connect">
+      <div class="section-head">
+        <h2>Connect</h2>
+        <p class="lede">If you have a repetitive job that eats your day — a form, a phone call, a stock question, a letter — that is exactly the kind of thing I build away.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="https://wa.me/917498601105?text=Hi%2C%20I%20want%20to%20get%20started%20with%20Sonkawade%20Labs">WhatsApp</a>
+        <a class="btn btn--light" href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>
+        <a class="btn btn--ghost" href="tel:+917498601105">+91 74986 01105</a>
+      </div>
+      <p class="hero-note">Monday–Saturday, 10:00 AM – 6:00 PM IST (email monitored on all days).</p>
+      <p class="hero-note" style="margin-top:8px">
+        Sonkawade Labs is a sole proprietorship owned by Sumit Sonkawade — Walandi, Deoni Taluka, Latur District, Maharashtra 413519, India.
+        Support queries are answered within 2 business days; privacy grievances are acknowledged within 48 hours and resolved within 30 days; data deletion requests are answered within 30 days.
+        Grievance Officer: Sumit Sonkawade, <a href="mailto:sumitsonkawade@sonkawadelabs.in">sumitsonkawade@sonkawadelabs.in</a>.
       </p>
     </section>
 
@@ -369,24 +321,20 @@
           <p>Software for citizen workflows and certificate operators. Walandi, Deoni Taluka, Latur District, Maharashtra 413519, India.</p>
         </div>
         <div class="footer-col">
-          <h4>Products</h4>
+          <h4>Site</h4>
           <ul>
-            <li><a href="/products/">All products</a></li>
-            <li><a href="/products/arzi-bot/">Arzi</a></li>
-            <li><a href="/products/csc-pro/">CSC Pro</a></li>
-            <li><a href="/products/helpora/">Helpora Support</a></li>
-            <li><a href="/products/stocksaathi/">StockSaathi</a></li>
-            <li><a href="/products/phone-munshi/">Phone Munshi</a></li>
-            <li><a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#connect">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="/pricing/">Pricing</a></li>
-            <li><a href="/contact/">Contact</a></li>
             <li><a href="mailto:sumitsonkawade@sonkawadelabs.in">Email us</a></li>
             <li><a href="tel:+917498601105">+91 74986 01105</a></li>
+            <li><a href="https://github.com/sumitsonkawade/sonkawadelabs-site/releases/latest/download/CSC_Pro_Setup.zip">Download CSC Pro</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -405,7 +353,6 @@
 
   </main>
 
-  <script src="/assets/site.js" defer></script>
   <!-- Helpora support widget -->
   <script src="https://helpora-support-production.up.railway.app/widget.js"
           data-client-id="a8b32735-14c7-4c66-a5b6-6d062438cc52"></script>
