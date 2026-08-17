@@ -1,26 +1,94 @@
 {
   "redirects": [
-    { "source": "/privacy", "destination": "/csc-pro/privacy/", "type": 301 },
-    { "source": "/privacy/", "destination": "/csc-pro/privacy/", "type": 301 },
-    { "source": "/terms", "destination": "/csc-pro/terms/", "type": 301 },
-    { "source": "/terms/", "destination": "/csc-pro/terms/", "type": 301 },
-    { "source": "/data-deletion", "destination": "/csc-pro/data-deletion/", "type": 301 },
-    { "source": "/data-deletion/", "destination": "/csc-pro/data-deletion/", "type": 301 },
-    { "source": "/products", "destination": "/#projects", "type": 301 },
-    { "source": "/products/", "destination": "/#projects", "type": 301 },
-    { "source": "/products/arzi-bot", "destination": "/#projects", "type": 301 },
-    { "source": "/products/arzi-bot/", "destination": "/#projects", "type": 301 },
-    { "source": "/products/csc-pro", "destination": "/#projects", "type": 301 },
-    { "source": "/products/csc-pro/", "destination": "/#projects", "type": 301 },
-    { "source": "/products/helpora", "destination": "/#projects", "type": 301 },
-    { "source": "/products/helpora/", "destination": "/#projects", "type": 301 },
-    { "source": "/products/stocksaathi", "destination": "/#projects", "type": 301 },
-    { "source": "/products/stocksaathi/", "destination": "/#projects", "type": 301 },
-    { "source": "/products/phone-munshi", "destination": "/#projects", "type": 301 },
-    { "source": "/products/phone-munshi/", "destination": "/#projects", "type": 301 },
-    { "source": "/pricing", "destination": "/#pricing", "type": 301 },
-    { "source": "/pricing/", "destination": "/#pricing", "type": 301 },
-    { "source": "/contact", "destination": "/#connect", "type": 301 },
-    { "source": "/contact/", "destination": "/#connect", "type": 301 }
+    {
+      "source": "/privacy",
+      "destination": "/csc-pro/privacy/",
+      "type": 301
+    },
+    {
+      "source": "/privacy/",
+      "destination": "/csc-pro/privacy/",
+      "type": 301
+    },
+    {
+      "source": "/terms",
+      "destination": "/csc-pro/terms/",
+      "type": 301
+    },
+    {
+      "source": "/terms/",
+      "destination": "/csc-pro/terms/",
+      "type": 301
+    },
+    {
+      "source": "/data-deletion",
+      "destination": "/csc-pro/data-deletion/",
+      "type": 301
+    },
+    {
+      "source": "/data-deletion/",
+      "destination": "/csc-pro/data-deletion/",
+      "type": 301
+    },
+    {
+      "source": "/products",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/arzi-bot",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/arzi-bot/",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/csc-pro",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/csc-pro/",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/helpora",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/helpora/",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/stocksaathi",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/stocksaathi/",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/phone-munshi",
+      "destination": "/#projects",
+      "type": 301
+    },
+    {
+      "source": "/products/phone-munshi/",
+      "destination": "/#projects",
+      "type": 301
+    }
   ]
 }
