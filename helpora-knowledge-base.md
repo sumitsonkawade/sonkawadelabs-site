@@ -259,10 +259,9 @@ cards, net banking and wallets. Card and bank details are entered on Cashfree's 
 are never stored by Sonkawade Labs.
 
 **Q: Is GST added to the price?**
-No. Prices shown on the pricing page are the final amount payable and no additional tax is added at
-the time of payment. Sonkawade Labs is not currently registered under GST, so GST is not charged or
-collected and a GST tax invoice is not issued. If GST registration becomes applicable in future, the
-pricing page will be updated before any revised amount is charged.
+Sonkawade Labs is registered under GST, with GSTIN 27KGQPS6459R1ZP, effective from 17 September 2026.
+Refer to the pricing page, the total shown before payment and the invoice for applicable GST and
+the final amount payable. Do not assume a GST rate or whether a particular listed price includes tax.
 
 **Q: Can I pay from outside India?**
 All amounts are in Indian Rupees and are payable in India only.
