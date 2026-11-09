@@ -2,92 +2,152 @@
   "redirects": [
     {
       "source": "/privacy",
-      "destination": "/csc-pro/privacy/",
+      "destination": "/phone-munshi/privacy/",
       "type": 301
     },
     {
       "source": "/privacy/",
-      "destination": "/csc-pro/privacy/",
+      "destination": "/phone-munshi/privacy/",
+      "type": 301
+    },
+    {
+      "source": "/privacy/index.html",
+      "destination": "/phone-munshi/privacy/",
       "type": 301
     },
     {
       "source": "/terms",
-      "destination": "/csc-pro/terms/",
+      "destination": "/phone-munshi/terms/",
       "type": 301
     },
     {
       "source": "/terms/",
-      "destination": "/csc-pro/terms/",
+      "destination": "/phone-munshi/terms/",
+      "type": 301
+    },
+    {
+      "source": "/terms/index.html",
+      "destination": "/phone-munshi/terms/",
+      "type": 301
+    },
+    {
+      "source": "/refunds",
+      "destination": "/phone-munshi/refunds/",
+      "type": 301
+    },
+    {
+      "source": "/refunds/",
+      "destination": "/phone-munshi/refunds/",
+      "type": 301
+    },
+    {
+      "source": "/refunds/index.html",
+      "destination": "/phone-munshi/refunds/",
+      "type": 301
+    },
+    {
+      "source": "/faq",
+      "destination": "/phone-munshi/faq/",
+      "type": 301
+    },
+    {
+      "source": "/faq/",
+      "destination": "/phone-munshi/faq/",
+      "type": 301
+    },
+    {
+      "source": "/faq/index.html",
+      "destination": "/phone-munshi/faq/",
       "type": 301
     },
     {
       "source": "/data-deletion",
-      "destination": "/csc-pro/data-deletion/",
+      "destination": "/phone-munshi/data-deletion/",
       "type": 301
     },
     {
       "source": "/data-deletion/",
-      "destination": "/csc-pro/data-deletion/",
+      "destination": "/phone-munshi/data-deletion/",
+      "type": 301
+    },
+    {
+      "source": "/data-deletion/index.html",
+      "destination": "/phone-munshi/data-deletion/",
+      "type": 301
+    },
+    {
+      "source": "/pricing",
+      "destination": "https://phonemunshi.com/#pricing",
+      "type": 301
+    },
+    {
+      "source": "/pricing/",
+      "destination": "https://phonemunshi.com/#pricing",
+      "type": 301
+    },
+    {
+      "source": "/pricing/index.html",
+      "destination": "https://phonemunshi.com/#pricing",
+      "type": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "https://sonkawadelabs.in/#contact",
+      "type": 301
+    },
+    {
+      "source": "/contact/",
+      "destination": "https://sonkawadelabs.in/#contact",
+      "type": 301
+    },
+    {
+      "source": "/contact/index.html",
+      "destination": "https://sonkawadelabs.in/#contact",
+      "type": 301
+    },
+    {
+      "source": "/legal",
+      "destination": "https://sonkawadelabs.in/#policies",
+      "type": 301
+    },
+    {
+      "source": "/legal/",
+      "destination": "https://sonkawadelabs.in/#policies",
+      "type": 301
+    },
+    {
+      "source": "/legal/index.html",
+      "destination": "https://sonkawadelabs.in/#policies",
       "type": 301
     },
     {
       "source": "/products",
-      "destination": "/#projects",
+      "destination": "https://sonkawadelabs.in/#phone-munshi",
       "type": 301
     },
     {
       "source": "/products/",
-      "destination": "/#projects",
+      "destination": "https://sonkawadelabs.in/#phone-munshi",
       "type": 301
     },
     {
-      "source": "/products/arzi-bot",
-      "destination": "/#projects",
-      "type": 301
-    },
-    {
-      "source": "/products/arzi-bot/",
-      "destination": "/#projects",
-      "type": 301
-    },
-    {
-      "source": "/products/csc-pro",
-      "destination": "/#projects",
-      "type": 301
-    },
-    {
-      "source": "/products/csc-pro/",
-      "destination": "/#projects",
-      "type": 301
-    },
-    {
-      "source": "/products/helpora",
-      "destination": "/#projects",
-      "type": 301
-    },
-    {
-      "source": "/products/helpora/",
-      "destination": "/#projects",
-      "type": 301
-    },
-    {
-      "source": "/products/stocksaathi",
-      "destination": "/#projects",
-      "type": 301
-    },
-    {
-      "source": "/products/stocksaathi/",
-      "destination": "/#projects",
+      "source": "/products/index.html",
+      "destination": "https://sonkawadelabs.in/#phone-munshi",
       "type": 301
     },
     {
       "source": "/products/phone-munshi",
-      "destination": "/#projects",
+      "destination": "https://phonemunshi.com/",
       "type": 301
     },
     {
       "source": "/products/phone-munshi/",
-      "destination": "/#projects",
+      "destination": "https://phonemunshi.com/",
+      "type": 301
+    },
+    {
+      "source": "/products/phone-munshi/index.html",
+      "destination": "https://phonemunshi.com/",
       "type": 301
     }
   ]
