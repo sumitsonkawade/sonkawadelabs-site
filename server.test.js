@@ -16,13 +16,13 @@ test('domains publish only the introduction, Phone Munshi plans and related link
     const phone = await get('phonemunshi.com');
     assert.equal(phone.status, 200);
     assert.match(phone.body, /Your calls, handled/);
-    assert.match(phone.body, /₹999<span>\/month/);
+    assert.match(phone.body, /₹1,499<span>\/month/);
     assert.match(phone.body, /₹3.50<span>\/minute/);
     assert.doesNotMatch(phone.body, /₹1,299|₹1,599|₹1,799/);
     const pricing = phone.body.split('<section id="pricing"')[1].split('</section>')[0];
     assert.match(pricing, /Includes GST/);
     assert.match(pricing, /only in the app/);
-    assert.match(pricing, /No call minutes included/);
+    assert.match(pricing, /90 AI calling minutes/);
     assert.doesNotMatch(pricing, /<button|<form|href=|checkout|buy now/i);
     assert.doesNotMatch(phone.body, /whatsapp/i);
     for (const asset of ['logo.svg', 'app-icon.png', 'business-assistant.webp']) {
