@@ -38,8 +38,14 @@ test('domains publish only the introduction, Phone Munshi plans and related link
     assert.doesNotMatch(studio.body, /Arzi|CSC Pro|Helpora|Wearly|StockSaathi|widget.js/i);
     assert.equal((await get('www.phonemunshi.com', '/?hello=1')).headers.location, 'https://phonemunshi.com/?hello=1');
     assert.equal((await get('phonemunshi.com', '/assets/phone-munshi.css')).status, 200);
-    assert.equal((await get('phonemunshi.com', '/privacy')).headers.location, 'https://web-production-c8fc6.up.railway.app/static/legal/privacy.html');
-    assert.equal((await get('sonkawadelabs.in', '/phone-munshi/terms/')).status, 302);
+    assert.equal((await get('phonemunshi.com', '/privacy')).headers.location, 'https://phone-munshi-1062783566405.asia-south1.run.app/static/legal/privacy.html');
+    for (const host of ['phonemunshi.com', 'sonkawadelabs.in']) {
+      for (const [slug, file] of Object.entries({ privacy: 'privacy', terms: 'terms', refunds: 'refund', faq: 'faq' })) {
+        const legal = await get(host, `/phone-munshi/${slug}/`);
+        assert.equal(legal.status, 302);
+        assert.equal(legal.headers.location, `https://phone-munshi-1062783566405.asia-south1.run.app/static/legal/${file}.html`);
+      }
+    }
     assert.equal((await get('sonkawadelabs.in', '/privacy')).headers.location, '/phone-munshi/privacy/');
     assert.equal((await get('sonkawadelabs.in', '/pricing/')).headers.location, 'https://phonemunshi.com/#pricing');
     assert.equal((await get('phonemunshi.com', '/data-deletion')).headers.location, '/phone-munshi/data-deletion/');

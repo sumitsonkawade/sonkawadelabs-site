@@ -2,7 +2,7 @@ const http = require('node:http');
 const handler = require('serve-handler');
 const config = require('./serve.json');
 
-const legalBase = 'https://web-production-c8fc6.up.railway.app/static/legal/';
+const legalBase = 'https://phone-munshi-1062783566405.asia-south1.run.app/static/legal/';
 const legalPages = { privacy: 'privacy.html', terms: 'terms.html', refunds: 'refund.html', faq: 'faq.html' };
 
 const server = http.createServer((request, response) => {
