@@ -12,6 +12,11 @@ test('domains publish only the introduction, Phone Munshi plans and related link
       response.on('end', () => resolve({ status: response.statusCode, headers: response.headers, body }));
     }).on('error', reject);
   });
+  const originalFetch = global.fetch;
+  global.fetch = async url => {
+    assert.match(url, /^https:\/\/phone-munshi-1062783566405\.asia-south1\.run\.app\/static\/legal\/(privacy\.html|terms\.html|refund\.html|faq\.html|legal\.css)$/);
+    return new Response(url.endsWith('.css') ? 'body { color: black; }' : '<html><link href="legal.css"><a href="terms.html#section-1">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refunds</a><a href="faq.html">FAQ</a><a href="index.html">Home</a></html>');
+  };
   try {
     const phone = await get('phonemunshi.com');
     assert.equal(phone.status, 200);
@@ -38,12 +43,15 @@ test('domains publish only the introduction, Phone Munshi plans and related link
     assert.doesNotMatch(studio.body, /Arzi|CSC Pro|Helpora|Wearly|StockSaathi|widget.js/i);
     assert.equal((await get('www.phonemunshi.com', '/?hello=1')).headers.location, 'https://phonemunshi.com/?hello=1');
     assert.equal((await get('phonemunshi.com', '/assets/phone-munshi.css')).status, 200);
-    assert.equal((await get('phonemunshi.com', '/privacy')).headers.location, 'https://phone-munshi-1062783566405.asia-south1.run.app/static/legal/privacy.html');
+    assert.equal((await get('phonemunshi.com', '/privacy')).status, 200);
     for (const host of ['phonemunshi.com', 'sonkawadelabs.in']) {
       for (const [slug, file] of Object.entries({ privacy: 'privacy', terms: 'terms', refunds: 'refund', faq: 'faq' })) {
         const legal = await get(host, `/phone-munshi/${slug}/`);
-        assert.equal(legal.status, 302);
-        assert.equal(legal.headers.location, `https://phone-munshi-1062783566405.asia-south1.run.app/static/legal/${file}.html`);
+        assert.equal(legal.status, 200);
+        assert.equal(legal.headers.location, undefined);
+        assert.match(legal.body, /href="\/phone-munshi\/terms\/#section-1"/);
+        assert.match(legal.body, /href="\/phone-munshi\/legal.css"/);
+        assert.doesNotMatch(legal.body, /run\.app|href="terms\.html/);
       }
     }
     assert.equal((await get('sonkawadelabs.in', '/privacy')).headers.location, '/phone-munshi/privacy/');
@@ -59,7 +67,13 @@ test('domains publish only the introduction, Phone Munshi plans and related link
     assert.doesNotMatch(sitemap.body, /arzi|csc-pro|helpora|stocksaathi|thank-you/i);
     assert.match((await get('phonemunshi.com', '/sitemap.xml')).body, /https:\/\/phonemunshi.com\//);
     assert.equal((await get('phonemunshi.com', '/does-not-exist')).status, 404);
+    assert.equal((await get('phonemunshi.com', '/phone-munshi/legal.css')).headers['content-type'], 'text/css; charset=utf-8');
+    global.fetch = async () => new Response('missing', { status: 404 });
+    assert.equal((await get('phonemunshi.com', '/privacy')).status, 502);
+    global.fetch = async () => { throw new Error('timeout'); };
+    assert.equal((await get('phonemunshi.com', '/terms')).status, 502);
   } finally {
+    global.fetch = originalFetch;
     await new Promise(resolve => server.close(resolve));
   }
 });
