@@ -39,10 +39,20 @@ def verify(site, host, edge):
     paths = [p for p in paths if p.is_file()]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         checked = list(pool.map(check, paths))
-    for uri, expected in [('/privacy', 'https://phone-munshi-1062783566405.asia-south1.run.app/static/legal/privacy.html' if site == 'phone' else '/phone-munshi/privacy/'),('/phone-munshi/terms/', 'https://phone-munshi-1062783566405.asia-south1.run.app/static/legal/terms.html')]:
+    for uri, expected in [('/privacy', '/static/legal/privacy.html' if site == 'phone' else '/phone-munshi/privacy/'),('/phone-munshi/terms/', '/static/legal/terms.html')]:
         status, headers, body = fetch(host, edge, uri)
         assert status in (301, 302) and headers.get('location') == expected, (host, uri, status, headers)
-    for uri in ['/does-not-exist', '/server.js', '/invoice-template.html']:
+    for file in ['privacy.html', 'terms.html', 'refund.html', 'faq.html', 'index.html', 'legal.css', 'metadata.json']:
+        uri = '/static/legal/' + file
+        status, headers, body = fetch(host, edge, uri)
+        assert status == 200 and 'location' not in headers, (host, uri, status, headers)
+        assert 'cloudfront' in headers.get('via', '').lower(), (host, uri, 'not served by CloudFront')
+        if file.endswith('.html'):
+            assert b'<html' in body.lower(), (host, uri, 'not HTML')
+            assert b'.run.app' not in body, (host, uri, 'server URL exposed')
+        elif file == 'legal.css':
+            assert 'text/css' in headers.get('content-type', ''), (host, uri, 'stylesheet type')
+    for uri in ['/does-not-exist', '/server.js', '/invoice-template.html', '/static/legal/private.txt']:
         assert fetch(host, edge, uri)[0] == 404, (host, uri)
     status, headers, body = fetch('www.' + host, edge, '/?hello=1')
     if site == 'phone':

@@ -46,7 +46,7 @@ over newer email or certificate records. Keep the Phone Munshi voice/API backend
 
 AWS account verification was cleared on 16 November 2026. See `.aws-migration/resume.md` for the latest stack and cutover state. Do not switch DNS until distributions are deployed, both Free plans are ACTIVE, and endpoint checks pass.
 
-Free plans exclude detailed access logs. Keep access logging disabled and use the standard managed caching policy to preserve eligibility; do not silently upgrade to a paid plan. Subscribe the sites sequentially to avoid plan-service throttling. Policy routes redirect directly to the canonical Google Cloud Run legal pages.
+Free plans exclude detailed access logs. Keep access logging disabled and use the standard managed caching policy to preserve eligibility; do not silently upgrade to a paid plan. Subscribe the sites sequentially to avoid plan-service throttling. Policy routes stay on the website domain at `/static/legal/`. CloudFront fetches the current legal pages and stylesheet from the canonical Google Cloud Run origin over HTTPS using the managed CachingDisabled policy. Only allowlisted legal files are forwarded.
 
 ## Current endpoints (16 November 2026)
 
@@ -59,4 +59,4 @@ Stack `sonkawadelabs-websites-v5` is CREATE_COMPLETE. Both CloudFront subscripti
 
 Content is stored in `sonkawadelabs-websites-v5-content-bbfzuquqfuty`, under `studio/` and `phone/`.
 DNS cutover completed on 16 November 2026. Live root and www requests now reach CloudFront; www.phonemunshi.com redirects to the root domain. Original Railway services remain available for rollback and have not been stopped.
-Endpoint verification matched all 12 files per site and checked legal redirects, canonical www handling, unknown routes and security headers.
+Endpoint verification matched all 12 files per site and checked same-domain legal navigation, canonical www handling, unknown routes and security headers.
