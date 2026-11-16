@@ -58,5 +58,5 @@ Stack `sonkawadelabs-websites-v5` is CREATE_COMPLETE. Both CloudFront subscripti
 | phonemunshi.com | EPQ87XSEMC0YC | d2lx9qvgkpers2.cloudfront.net |
 
 Content is stored in `sonkawadelabs-websites-v5-content-bbfzuquqfuty`, under `studio/` and `phone/`.
-DNS cutover is pending owner access to Hostinger. Do not treat successful CloudFront deployment as proof that public domains already use it.
+DNS cutover completed on 16 November 2026. Live root and www requests now reach CloudFront; www.phonemunshi.com redirects to the root domain. Original Railway services remain available for rollback and have not been stopped.
 Endpoint verification matched all 12 files per site and checked legal redirects, canonical www handling, unknown routes and security headers.
